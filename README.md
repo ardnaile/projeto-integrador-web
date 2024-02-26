@@ -1,1 +1,14 @@
-# projeto-integrador-web
+## Projeto integrador: sistema web
+
+Este é um projeto de extensão do curso de Engenharia de Software: um site com quizes e atividades lúdicas em diversas matérias 
+como programação, matemática e inglês, com foco nas crianças. Serão aplicados princípios de gamificação para tornar o aprendizado 
+mais leve e divertido. A intenção é que o site seja fácil de usar até para crianças que não são acostumadas com tecnologia, sendo 
+que a pretensão é aplicar essas atividades nas aulas em escolas particulares, públicas e instituições que acolhem crianças carentes. 
+
+
+### Integrantes:
+- Eliandra Cardoso - [GitHub](https://github.com/ardnaile)
+- Rafael Rodrigues - [GitHub](https://github.com/Rafael171022)
+- Wallace Mendes - [GitHub](https://github.com/WallaceB2)
+
+Mais informações conforme o andamento do projeto.
