@@ -11,4 +11,8 @@ que a pretensão é aplicar essas atividades nas aulas em escolas particulares, 
 - Rafael Rodrigues - [GitHub](https://github.com/Rafael171022)
 - Wallace Mendes - [GitHub](https://github.com/WallaceB2)
 
+### Protótipo
+[Figma](https://www.figma.com/file/zNFQ7vR1OBFGFjCfuJ7pHZ/sistemas-web?type=design&node-id=1%3A2&mode=design&t=QWASmsC2nctzVp8Q-1)
+[Canva](https://www.canva.com/design/DAF923OVfOs/kC-fLkWwrF3PuFZEjdz4lg/edit?utm_content=DAF923OVfOs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
 Mais informações conforme o andamento do projeto.
