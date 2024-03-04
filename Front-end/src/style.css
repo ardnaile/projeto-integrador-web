@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Open+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Dancing+Script:wght@500&family=Open+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@700&family=Open+Sans:wght@300;400;500&family=Raleway:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rubik+Bubbles&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-size: 14px;
+  font-synthesis: none;
+  /* background-image: url('assets/img_fundo/fundo3.png'); */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
