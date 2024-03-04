@@ -3,6 +3,7 @@ import React from 'react'
 export default function Old_user() {
   return (
     <div className="w-screen mx-auto">
+      <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo1.png')`}>
         <div className='items-center justify-center  w-screen h-screen'>
           <form className="max-w-full mx-auto flex items-center h-screen w-screen justify-center bg-transparent" > 
             <div className='space-y-4'>
@@ -17,6 +18,7 @@ export default function Old_user() {
             </div>´
           </form>
         </div> 
+      </BackgroundLayout>
     </div>
   )
 }

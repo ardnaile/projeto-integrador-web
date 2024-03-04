@@ -1,8 +1,8 @@
-import Home from './rotas/Home';
+import Prof_aluno from './rotas/usuario/Prof_aluno';
 
 export default function App() {
 
   return (
-   <Home/>
+   <Prof_aluno/>
   )
 }

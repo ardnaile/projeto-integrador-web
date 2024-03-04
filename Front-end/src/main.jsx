@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import New_user from './rotas/usuario/New_user';
 import Home from './rotas/Home';
 import Old_user from './rotas/usuario/Old_user';
+import Prof_aluno from './rotas/usuario/Prof_aluno';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path:"/Old_user",
     element:<Old_user/>,
+  },
+  {
+    path:"/Prof_aluno",
+    element:<Prof_aluno/>,
   },
 ]);
 
