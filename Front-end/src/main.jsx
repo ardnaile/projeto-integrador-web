@@ -9,11 +9,11 @@ import New_user from './rotas/usuario/New_user';
 import Home from './rotas/Home';
 import Old_user from './rotas/usuario/Old_user';
 import Prof_aluno from './rotas/usuario/Prof_aluno';
-<<<<<<< HEAD
-import Estudandte from './rotas/usuario/Estudandte';
-=======
-import Quiz from 'Front-end\src\Quiz.jsx';
->>>>>>> 517b4244243d6eebac48c9c49576c9aeece2a1f6
+
+import Estudante from './rotas/usuario/Estudante';
+
+import Quiz from './rotas/usuario/Quiz';
+
 
 const router = createBrowserRouter([
   {
@@ -37,13 +37,14 @@ const router = createBrowserRouter([
     element:<Prof_aluno/>,
   },
   {
-<<<<<<< HEAD
+
     path:"/Estudante",
-    element:<Estudandte/>,
-=======
+    element:<Estudante/>,
+  },
+  {
     path:"/Quiz",
     element:<Quiz/>,
->>>>>>> 517b4244243d6eebac48c9c49576c9aeece2a1f6
+
   },
 ]);
 

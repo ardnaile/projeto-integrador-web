@@ -1,7 +1,7 @@
 import React from 'react'
 import BackgroundLayout from '../../background/VariosLayouts'
 
-function Estudandte() {
+function Estudante() {
     return (
         <div>
             <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo0.png')`}>
