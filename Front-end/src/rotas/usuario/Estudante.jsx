@@ -1,7 +1,7 @@
 import React from 'react'
 import BackgroundLayout from '../../background/VariosLayouts'
 
-function Estudante() {
+export default function Estudante() {
     return (
         <div>
             <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo0.png')`}>
@@ -30,5 +30,3 @@ function Estudante() {
     )
 }
     
-
-export default Estudandte
