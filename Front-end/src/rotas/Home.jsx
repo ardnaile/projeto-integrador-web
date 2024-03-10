@@ -14,40 +14,40 @@ export default function Home() {
             <div className=' mx-auto  bg-transparent'>  
                 <div className='grid grid-cols-4 '>
                 
-                  <div className='text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-r-gray-200 mr-16 mb-16'>
-                    <img className='w-auto cursor-pointer  rounded-3xl mt-2 ' src="src\assets\icones\calculadora.png" alt=""/>MATEMÁTICA
+                  <div className='sm:text-1xl  text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-6 border-r-gray-300 mr-16 mb-16'>
+                    <img className='w-full cursor-pointer  rounded-3xl mt-16 mb-16' src="src\assets\icones\8.svg" alt=""/>MATEMÁTICA
                   </div>
 
-                  <div className='text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-200'>
-                    <img className='w-auto cursor-pointer  rounded-3xl mt-5 mb-14' src="src\assets\icones\programacao.png" alt=""/>TECNOLOGIA    
+                  <div className='sm:text-1xl text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400'>
+                    <img className='w-full cursor-pointer  rounded-3xl mt-16 mb-16' src="src\assets\icones\1.svg" alt=""/>TECNOLOGIA    
                   </div>
 
-                  <div className='text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-200'>
-                    <img className='w-auto cursor-pointer  rounded-3xl mt-12 mb-12' src="src\assets\icones\idiomas.png" alt=""/>IDIOMAS 
+                  <div className='sm:text-1xl text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400'>
+                    <img className='w-full cursor-pointer  rounded-3xl mt-16 mb-16' src="src\assets\icones\2.svg" alt=""/>IDIOMAS 
                     
                   </div>
 
-                  <div className='text-center font-text_ale w-60 h-80 text-2xl rounded-3xl bg-white border-r-4 border-x-gray-200'>
-                    <img className='w-auto cursor-pointer  rounded-3xl mt-14 mb-12' src="src\assets\icones\animais.png" alt=""/>ANIMAIS      
+                  <div className='sm:text-1xl text-center font-text_ale w-60 h-80 text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400'>
+                    <img className='w-full cursor-pointer  rounded-3xl mt-16 mb-16 ' src="src\assets\icones\3.svg" alt=""/>ANIMAIS      
                   </div>
 
-                  <div className='text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-200'>
-                    <img className='w-auto cursor-pointer  rounded-3xl mt-6 mb-10' src="src\assets\icones\comida.png" alt=""/>COMIDA
+                  <div className='sm:text-1xl text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400'>
+                    <img className='w-full cursor-pointer  rounded-3xl mt-16 mb-16' src="src\assets\icones\4.svg" alt=""/>COMIDA
                             
                   </div>
 
-                  <div className='text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-200'>
-                    <img className='w-auto cursor-pointer  rounded-3xl mt-5 mb-8' src="src\assets\icones\natureza.png" alt=""/>NATUREZA
+                  <div className='sm:text-1xl text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400'>
+                    <img className='w-full cursor-pointer  rounded-3xl mt-16 mb-16' src="src\assets\icones\5.svg" alt=""/>NATUREZA
                             
                   </div>
 
-                  <div className='text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-200'>
-                    <img className='w-auto cursor-pointer  rounded-3xl mt-7 mb-8' src="src\assets\icones\artes.png" alt=""/>ARTES
+                  <div className='sm:text-1xl text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400'>
+                    <img className='w-full cursor-pointer  rounded-3xl mt-16 mb-16' src="src\assets\icones\6.svg" alt=""/>ARTES
                             
                   </div>
 
-                  <div className='text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-200'>
-                    <img className='w-auto cursor-pointer  rounded-3xl mt-2' src="src\assets\icones\esporte.png" alt=""/>ESPORTES
+                  <div className='sm:text-1xl text-center w-60 h-80 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400'>
+                    <img className='w-full cursor-pointer  rounded-3xl mt-16 mb-16' src="src\assets\icones\7.svg" alt=""/>ESPORTES
                           
                   </div>
                   
