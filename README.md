@@ -12,6 +12,9 @@ que a pretensão é aplicar essas atividades nas aulas em escolas particulares, 
 - Wallace Mendes - [GitHub](https://github.com/WallaceB2)
 
 ### Protótipo
-- [Canva](https://www.canva.com/design/DAF923OVfOs/kC-fLkWwrF3PuFZEjdz4lg/edit?utm_content=DAF923OVfOs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- [Canva](https://www.canva.com/design/DAF923OVfOs/kC-fLkWwrF3PuFZEjdz4lg/edit?utm_content=DAF923OVfOs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+
+### Documentação
+- Os planos de trabalho e documentos de requisitos para o sistema estão [nesta pasta](Documentação)
 
 Mais informações conforme o andamento do projeto.

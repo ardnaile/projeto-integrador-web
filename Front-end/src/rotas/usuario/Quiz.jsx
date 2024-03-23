@@ -1,19 +1,22 @@
 import React from 'react'
 
+
 function Quiz() {
   return (
-    <div>
-        <div>
-                <span className = "bg-blue-400">Pergunta vai ficar aqui</span>
-                <div className="h-screen w-1/2 gap-4 p-4 grid grid-cols-2 grid-rows-2 div-grid bg-green-700 justify-center" >
-                    <button className = "mb-16 mt-16 text-center font-text_ale text-5xl">Resposta 1</button>
-                    <button className = "mb-16 mt-16 text-center font-text_ale text-5xl">Resposta 2</button>
-                    <button className = "mb-16 mt-16 text-center font-text_ale text-5xl">Resposta 3</button>
-                    <button className = "mb-16 mt-16 text-center font-text_ale text-5xl">Resposta 4</button>
-                </div>
-                <button className = "bg-blue-400">Próxima Pergunta</button>    
-            
+    <div className = "bg-blue-900 text-white h-screen flex flex-col items-center justify-center shadow-lg"> 
+      <div className = "bg-black w-90 max-w-800 border border-white rounded-lg shadow-lg ">
+        <span className = "text-lg font-bold text-center items-center flex flex-col justify-center">Qual é o Pokemon de Ash ?</span>
+        <div className = "p-8 m-0 gap-4 box-sizing grid grid-cols-2 w-full">
+          <button className ="bg-white text-black px-20 py-4 rounded-lg mb-2 hover:bg-gray-200">Pikachu</button>
+          <button className ="bg-white text-black px-20 py-4 rounded-lg mb-2 hover:bg-gray-200">Grouthlite</button>
+          <button className ="bg-white text-black px-20 py-4 rounded-lg mb-2 hover:bg-gray-200">Chalizard</button>
+          <button className ="bg-white text-black px-20 py-4 rounded-lg mb-2 hover:bg-gray-200">Bulbassauro</button>
         </div>
+      <div className ="flex justify-center mt-4 gap-2 p-2">
+        <button className ="bg-white text-black px-20 py-4 rounded-lg mb-2 hover:bg-gray-200">Começar Quiz!</button>
+        <button className ="bg-white text-black px-20 py-4 rounded-lg mb-2 hover:bg-gray-200">Próxima Pergunta</button>
+      </div>
+      </div>
     </div>
   )
 }
