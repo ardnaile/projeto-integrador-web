@@ -11,7 +11,8 @@ export default {
       titulos: ["Dancing Script","cursive"],
       paragrafos:["Abel","sans-serif"],
       text_ale:["Atma","sans-serif"],
-      text_ale2:["Indie Flower", "Rubik Bubbles"]
+      text_ale2:["Indie Flower", "Rubik Bubbles"],
+      text_ale3:["Josefin Sans", "sans-serif"]
 
     }
   },

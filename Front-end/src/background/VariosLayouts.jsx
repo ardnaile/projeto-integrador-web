@@ -4,10 +4,11 @@ import styled from 'styled-components';
 const BackgroundContainer = styled.div`
     height: 100vh;
     background-size: cover ; 
-     background-position: center;
+    background-position: center;
     display: column;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
     background-image: ${props => props.backgroundImage || 'none'};
 `;
 

@@ -12,6 +12,7 @@ import Prof_aluno from './rotas/usuario/Prof_aluno';
 import Estudante from './rotas/usuario/Estudante';
 
 import Quiz from './rotas/usuario/Quiz';
+import Sobre from './rotas/Sobre';
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
   {
     path:"/Quiz",
     element:<Quiz/>,
+
+  },
+  {
+    path:"/Sobre",
+    element:<Sobre/>,
 
   },
 ]);
