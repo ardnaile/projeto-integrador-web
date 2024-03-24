@@ -5,11 +5,10 @@ const BackgroundContainer = styled.div`
     height: 100vh;
     background-size: cover ; 
     background-position: center;
-    display: column;
+    // display: column;
     justify-content: center;
     align-items: center;
-    background-repeat: no-repeat;
-    background-image: ${props => props.backgroundImage || 'none'};
+     background-image: ${props => props.backgroundImage || 'none'};
 `;
 
 const BackgroundLayout = ({ children, backgroundImage }) => {
