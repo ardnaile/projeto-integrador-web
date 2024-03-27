@@ -24,14 +24,14 @@ export default function Quiz() {
   }
   return (
     <div className="w-screen mx-auto">
-      <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo00.svg')`}>
+      <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo0.png')`}>
         {showPontuacao ? 
           (<div className = 'pontuacao'><span>Sua pontuação é {pontos} de {questions.length}!</span>
             </div>) : (
-              <div className = "bg-white-900 text-white h-screen flex flex-col items-center justify-center shadow-lg"> 
-                  <div className = 'ContagemPerguntas text-lg font-bold text-center items-center flex flex-col justify-center'>  
-                    <span className = "bg-blue-800 text-white flex flex-col items-center justify-center shadow-lg">Pergunta {perguntaAtual + 1}/2{questions.lenght}
-                      <span className = "text-lg font-bold text-center items-center flex flex-col justify-center">{questions[perguntaAtual].pergunta}</span>
+              <div className = "bg-white-900 text-black font-bold h-screen flex flex-col items-center justify-center shadow-lg"> 
+                  <div className = 'ContagemPerguntas text-lg font-bold text-center items-center flex flex-col justify-center '>  
+                    <span className = " ">Pergunta {perguntaAtual + 1}/2{questions.lenght}
+                      <span className = "text-lg font-bold text-center items-center flex flex-col justify-center mt-3">{questions[perguntaAtual].pergunta}</span>
                         <div className = "p-8 m-0 gap-4 box-sizing grid grid-cols-2">
                           {questions[perguntaAtual].opcoesResposta.map((opcoesResposta)=>
                             <div>
@@ -40,9 +40,6 @@ export default function Quiz() {
                             </div>
                           )}
                         </div>
-                        <div className ="flex justify-center mt-4 gap-2 p-2">
-                          <button className ="bg-white hover:bg-green-400 text-black font-bold px-20 py-4 border-b-2 hover:border-white-500 rounded-xl">Começar Quiz!</button>
-                      </div>
                     </span>
                   </div> 
               </div>
