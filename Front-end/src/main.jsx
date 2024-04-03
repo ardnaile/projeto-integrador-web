@@ -4,14 +4,16 @@ import App from './App'
 import './style.css'
 
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import New_user from './rotas/usuario/New_user';
 import Home from './rotas/Home';
 import Old_user from './rotas/usuario/Old_user';
 import Prof_aluno from './rotas/usuario/Prof_aluno';
 import Estudante from './rotas/usuario/Estudante';
-
 import Quiz from './rotas/usuario/Quiz';
+import Sobre from './rotas/Sobre';
+import ColetaNome from './rotas/usuario/ColetaNome';
 
 
 const router = createBrowserRouter([
@@ -45,6 +47,14 @@ const router = createBrowserRouter([
     element:<Quiz/>,
 
   },
+  {
+    path:"/Sobre",
+    element:<Sobre/>,
+  },
+  {
+    path:"/ColetaNome",
+    element:<ColetaNome/>,
+  },
 ]);
 
 
@@ -52,4 +62,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <RouterProvider router={router}/>
   </React.StrictMode>
+  
 )

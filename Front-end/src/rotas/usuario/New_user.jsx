@@ -18,7 +18,7 @@ export default function New_user() {
                   <button className='font-text_ale text-4xl bg-green-400 py-2 px-16 rounded-full border-b-4 border-gray-400 hover:bg-green-600 hover:text-5xl'>OK!</button>
                 </Link>
               </div>
-            </div>´
+            </div>
           </form>
         </div> 
       </BackgroundLayout> 
