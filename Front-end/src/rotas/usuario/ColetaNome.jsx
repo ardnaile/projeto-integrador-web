@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function ColetaNome() {
+export default function ColetaNomeSS() {
   return (
     <div className="bg-cover bg-center sm:w-full md:w-full lg:w-full xl:w-full p-4 w-screen h-screen" style={{backgroundImage: 'url(\'./src/assets/img_fundo/fundo4.svg\')'}}>
       <div className='items-center justify-center'>
