@@ -14,7 +14,7 @@ import Estudante from './rotas/usuario/Estudante';
 import Quiz from './rotas/usuario/Quiz';
 import Sobre from './rotas/Sobre';
 import ColetaNome from './rotas/usuario/ColetaNome';
-
+import ConfirmarEstudante from './rotas/usuario/ConfirmarEstudante';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +54,10 @@ const router = createBrowserRouter([
   {
     path:"/ColetaNome",
     element:<ColetaNome/>,
+  },
+  {
+    path:"/ConfirmarEstudante",
+    element:<ConfirmarEstudante/>,
   },
 ]);
 
