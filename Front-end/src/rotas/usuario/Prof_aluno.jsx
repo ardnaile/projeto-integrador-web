@@ -3,7 +3,7 @@ import BackgroundLayout from '../../background/VariosLayouts'
 
 export default function Prof_aluno() {
   return (
-        <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo00.svg')`}>
+        <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo0.png')`}>
         <div className='grid justify-center items-center w-screen  mx-auto container'>
             <div className='space-x-4 mb-8 mt-16 space-y-16'>
               <h1 className='text-center font-extrabold text-5xl'>OLÁ, SEJA BEM VINDO!</h1>
@@ -19,7 +19,7 @@ export default function Prof_aluno() {
               <div className='container relative flex items-center space-x-40'>
                 <img className='w-52 absolute cursor-pointer mb-14 ml-4 ' src="src\assets\icones\aluno2.png" alt=""/>
                 <Link to="/New_user">
-                  <p className=' bg-red-500 rounded-full font-bold text-4xl text-start px-16 py-10 cursor-pointer hover:text-5xl  '>SOU ESTUDANDE</p>
+                  <p className=' bg-red-500 rounded-full font-bold text-4xl text-start px-16 py-10 cursor-pointer hover:text-5xl  '>SOU ESTUDANTE</p>
                 </Link>
               </div>
             </div>

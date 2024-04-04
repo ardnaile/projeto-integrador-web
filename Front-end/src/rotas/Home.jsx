@@ -5,11 +5,15 @@ export default function Home() {
   return (
     <div className='w-screen  h-screen'>
       <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo3.png')`}>
-        <div className='grid justify-center items-center'>
-            <div className='space-x-4 mb-16 mt-16 space-y-8'>
-              <h1 className='text-center font-extrabold text-5xl'>OLÁ, FULANINHO</h1>
-              <h2 className=' text-center font-extrabold text-5xl'>O QUE VAMOS APRENDER HOJE?</h2>
-            </div>
+      <div className='grid justify-center items-center'>
+          <div className='space-x-4 mb-16 mt-16 space-y-8'>
+            <h1 className='text-center font-extrabold text-5xl'>OLÁ, FULANINHO</h1>
+            <p className=' text-center font-extrabold text-5xl'>O QUE VAMOS APRENDER HOJE?</p>
+          </div>
+          <div className='space-x-4 mb-16 mt-16 space-y-8'>
+            <h1 className='text-center font-extrabold text-5xl'>OLÁ, FULANINHO</h1>
+            <p className=' text-center font-extrabold text-5xl'>O QUE VAMOS APRENDER HOJE?</p>
+          </div>
 
             {/* 1 */}           
             <div className=''>  
