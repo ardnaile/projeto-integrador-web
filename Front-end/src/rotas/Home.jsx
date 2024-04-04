@@ -10,10 +10,6 @@ export default function Home() {
             <h1 className='text-center font-extrabold text-5xl'>OLÁ, FULANINHO</h1>
             <p className=' text-center font-extrabold text-5xl'>O QUE VAMOS APRENDER HOJE?</p>
           </div>
-          <div className='space-x-4 mb-16 mt-16 space-y-8'>
-            <h1 className='text-center font-extrabold text-5xl'>OLÁ, FULANINHO</h1>
-            <p className=' text-center font-extrabold text-5xl'>O QUE VAMOS APRENDER HOJE?</p>
-          </div>
 
             {/* 1 */}           
             <div className=''>  

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function ColetaNome() {
   return (
     <div className="bg-cover bg-center sm:w-full md:w-full lg:w-full xl:w-full p-4 w-screen h-screen" style={{backgroundImage: 'url(\'./src/assets/img_fundo/fundo4.svg\')'}}>
-      <div className='items-center justify-center '>
+      <div className='items-center justify-center'>
           <form className="mx-auto flex items-center h-screen w-screen justify-center bg-transparent" > 
             <div className='space-y-4'>
               <p className="font-text_ale text-5xl text-center mb-16">Ok! Agora que você já anotou seu <br />código secreto, digite aqui o seu nome:</p>
