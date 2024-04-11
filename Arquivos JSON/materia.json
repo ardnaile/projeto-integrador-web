@@ -1,0 +1,36 @@
+{
+    "materias": [
+      {
+        "id_materia": 1,
+        "nome_materia": "Matemática"
+      },
+      {
+        "id_materia": 2,
+        "nome_materia": "Tecnologia" 
+      },
+      {
+        "id_materia": 3,
+        "nome_materia": "Idiomas" 
+      },
+      {
+        "id_materia": 4,
+        "nome_materia": "Animais" 
+      },
+      {
+        "id_materia": 5,
+        "nome_materia": "Comidas" 
+      },
+      {
+        "id_materia": 6,
+        "nome_materia": "Natureza" 
+      },
+      {
+        "id_materia": 7,
+        "nome_materia": "Artes" 
+      },
+      {
+        "id_materia": 8,
+        "nome_materia": "Esportes" 
+      }
+    ]
+  }
