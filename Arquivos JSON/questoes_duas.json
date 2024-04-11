@@ -4,7 +4,8 @@
         "id_questao_duas": 1,
         "enunciado": "Enunciado1",
         "resposta": "Resposta1",
-        "id_materia": 1
+        "dica": "",
+        "id_categoria": 1
       }
     ]
   }

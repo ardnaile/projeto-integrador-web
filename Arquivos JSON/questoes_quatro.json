@@ -2,9 +2,38 @@
     "questoes_quatro": [
     {
         "id_questao_quatro": 1,
-        "enunciado": "Enunciado1",
-        "resposta": "Resposta1",
-        "id_materia": 1
+        "enunciado": "Como podemos dizer \"Olá\" em inglês?",
+        "resposta": "Hello",
+        "dica": "Essa palavra começa com a letra 'h' e é parecida com o \"alô\" do português.",
+        "id_categoria": 1
+    },
+    {
+        "id_questao_quatro": 2,
+        "enunciado": "Como podemos dizer \"Bom dia\" em inglês?",
+        "resposta": "Good morning",
+        "dica": "\"I love mornings\" significa \"Eu amo manhãs\" em inglês.",
+        "id_categoria": 1
+    },
+    {
+        "id_questao_quatro": 3,
+        "enunciado": "Qual a expressão usada para agradecer a alguém em inglês?",
+        "resposta": "Thank you",
+        "dica": "Essa expressão é formada por duas palavras e é o seu sinônimo é \"Thanks\".",
+        "id_categoria": 1
+    },
+    {
+        "id_questao_quatro": 4,
+        "enunciado": "Qual palavra podemos usar para pedir algo educadamente em inglês?",
+        "resposta": "Please",
+        "dica": "Essa palavra rima com \"Cheese\", começa com a letra 'p' e expressa respeito à outra pessoa.",
+        "id_categoria": 1
+    },
+    {
+        "id_questao_quatro": 5,
+        "enunciado": "Como podemos dizer \"Com licença\" em inglês?",
+        "resposta": "Excuse me",
+        "dica": "Essa expressão se parece muito com \"Excusez-moi\", que significa \"Desculpe-me\" em francês.",
+        "id_categoria": 1
     }
     ]
 }

@@ -1,14 +1,34 @@
 {
-    "usuarios": [
+    "categorias": [
       {
-        "id_usuario": 1,
-        "nome_usuario": "Nome1",
-        "chave": "Chave1"
+        "id_categoria": 1,
+        "nome_categoria": "Cumprimentos em inglês",
+        "id_materia": 3
       },
       {
-        "id_usuario": 2,
-        "nome_usuario": "Nome2",
-        "chave": "Chave2"
+        "id_categoria": 2,
+        "nome_categoria": "Animais em inglês",
+        "id_materia": 3
+      },
+      {
+        "id_categoria": 3,
+        "nome_categoria": "Verbos em inglês",
+        "id_materia": 3
+      },
+      {
+        "id_categoria": 4,
+        "nome_categoria": "Frases em inglês",
+        "id_materia": 3
+      },
+      {
+        "id_categoria": 5,
+        "nome_categoria": "Adjetivos em inglês",
+        "id_materia": 3
+      },
+      {
+        "id_categoria": 6,
+        "nome_categoria": "Algoritmo",
+        "id_materia": 2
       }
     ]
   }
