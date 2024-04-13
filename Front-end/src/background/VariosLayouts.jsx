@@ -5,7 +5,7 @@ const BackgroundContainer = styled.div`
     height: 100vh;
     background-size: cover ; 
     background-position: center;
-    // display: column;
+    display: column;
     justify-content: center;
     align-items: center;
      background-image: ${props => props.backgroundImage || 'none'};
