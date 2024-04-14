@@ -24,7 +24,7 @@ export const Perguntas = [
   {
     pergunta: 'Qual o nome do pato mais rico dos desenhos?',
     opcoesResposta: [
-      { resposta: 'Power Ranger Vermelho', correta: false, alternativa: '   ' },
+      { resposta: 'Goku', correta: false, alternativa: '   ' },
       { resposta: 'Tio Patinhas', correta: true, alternativa: '   ' },
       { resposta: 'Harry Potter', correta: false, alternativa: '   ' },
       { resposta: 'Shrek', correta: false, alternativa: '   ' },

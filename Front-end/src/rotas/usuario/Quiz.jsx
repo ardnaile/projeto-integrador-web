@@ -131,7 +131,7 @@ export default function Quiz() {
                     <button
                       className={`${
                         respostaSelecionada === index ? 'bg-gray-400' : 'bg-white'
-                      } hover:bg-green-400 text-black font-bold px-20 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
+                      } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
                       onClick={() => handleSelecionarResposta(index)}
                     >
                       {opcaoResposta.resposta}
