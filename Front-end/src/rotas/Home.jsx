@@ -9,7 +9,7 @@ const Home = () => {
     const Img2        = 'w-full cursor-pointer rounded-3xl mt-16 mb-10';
     const DivbtnQuiz  = 'bg-green-500 rounded-full px-4 py-2 flex items-center cursor-pointer text-center font-text_ale text-2xl';
     const CaminhoIcone = 'src\\assets\\icones\\';
-    
+
     const [selecionados, setSelecionados] = useState([]);
     const handleClick = (id) => {
       if (selecionados.includes(id)) {
@@ -42,7 +42,7 @@ const Home = () => {
               <ul className='font-text_ale mr-2 text-2xl cursor-pointer'>Minha conta</ul>
               <img className='w-16 cursor-pointer rounded-full bg-transparent' src={CaminhoIcone.concat("Conta.png")} alt=""/> 
             </div>
-          </div>=
+          </div>
         </nav>
       </div>
 
