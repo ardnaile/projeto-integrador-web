@@ -17,6 +17,8 @@ import ColetaNome from './rotas/usuario/ColetaNome';
 import ConfirmarEstudante from './rotas/usuario/ConfirmarEstudante';
 import TelaTeste from './rotas/usuario/TelaTeste';
 import RespostaErrada from './rotas/usuario/RespostaErrada';
+import QuizBoleano from './rotas/usuario/QuizBoleano';
+import RespostaErradaBoleano from './rotas/usuario/RespostaErradaBoleano'; 
 
 const router = createBrowserRouter([
   {
@@ -68,6 +70,14 @@ const router = createBrowserRouter([
   {
     path:"/RespostaErrada",
     element:<RespostaErrada/>,
+  },
+  {
+    path:"/QuizBoleano",
+    element:<QuizBoleano/>,
+  },
+  {
+    path:"/RespostaErradaBoleano",
+    element:<RespostaErradaBoleano/>,
   },
 ]);
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import BackgroundLayout from '../../background/VariosLayouts'
+import { Link } from 'react-router-dom'; 
 
 export default function Estudante() {
     return (
