@@ -32,15 +32,14 @@ export default function Quiz() {
   }, [seconds, perguntaAtual]);
 
   function proximaPergunta(correta) {
-    const proximaPergunta = perguntaAtual + 1;
-
     if (!correta) {
       // Se a resposta for incorreta, direcionar para a tela de resposta errada
       const respostaCorreta = questions[perguntaAtual].opcoesResposta.find(opcao => opcao.correta).resposta;
-      window.location.href = `/RespostaErrada?respostaCorreta=${encodeURIComponent(questions[perguntaAtual].opcoesResposta.find(opcao => opcao.correta).resposta)}`;
+      window.location.href = `/RespostaErrada?respostaCorreta=${encodeURIComponent(respostaCorreta)}`;
       return;
     }
 
+    const proximaPergunta = perguntaAtual + 1;
     if (proximaPergunta < questions.length) {
       setPerguntaAtual(proximaPergunta);
       setSeconds(30);
@@ -60,6 +59,9 @@ export default function Quiz() {
       setRespostaSelecionada(null);
     } else {
       setRespostaSelecionada(index);
+      if (questions[perguntaAtual].opcoesResposta[index].correta) {
+        setPontos(pontos + 1);
+      }
     }
   }
 

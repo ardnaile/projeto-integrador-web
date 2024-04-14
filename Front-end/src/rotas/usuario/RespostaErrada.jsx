@@ -16,7 +16,7 @@ export default function RespostaErrada({ location }) {
 
   return (
     <div className="w-screen h-screen relative">
-      <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo4.svg\')`}>
+      <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo5.png\')`}>
         <Link to="/Home" className="absolute top-0 left-0 mt-4 ml-4 flex items-center">
           <img className="w-8" src="src/assets/icones/Voltar.png" alt="Ícone de Voltar"/>
           <span className="text-black ml-2 font-text_ale">VOLTAR</span>
