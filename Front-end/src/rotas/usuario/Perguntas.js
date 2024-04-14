@@ -5,7 +5,7 @@ export const Perguntas = [
       { resposta: 'Charmander', correta: false, alternativa: '   ' },
       { resposta: 'Monkey', correta: false, alternativa: '  ' },
       { resposta: 'Bulbassauro', correta: false, alternativa: '  ' },
-      { resposta: 'Pikachu', correta: true, alternativa: '   ' },
+      { resposta: 'Pikachu', correta: true, alternativa: '  ' },
     ],
     dica: 'Este Pokémon é conhecido por sua cauda em forma de raio.',
     respostaCorreta: 'Pikachu' // Resposta correta para a primeira pergunta

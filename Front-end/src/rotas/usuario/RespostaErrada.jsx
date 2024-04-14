@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import BackgroundLayout from '../../background/VariosLayouts';
 import { Link } from 'react-router-dom';
+import { Perguntas } from './Perguntas'; // Importe suas perguntas aqui
 
 export default function RespostaErrada({ location }) {
   const [mostrarRespostaCorreta, setMostrarRespostaCorreta] = useState(false);
-  const respostaCorreta = location && location.search ? new URLSearchParams(location.search).get('respostaCorreta') : '';
+  const perguntaAtual = parseInt(location && location.search ? new URLSearchParams(location.search).get('perguntaAtual') : 0);
+  const respostaCorreta = Perguntas[perguntaAtual].respostaCorreta;
 
   const handleVerRespostaCorreta = () => {
     setMostrarRespostaCorreta(true);
@@ -32,12 +34,12 @@ export default function RespostaErrada({ location }) {
             </button>
             {/* Adicionei a chamada da função proximaPergunta no onClick do botão */}
             <Link to="/Quiz">
-            <button
-              onClick={proximaPergunta}
-              className="bg-orange-500 hover:bg-orange-700 text-black font-bold py-6 px-12 rounded-full text-3xl"
-            >
-              PRÓXIMA PERGUNTA
-            </button>
+              <button
+                onClick={proximaPergunta}
+                className="bg-orange-500 hover:bg-orange-700 text-black font-bold py-6 px-12 rounded-full text-3xl"
+              >
+                PRÓXIMA PERGUNTA
+              </button>
             </Link>
           </div>
         </div>

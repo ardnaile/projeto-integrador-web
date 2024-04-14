@@ -42,7 +42,7 @@ const Home = () => {
               <ul className='font-text_ale mr-2 text-2xl cursor-pointer'>Minha conta</ul>
               <img className='w-16 cursor-pointer rounded-full bg-transparent' src={CaminhoIcone.concat("Conta.png")} alt=""/> 
             </div>
-          </div>=
+          </div>
         </nav>
       </div>
 
