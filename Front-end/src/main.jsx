@@ -16,6 +16,7 @@ import Sobre from './rotas/Sobre';
 import ColetaNome from './rotas/usuario/ColetaNome';
 import ConfirmarEstudante from './rotas/usuario/ConfirmarEstudante';
 import TelaTeste from './rotas/usuario/TelaTeste';
+import RespostaErrada from './rotas/usuario/RespostaErrada';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
   {
     path:"/TelaTeste",
     element:<TelaTeste/>,
+  },
+  {
+    path:"/RespostaErrada",
+    element:<RespostaErrada/>,
   },
 ]);
 

@@ -1,4 +1,3 @@
-
 export const Perguntas = [
   {
     pergunta: 'Qual foi o primeiro Pokemon que Ash capturou?',
@@ -8,7 +7,8 @@ export const Perguntas = [
       { resposta: 'Bulbassauro', correta: false, alternativa: '  ' },
       { resposta: 'Pikachu', correta: true, alternativa: '   ' },
     ],
-    dica: 'Este Pokémon é conhecido por sua cauda em forma de raio.'
+    dica: 'Este Pokémon é conhecido por sua cauda em forma de raio.',
+    respostaCorreta: 'Pikachu' // Resposta correta para a primeira pergunta
   },
   {
     pergunta: 'Qual mês estamos?',
@@ -18,6 +18,7 @@ export const Perguntas = [
       { resposta: 'Junho', correta: false, alternativa: '   ' },
       { resposta: 'Maio', correta: true, alternativa: '   ' },
     ],
-    dica: 'É o quinto mês do ano.'
+    dica: 'É o quinto mês do ano.',
+    respostaCorreta: 'Maio' // Resposta correta para a segunda pergunta
   }
 ];
