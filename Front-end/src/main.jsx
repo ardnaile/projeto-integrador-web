@@ -15,6 +15,7 @@ import Quiz from './rotas/usuario/Quiz';
 import Sobre from './rotas/Sobre';
 import ColetaNome from './rotas/usuario/ColetaNome';
 import ConfirmarEstudante from './rotas/usuario/ConfirmarEstudante';
+import TelaTeste from './rotas/usuario/TelaTeste';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path:"/ConfirmarEstudante",
     element:<ConfirmarEstudante/>,
+  },
+  {
+    path:"/TelaTeste",
+    element:<TelaTeste/>,
   },
 ]);
 

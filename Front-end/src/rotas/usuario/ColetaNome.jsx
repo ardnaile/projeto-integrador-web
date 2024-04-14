@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import BackgroundLayout from '../../background/VariosLayouts'
 
-export default function ColetaNomeSS() {
+export default function ColetaNome() {
   return (
-    <div className="bg-cover bg-center sm:w-full md:w-full lg:w-full xl:w-full p-4 w-screen h-screen" style={{backgroundImage: 'url(\'./src/assets/img_fundo/fundo4.svg\')'}}>
+    <div className="w-screen h-screen " >
+      <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo4.svg\')`}>
       <div className='items-center justify-center'>
           <form className="mx-auto flex items-center h-screen w-screen justify-center bg-transparent" > 
             <div className='space-y-4'>
@@ -20,6 +22,7 @@ export default function ColetaNomeSS() {
             </div>
           </form>
         </div> 
+        </BackgroundLayout>
     </div>
   )
 }

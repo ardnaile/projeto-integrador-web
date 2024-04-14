@@ -1,0 +1,17 @@
+{
+    "questoes_setas": [
+      {
+        "id_questao_setas": 1,
+        "enunciado": "Ajude o colada a chegar até a maçã. Use as setas do teclado para isso!",
+        "id_categoria": 6,
+        "dica": "",
+        "matriz": [
+          [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        ]
+      }
+    ]
+  }
