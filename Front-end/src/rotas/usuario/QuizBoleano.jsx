@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Perguntas } from '../usuario/Perguntas';
-import { FiClock } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import BackgroundLayout from '../../background/VariosLayouts';
 import dicaIcon from '../../assets/icones/dica.png';
-import { Link } from 'react-router-dom';
+import simIcon from '../../assets/icones/sim.png';
+import naoIcon from '../../assets/icones/nao.png';
+import { PerguntasBoleano } from './PerguntasBoleano';
+import { FiClock } from 'react-icons/fi';
 
-export default function Quiz() {
-  const questions = Perguntas ?? [];
+export default function QuizBoleano() {
+  const questions = PerguntasBoleano ?? [];
   const [perguntaAtual, setPerguntaAtual] = useState(0);
   const [showPontuacao, setShowPontuacao] = useState(false);
   const [pontos, setPontos] = useState(0);
@@ -15,37 +17,23 @@ export default function Quiz() {
   const [mostrarDica, setMostrarDica] = useState(false);
   const [dicaAtual, setDicaAtual] = useState('');
   const [respostaSelecionada, setRespostaSelecionada] = useState(null);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-        setRotateSeconds((360 - ((seconds / 30) * 360)) % 360);
-      } else {
-        clearInterval(timer);
-        console.log("Tempo esgotado!");
-        proximaPergunta(false);
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [seconds, perguntaAtual]);
+  const [confirmarVisivel, setConfirmarVisivel] = useState(false);
 
   function proximaPergunta(correta) {
     if (!correta) {
-      // Se a resposta for incorreta, direcionar para a tela de resposta errada
-      const respostaCorreta = questions[perguntaAtual].opcoesResposta.find(opcao => opcao.correta).resposta;
-      window.location.href = `/RespostaErrada?respostaCorreta=${encodeURIComponent(respostaCorreta)}`;
-      return;
-    }
-
-    const proximaPergunta = perguntaAtual + 1;
-    if (proximaPergunta < questions.length) {
-      setPerguntaAtual(proximaPergunta);
-      setSeconds(30);
-      setRespostaSelecionada(null);
+      const respostaCorreta = questions[perguntaAtual].respostaCorreta;
+      window.location.href = `/RespostaErradaBoleano?respostaCorreta=${encodeURIComponent(respostaCorreta)}`;
     } else {
-      setShowPontuacao(true);
+      setPontos(pontos + 1);
+      const proximaPergunta = perguntaAtual + 1;
+      if (proximaPergunta < questions.length) {
+        setPerguntaAtual(proximaPergunta);
+        setSeconds(30);
+        setRespostaSelecionada(null);
+        setConfirmarVisivel(false);
+      } else {
+        setShowPontuacao(true);
+      }
     }
   }
 
@@ -54,14 +42,13 @@ export default function Quiz() {
     setMostrarDica(true);
   }
 
-  function handleSelecionarResposta(index) {
-    if (respostaSelecionada === index) {
+  function handleSelecionarResposta(resposta) {
+    if (respostaSelecionada === resposta) {
       setRespostaSelecionada(null);
+      setConfirmarVisivel(false);
     } else {
-      setRespostaSelecionada(index);
-      if (questions[perguntaAtual].opcoesResposta[index].correta) {
-        setPontos(pontos + 1);
-      }
+      setRespostaSelecionada(resposta);
+      setConfirmarVisivel(true);
     }
   }
 
@@ -119,30 +106,42 @@ export default function Quiz() {
                 </button>
               </div>
             </div>
-            <div className='ContagemPerguntas text-lg font-bold text-center items-center flex flex-col justify-center mt-3'>
+            <div className='ContagemPerguntas text-2xl font-bold text-center items-center flex flex-col justify-center mt-3'>
               {/*<span>Pergunta {perguntaAtual + 1}/{questions.length}</span> //aqui iria aparecer a contagem de perguntas*/}
-              <span className="text-lg font-bold text-center mt-3">
+              <span className="text-3xl font-bold text-center mt-3">
                 {questions[perguntaAtual].pergunta}
               </span>
-              <div className="p-8 m-0 gap-4 box-sizing grid grid-cols-2">
-                {questions[perguntaAtual].opcoesResposta.map((opcaoResposta, index) => (
-                  <div key={index}>
-                    <span>{opcaoResposta.alternativa}</span>
-                    <button
-                      className={`${
-                        respostaSelecionada === index ? 'bg-gray-400' : 'bg-white'
-                      } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
-                      onClick={() => handleSelecionarResposta(index)}
-                    >
-                      {opcaoResposta.resposta}
-                    </button>
-                  </div>
-                ))}
+              <div className="p-8 m-0 gap-8 box-sizing grid grid-cols-2">
+                <div className="flex items-center">
+                  <img src={simIcon} alt="Ícone de Like" className="w-24 h-24" />
+                  <button
+                    className={`${
+                      respostaSelecionada === 'Verdadeiro' ? 'bg-gray-400' : 'bg-white'
+                    } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
+                    onClick={() => handleSelecionarResposta('Verdadeiro')}
+                  >
+                    Verdadeiro
+                  </button>
+                </div>
+                <div className="flex items-center">
+                  <img src={naoIcon} alt="Ícone de Dislike" className="w-24 h-24" />
+                  <button
+                    className={`${
+                      respostaSelecionada === 'Falso' ? 'bg-gray-400' : 'bg-white'
+                    } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
+                    onClick={() => handleSelecionarResposta('Falso')}
+                  >
+                    Falso
+                  </button>
+                </div>
               </div>
             </div>
-            {respostaSelecionada !== null && (
+            {respostaSelecionada && confirmarVisivel && (
               <button
-                onClick={() => proximaPergunta(questions[perguntaAtual].opcoesResposta[respostaSelecionada].correta)}
+                onClick={() => {
+                  proximaPergunta(respostaSelecionada === questions[perguntaAtual].respostaCorreta);
+                  setConfirmarVisivel(false);
+                }}
                 className="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
               >
                 Confirmar Resposta

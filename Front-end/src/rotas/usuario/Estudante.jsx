@@ -1,5 +1,6 @@
 import React from 'react'
 import BackgroundLayout from '../../background/VariosLayouts'
+import { Link } from 'react-router-dom'; 
 
 export default function Estudante() {
     return (
@@ -19,7 +20,7 @@ export default function Estudante() {
                   </div>
                   <div className='container relative flex items-center space-x-40'>
                     <img className='w-52 absolute cursor-pointer mb-14 ml-4 ' src="src\assets\icones\aluno2.png" alt=""/>
-                    <Link to="/New_user">
+                    <Link to="/ConfirmarEstudante">
                       <p className=' bg-red-500 rounded-full font-bold text-4xl text-start px-16 py-10 cursor-pointer hover:text-5xl  '>SOU ESTUDANDE</p>
                     </Link>
                   </div>

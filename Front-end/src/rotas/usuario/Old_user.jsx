@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Modal from '../../Componentes/Modal';
 
 
+
 export default function Old_user() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenErro,setIsOpenErro] = useState(false);
@@ -34,6 +35,7 @@ export default function Old_user() {
   return (
     <main className={styleMain}>
       <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundo1.png')`}>
+
         <div className={styleDivPri}> 
           <div className=''>
             <h1 className={styleH1}>BEM VINDO DE VOLTA!</h1>
@@ -50,6 +52,5 @@ export default function Old_user() {
       </BackgroundLayout>
     </main>
   )
+
 }
-
-
