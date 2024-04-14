@@ -1,14 +1,13 @@
-// Importe as dependências necessárias
-import React, { useState, useEffect } from 'react';
-import { FiClock } from 'react-icons/fi';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import BackgroundLayout from '../../background/VariosLayouts';
 import dicaIcon from '../../assets/icones/dica.png';
-import { Link } from 'react-router-dom';
+import simIcon from '../../assets/icones/sim.png';
+import naoIcon from '../../assets/icones/nao.png';
 import { PerguntasBoleano } from './PerguntasBoleano';
+import { FiClock } from 'react-icons/fi';
 
-// Componente principal do Quiz
 export default function QuizBoleano() {
-  // Defina o estado inicial e os ganchos necessários
   const questions = PerguntasBoleano ?? [];
   const [perguntaAtual, setPerguntaAtual] = useState(0);
   const [showPontuacao, setShowPontuacao] = useState(false);
@@ -18,25 +17,8 @@ export default function QuizBoleano() {
   const [mostrarDica, setMostrarDica] = useState(false);
   const [dicaAtual, setDicaAtual] = useState('');
   const [respostaSelecionada, setRespostaSelecionada] = useState(null);
-  const [confirmarVisivel, setConfirmarVisivel] = useState(false); // Adicione o estado para controlar a visibilidade do botão de confirmação
+  const [confirmarVisivel, setConfirmarVisivel] = useState(false);
 
-  // Efeito para atualizar o temporizador
-  useEffect(() => {
-    const timer = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-        setRotateSeconds((360 - ((seconds / 30) * 360)) % 360);
-      } else {
-        clearInterval(timer);
-        console.log("Tempo esgotado!");
-        proximaPergunta(false);
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [seconds, perguntaAtual]);
-
-  // Função para avançar para a próxima pergunta
   function proximaPergunta(correta) {
     if (!correta) {
       const respostaCorreta = questions[perguntaAtual].respostaCorreta;
@@ -48,32 +30,28 @@ export default function QuizBoleano() {
         setPerguntaAtual(proximaPergunta);
         setSeconds(30);
         setRespostaSelecionada(null);
-        setConfirmarVisivel(false); // Ocultar o botão de confirmação ao avançar para a próxima pergunta
+        setConfirmarVisivel(false);
       } else {
         setShowPontuacao(true);
       }
     }
   }
 
-  // Função para mostrar a dica
   function handleMostrarDica() {
     setDicaAtual(questions[perguntaAtual].dica);
     setMostrarDica(true);
   }
 
-  // Função para lidar com a seleção de resposta
   function handleSelecionarResposta(resposta) {
     if (respostaSelecionada === resposta) {
-      // Se clicar novamente na mesma resposta, desmarque-a
       setRespostaSelecionada(null);
-      setConfirmarVisivel(false); // Ocultar o botão de confirmação ao desmarcar a resposta
+      setConfirmarVisivel(false);
     } else {
       setRespostaSelecionada(resposta);
-      setConfirmarVisivel(true); // Mostrar o botão de confirmação ao selecionar uma resposta
+      setConfirmarVisivel(true);
     }
   }
 
-  // Função para obter a classe de cor com base nos segundos restantes
   const getColorClass = (seconds) => {
     if (seconds <= 10) {
       return 'text-red-500';
@@ -84,7 +62,6 @@ export default function QuizBoleano() {
     }
   };
 
-  // Componente para o modal de pontuação
   const PontuacaoModal = () => {
     return (
       <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
@@ -99,7 +76,6 @@ export default function QuizBoleano() {
     );
   };
 
-  // Retorne o JSX do componente principal
   return (
     <div className="w-screen h-screen relative">
       <BackgroundLayout className="w-full h-full" backgroundImage={`url('./src/assets/img_fundo/fundo0.png')`}>
@@ -131,34 +107,40 @@ export default function QuizBoleano() {
               </div>
             </div>
             <div className='ContagemPerguntas text-2xl font-bold text-center items-center flex flex-col justify-center mt-3'>
-              <span>Pergunta {perguntaAtual + 1}/{questions.length}</span>
+              {/*<span>Pergunta {perguntaAtual + 1}/{questions.length}</span> //aqui iria aparecer a contagem de perguntas*/}
               <span className="text-3xl font-bold text-center mt-3">
                 {questions[perguntaAtual].pergunta}
               </span>
-              <div className="p-8 m-0 gap-4 box-sizing grid grid-cols-2">
-                <button
-                  className={`${
-                    respostaSelecionada === 'Verdadeiro' ? 'bg-gray-400' : 'bg-white'
-                  } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
-                  onClick={() => handleSelecionarResposta('Verdadeiro')}
-                >
-                  Verdadeiro
-                </button>
-                <button
-                  className={`${
-                    respostaSelecionada === 'Falso' ? 'bg-gray-400' : 'bg-white'
-                  } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
-                  onClick={() => handleSelecionarResposta('Falso')}
-                >
-                  Falso
-                </button>
+              <div className="p-8 m-0 gap-8 box-sizing grid grid-cols-2">
+                <div className="flex items-center">
+                  <img src={simIcon} alt="Ícone de Like" className="w-24 h-24" />
+                  <button
+                    className={`${
+                      respostaSelecionada === 'Verdadeiro' ? 'bg-gray-400' : 'bg-white'
+                    } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
+                    onClick={() => handleSelecionarResposta('Verdadeiro')}
+                  >
+                    Verdadeiro
+                  </button>
+                </div>
+                <div className="flex items-center">
+                  <img src={naoIcon} alt="Ícone de Dislike" className="w-24 h-24" />
+                  <button
+                    className={`${
+                      respostaSelecionada === 'Falso' ? 'bg-gray-400' : 'bg-white'
+                    } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
+                    onClick={() => handleSelecionarResposta('Falso')}
+                  >
+                    Falso
+                  </button>
+                </div>
               </div>
             </div>
-            {respostaSelecionada && confirmarVisivel && ( // Verificar se há resposta selecionada e se o botão de confirmação deve ser exibido
+            {respostaSelecionada && confirmarVisivel && (
               <button
                 onClick={() => {
                   proximaPergunta(respostaSelecionada === questions[perguntaAtual].respostaCorreta);
-                  setConfirmarVisivel(false); // Ocultar o botão de confirmação quando clicado
+                  setConfirmarVisivel(false);
                 }}
                 className="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
               >

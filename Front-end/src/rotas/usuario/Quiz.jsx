@@ -120,7 +120,7 @@ export default function Quiz() {
               </div>
             </div>
             <div className='ContagemPerguntas text-lg font-bold text-center items-center flex flex-col justify-center mt-3'>
-              <span>Pergunta {perguntaAtual + 1}/{questions.length}</span>
+              {/*<span>Pergunta {perguntaAtual + 1}/{questions.length}</span> //aqui iria aparecer a contagem de perguntas*/}
               <span className="text-lg font-bold text-center mt-3">
                 {questions[perguntaAtual].pergunta}
               </span>
