@@ -44,7 +44,7 @@ export default function RespostaErradaBoleano({ location }) {
         </div>
       </BackgroundLayout>
       {mostrarRespostaCorreta && (
-        <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
           <div className="bg-white p-4 rounded-md w-96 text-center">
             <p className="mb-4">Resposta Correta: {respostaCorreta}</p>
             <button onClick={() => setMostrarRespostaCorreta(false)} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl">Fechar</button>
