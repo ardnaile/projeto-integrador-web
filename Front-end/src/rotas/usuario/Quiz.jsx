@@ -13,6 +13,7 @@ export default function Quiz() {
   const [rotateSeconds, setRotateSeconds] = useState(0); // Estado para controlar a rotação do ponteiro dos segundos
   const [mostrarDica, setMostrarDica] = useState(false); // Estado para controlar a exibição do modal de dica
   const [dicaAtual, setDicaAtual] = useState(''); // Estado para armazenar a dica atual
+  const [respostaSelecionada, setRespostaSelecionada] = useState(null); // Estado para armazenar o índice da resposta selecionada
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -39,6 +40,7 @@ export default function Quiz() {
     if (proximaPergunta < questions.length) {
       setPerguntaAtual(proximaPergunta);
       setSeconds(30); // Reinicia o cronômetro
+      setRespostaSelecionada(null); // Limpa a resposta selecionada ao passar para a próxima pergunta
     } else {
       setShowPontuacao(true);
     }
@@ -50,6 +52,15 @@ export default function Quiz() {
     setDicaAtual(questions[perguntaAtual].dica);
     // Exibe o modal de dica
     setMostrarDica(true);
+  }
+
+  // Função para lidar com a seleção de uma resposta
+  function handleSelecionarResposta(index) {
+    if (respostaSelecionada === index) {
+      setRespostaSelecionada(null); // Se a resposta já estiver selecionada, desselecione
+    } else {
+      setRespostaSelecionada(index);
+    }
   }
 
   // Define classes de estilo para diferentes cores do relógio com base no tempo restante
@@ -99,8 +110,10 @@ export default function Quiz() {
                     <div key={index}>
                       <span>{opcaoResposta.alternativa}</span>
                       <button
-                        className="bg-white hover:bg-green-400 text-black font-bold px-20 py-4 border-b-2 hover:border-white-500 rounded-xl"
-                        onClick={() => proximaPergunta(opcaoResposta.correta)}
+                        className={`${
+                          respostaSelecionada === index ? 'bg-gray-400' : 'bg-white'
+                        } hover:bg-green-400 text-black font-bold px-20 py-4 border-b-2 hover:border-white-500 rounded-xl w-64`}
+                        onClick={() => handleSelecionarResposta(index)}
                       >
                         {opcaoResposta.resposta}
                       </button>
@@ -108,16 +121,23 @@ export default function Quiz() {
                   ))}
                 </div>
               </div>
+              {respostaSelecionada !== null && (
+                <button
+                  onClick={() => proximaPergunta(questions[perguntaAtual].opcoesResposta[respostaSelecionada].correta)}
+                  className="mt-4 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
+                >
+                  Confirmar Resposta
+                </button>
+              )}
             </div>
           )}
       </BackgroundLayout>
       {/* Modal de dica */}
       {mostrarDica && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50">
-          <div className="bg-white p-4 rounded-md">
-            <h2 className="text-lg font-bold mb-2">Dica</h2>
-            <p>{dicaAtual}</p>
-            <button onClick={() => setMostrarDica(false)} className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Fechar</button>
+          <div className="bg-white p-4 rounded-md w-96 text-center">
+            <p className="mb-4">{dicaAtual}</p>
+           <button onClick={() => setMostrarDica(false)} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl">Entendi!</button>
           </div>
         </div>
       )}
