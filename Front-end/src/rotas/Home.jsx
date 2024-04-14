@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import BackgroundLayout from '../background/VariosLayouts'
 
-const styleBloco  = 'bg-transparent grid grid-cols-4 justify-center items-center gap-4 mb-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4';
-const styleDivImg = 'sm:text-1xl text-center w-48 h-64 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400 cursor-pointer';
-const Text        = 'text-center font-extrabold text-5xl';
-const Img1        = 'w-full cursor-pointer rounded-3xl mt-10 mb-16';
-const Img2        = 'w-full cursor-pointer rounded-3xl mt-16 mb-10';
-const DivbtnQuiz  = 'bg-green-500 rounded-full px-4 py-2 flex items-center cursor-pointer text-center font-text_ale text-2xl';
-const CaminhoIcone = 'src\\assets\\icones\\';
-
-
 const Home = () => {
+    const styleBloco  = 'bg-transparent grid grid-cols-4 justify-center items-center gap-4 mb-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4';
+    const styleDivImg = 'sm:text-1xl text-center w-48 h-64 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400 cursor-pointer';
+    const Text        = 'text-center font-extrabold text-5xl';
+    const Img1        = 'w-full cursor-pointer rounded-3xl mt-10 mb-16';
+    const Img2        = 'w-full cursor-pointer rounded-3xl mt-16 mb-10';
+    const DivbtnQuiz  = 'bg-green-500 rounded-full px-4 py-2 flex items-center cursor-pointer text-center font-text_ale text-2xl';
+    const CaminhoIcone = 'src\\assets\\icones\\';
+    
     const [selecionados, setSelecionados] = useState([]);
     const handleClick = (id) => {
       if (selecionados.includes(id)) {
