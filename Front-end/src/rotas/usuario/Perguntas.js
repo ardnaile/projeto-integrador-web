@@ -3,19 +3,21 @@ export const Perguntas = [
   {
     pergunta: 'Qual foi o primeiro Pokemon que Ash capturou?',
     opcoesResposta: [
-      { resposta: 'Charmander', correta: false, alternativa: 'A)   ' },
-      { resposta: 'Monkey', correta: false, alternativa: 'B)   ' },
-      { resposta: 'Bulbassauro', correta: false, alternativa: 'C)   ' },
-      { resposta: 'Pikachu', correta: true, alternativa: 'D)   ' },
-    ]
+      { resposta: 'Charmander', correta: false, alternativa: '   ' },
+      { resposta: 'Monkey', correta: false, alternativa: '  ' },
+      { resposta: 'Bulbassauro', correta: false, alternativa: '  ' },
+      { resposta: 'Pikachu', correta: true, alternativa: '   ' },
+    ],
+    dica: 'Este Pokémon é conhecido por sua cauda em forma de raio.'
   },
   {
     pergunta: 'Qual mês estamos?',
     opcoesResposta: [
-      { resposta: 'Janeiro', correta: false, alternativa: 'A)   ' },
-      { resposta: 'Fevereiro', correta: false, alternativa: 'B)   ' },
-      { resposta: 'Junho', correta: false, alternativa: 'C)   ' },
-      { resposta: 'Maio', correta: true, alternativa: 'D )   ' },
-    ]
+      { resposta: 'Janeiro', correta: false, alternativa: '   ' },
+      { resposta: 'Fevereiro', correta: false, alternativa: '   ' },
+      { resposta: 'Junho', correta: false, alternativa: '   ' },
+      { resposta: 'Maio', correta: true, alternativa: '   ' },
+    ],
+    dica: 'É o quinto mês do ano.'
   }
 ];
