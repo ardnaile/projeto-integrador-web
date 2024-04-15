@@ -34,6 +34,76 @@
         "resposta": "Excuse me",
         "dica": "Essa expressão se parece muito com \"Excusez-moi\", que significa \"Desculpe-me\" em francês.",
         "id_categoria": 1
+    },
+    {
+        "id_questao_quatro": 6,
+        "enunciado": "João tem 3 maçãs e 5 bananas. Quantas frutas joão tem?",
+        "resposta": "8",
+        "dica": "Você pode desenhar 3 maçãs e 5 bananas em uma folha e contá-las caso não consiga fazer a conta na cabeça!",
+        "id_categoria": 7
+    },
+    {
+        "id_questao_quatro": 7,
+        "enunciado": "Quanto é 6 dividido por 3?",
+        "resposta": "2",
+        "dica": "Pegue 6 lápis e divida eles igualmente entre 3 colegas. Com quantos lápis cada colega ficou?",
+        "id_categoria": 7
+    },
+    {
+        "id_questao_quatro": 8,
+        "enunciado": "Maria tem 10 reais e comprou um lanche 5 reais na cantina da escola. Quantos reais sobraram para Maria?",
+        "resposta": "5",
+        "dica": "Levante 10 dedos e depois abaixe 5. Quantos dedos continuam levantados?",
+        "id_categoria": 7
+    },
+    {
+        "id_questao_quatro": 9,
+        "enunciado": "Qual o resultado da multiplicação do número 3 pelo número 5?",
+        "resposta": "15",
+        "dica": "Multiplicar 3 por 5 é a mesma coisa que 5+5+5!",
+        "id_categoria": 7
+    },
+    {
+        "id_questao_quatro": 10,
+        "enunciado": "Marcos tem 10 reais. Ele achou mais 2 reais na rua e comprou um lanche de 3 reais. Quantos reais sobraram?",
+        "resposta": "9",
+        "dica": "Para resolver problemas como esse, você pode ir por partes. Primeiro, resolva 10+2. Depois, pegue o resultado e subtraia 3.",
+        "id_categoria": 7
+    },
+    {
+        "id_questao_quatro": 11,
+        "enunciado": "Como podemos dizer cachorro em inglês?",
+        "resposta": "Dog",
+        "dica": "Cachorro em inglês rima com a palavra \"Frog\", que significa sapo em inglês!",
+        "id_categoria": 2
+    },
+    {
+        "id_questao_quatro": 12,
+        "enunciado": "\"Seu gato é muito fofo\". Complete a tradução dessa frase para inglês: \"Your _____ is very cute.\"",
+        "resposta": "Cat",
+        "dica": "\"Your\" significa seu. \"Is\" significa é. \"Very cute\" significa muito fofo. E como dizemos gato em inglês?",
+        "id_categoria": 2
+    },
+    {
+        "id_questao_quatro": 13,
+        "enunciado": "Responda em inglês: qual o nome do animal que é bem grande e possui uma tromba?",
+        "resposta": "Elephant",
+        "dica": "Essa é fácil! É quase igual em portugês. Dica extra: em inglês, \"ph\" seguido de uma vogal tem som de \"f\"!",
+        "id_categoria": 2
+    },
+    {
+        "id_questao_quatro": 14,
+        "enunciado": "Como podemos dizer peixe em inglês?",
+        "resposta": "Fish",
+        "dica": "A palavra \"fishing\" em inglês quer dizer pescar!",
+        "id_categoria": 2
+    },
+    {
+        "id_questao_quatro": 15,
+        "enunciado": "Como se diz cobra em inglês?",
+        "resposta": "Snake",
+        "dica": "Essa palavra rima com \"fake\" e começa com \"S\", o mesmo som que algumas cobras fazem!",
+        "id_categoria": 2
     }
     ]
 }

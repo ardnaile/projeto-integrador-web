@@ -29,6 +29,36 @@
         "id_categoria": 6,
         "nome_categoria": "Algoritmo",
         "id_materia": 2
+      },
+      {
+        "id_categoria": 7,
+        "nome_categoria": "Operações básicas",
+        "id_materia": 1
+      },
+      {
+        "id_categoria": 8,
+        "nome_categoria": "Nomes de animais",
+        "id_materia": 4
+      },
+      {
+        "id_categoria": 9,
+        "nome_categoria": "Nomes de alimentos",
+        "id_materia": 5
+      },
+      {
+        "id_categoria": 10,
+        "nome_categoria": "Plantas",
+        "id_materia": 6
+      },
+      {
+        "id_categoria": 11,
+        "nome_categoria": "Cores",
+        "id_materia": 7
+      },
+      {
+        "id_categoria": 12,
+        "nome_categoria": "Nomes de esportes",
+        "id_materia": 8
       }
     ]
   }
