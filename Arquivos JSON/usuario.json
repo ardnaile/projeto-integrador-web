@@ -3,17 +3,20 @@
       {
         "id_usuario": 1,
         "nome_usuario": "Eliandra",
-        "chave": "Eliandra12345678"
+        "chave": "Eliandra12345678",
+        "qtd_acertos": 0
       },
       {
         "id_usuario": 2,
         "nome_usuario": "Wallace",
-        "chave": "Wallace12345678"
+        "chave": "Wallace12345678",
+        "qtd_acertos": 0
       },
       {
         "id_usuario": 3,
         "nome_usuario": "Rafael",
-        "chave": "Rafael12345678"
+        "chave": "Rafael12345678",
+        "qtd_acertos": 0
       }
     ]
   }
