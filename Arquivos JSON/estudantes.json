@@ -1,0 +1,26 @@
+{
+    "estudantes": [
+      {
+        "id_estudante": 1,
+        "usuario_estudante": "Eliandra",
+        "chave_estudante": "Eliandra12345678",
+        "qtd_acertos": 0,
+        "turma": "turma1"
+      },
+      {
+        "id_estudante": 2,
+        "usuario_estudante": "Wallace",
+        "chave_estudante": "Wallace12345678",
+        "qtd_acertos": 0,
+        "turma": "turma1"
+      },
+      {
+        "id_estudante": 3,
+        "usuario_estudante": "Rafael",
+        "chave_estudante": "Rafael12345678",
+        "qtd_acertos": 0,
+        "turma": "turma1"
+      }
+    ]
+  }
+  
