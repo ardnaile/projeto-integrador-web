@@ -27,7 +27,7 @@ export const Perguntas = [
       { resposta: 'Goku', correta: false, alternativa: '   ' },
       { resposta: 'Tio Patinhas', correta: true, alternativa: '   ' },
       { resposta: 'Harry Potter', correta: false, alternativa: '   ' },
-      { resposta: 'Shrek', correta: false, alternativa: '   ' },
+      { resposta: 'Tio Patinhas', correta: false, alternativa: '   ' },
     ],
     dica: 'Ele é um pato muito famoso, conhecido por sua avareza e por nadar em uma piscina cheia de moedas de ouro',
     respostaCorreta: 'Tio Patinhas' // Resposta correta para a segunda pergunta
@@ -41,7 +41,7 @@ export const Perguntas = [
       { resposta: 'Scooby-Doo', correta: false, alternativa: '   ' },
     ],
     dica: 'Ele é conhecido por usar uma camisa de cor laranja e é muito corajoso quando se trata de enfrentar mistérios assustadores ao lado de seu fiel amigo Scooby-Doo.',
-    respostaCorreta: 'Shrek' // Resposta correta para a segunda pergunta
+    respostaCorreta: 'Fred Jones' // Resposta correta para a segunda pergunta
   },
   {
     pergunta: 'Qual é o nome do protagonista da série "Naruto ?',
@@ -52,6 +52,6 @@ export const Perguntas = [
       { resposta: 'Kakashi Hatake', correta: false, alternativa: '   ' },
     ],
     dica: 'Este personagem é conhecido por ter uma determinação inabalável em alcançar seu sonho de se tornar o líder de sua vila e ser reconhecido por todos como um grande ninja. ',
-    respostaCorreta: 'Shrek' // Resposta correta para a segunda pergunta
+    respostaCorreta: 'Naruto Uzumaki' // Resposta correta para a segunda pergunta
   },
 ];
