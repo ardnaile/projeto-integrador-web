@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import BackgroundLayout from '../../background/VariosLayouts';
 import dicaIcon from '../../assets/icones/dica.png';
@@ -18,6 +18,21 @@ export default function QuizBoleano() {
   const [dicaAtual, setDicaAtual] = useState('');
   const [respostaSelecionada, setRespostaSelecionada] = useState(null);
   const [confirmarVisivel, setConfirmarVisivel] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+        setRotateSeconds((360 - ((seconds / 30) * 360)) % 360);
+      } else {
+        clearInterval(timer);
+        console.log("Tempo esgotado!");
+        proximaPergunta(false);
+      }
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [seconds, perguntaAtual]);
 
   function proximaPergunta(correta) {
     if (!correta) {
