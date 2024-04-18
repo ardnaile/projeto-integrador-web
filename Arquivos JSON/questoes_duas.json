@@ -2,10 +2,80 @@
     "questoes_duas": [
       {
         "id_questao_duas": 1,
-        "enunciado": "Enunciado1",
-        "resposta": "Resposta1",
-        "dica": "",
+        "enunciado": "Podemos responder a frase \"Hi! How are you?\" com \"Hello! I am from Brazil!\"",
+        "resposta": 0,
+        "dica": "\"How are you\" significa \"como você está?\" em inglês.",
         "id_categoria": 1
+      },
+      {
+        "id_questao_duas": 2,
+        "enunciado": "É normal escutarmos a frase \"Look! A giraffe! I've never seen one before.\" no zoológico.",
+        "resposta": 1,
+        "dica": "\"I've never seen one before\" significa \"Eu nunca vi um(a) antes\"",
+        "id_categoria": 2
+      },
+      {
+        "id_questao_duas": 3,
+        "enunciado": "\"To eat\" significa comer em inglês.",
+        "resposta": 1,
+        "dica": "\"I like to eat apples!\" significa \"Eu gosto de comer maçãs!\"",
+        "id_categoria": 3
+      },
+      {
+        "id_questao_duas": 4,
+        "enunciado": "\"Ian is my friend\" significa \"Ian não é meu amigo\".",
+        "resposta": 0,
+        "dica": "\"Larissa is my colleague\" significa \"Larissa é minha colega\" em inglês.",
+        "id_categoria": 4
+      },
+      {
+        "id_questao_duas": 5,
+        "enunciado": "\"Cool\" é um adjetivo em inglês que pode significar \"frio\" ou \"legal\", dependendo do contexto.",
+        "resposta": 1,
+        "dica": "\"Ana is so cool! I like her style.\" significa \"Ana é tão legal! Eu gosto do estilo dela.\"",
+        "id_categoria": 5
+      },
+      {
+        "id_questao_duas": 7,
+        "enunciado": "Se dividirmos o resultado de 3+3 por 6, teremos o resultado 1.",
+        "resposta": 1,
+        "dica": "Lembre-se que todo número dividido por ele mesmo é 1!",
+        "id_categoria": 7
+      },
+      {
+        "id_questao_duas": 8,
+        "enunciado": "Algumas cobras e aranhas podem ser peçonhentas.",
+        "resposta": 1,
+        "dica": "Animais peçonhentos são aqueles que produzem veneno.",
+        "id_categoria": 8
+      },
+      {
+        "id_questao_duas": 9,
+        "enunciado": "Para fazer uma salada de frutas, podemos usar maçã, banana e cebola.",
+        "resposta": 0,
+        "dica": "A cebola, a pesar de adocicada, é mais utilizada em pratos salgados.",
+        "id_categoria": 9
+      },
+      {
+        "id_questao_duas": 11,
+        "enunciado": "Se misturarmos tinta amarela e vermelha, vamos obter tinta laranja.",
+        "resposta": 1,
+        "dica": "Na teoria das cores, o amarelo e o vermelho são cores primárias e a cor laranja é uma cor secundária.",
+        "id_categoria": 11
+      },
+      {
+        "id_questao_duas": 10,
+        "enunciado": "A clorofila é um pigmento amarelo encontrado nas plantas",
+        "resposta": 1,
+        "dica": "As folhas das árvores geralmente possuem bastante clorofila.",
+        "id_categoria": 10
+      },
+      {
+        "id_questao_duas": 12,
+        "enunciado": "No futebol, é proibido qualquer jogador usar as mãos para tocar na bola.",
+        "resposta": 0,
+        "dica": "Os goleiros geralmente usam as mãos para defender a bola do gol.",
+        "id_categoria": 12
       }
     ]
   }
