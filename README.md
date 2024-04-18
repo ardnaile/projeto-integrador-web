@@ -16,6 +16,9 @@ mais leve e divertido. A intenção é que o site seja fácil de usar até para 
 ### Banco de dados
 Neste projeto será utilizado um banco de dados não relacional no MongoDB Atlas. Os [arquivos JSON](https://github.com/ardnaile/projeto-integrador-web/tree/bce96f19eada0ce375610637f217a82ada22ca76/Arquivos%20JSON) estão sendo editados no VS Code para depois subirmos no MongoDB.
 
+### Front-end
+O front-end desse projeto está sendo desenvolvido com React, vite.js, tailwind.ccs e styled component. Para rodar o [front-end](https://github.com/ardnaile/projeto-integrador-web/tree/1aeaaf9239921d9c643a5099c22f29c944ea75dd/Front-end) é necessário rodar os comandos npm install, npm install react-icons e npm run dev. Também é preciso ter o node.js baixado!
+
 ### Documentação
 - Os planos de trabalho e documentos de requisitos para o sistema estão [nesta pasta](Documentação)
 
