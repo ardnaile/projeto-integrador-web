@@ -19,7 +19,7 @@ export default function Prof_aluno() {
               </div>
               <div className='container relative flex items-center space-x-40'>
                 <img className='w-52 absolute cursor-pointer mb-14 ml-4 ' src="src\assets\icones\aluno2.png" alt=""/>
-                <Link to="/New_user">
+                <Link to="/ConfirmarEstudante">
                   <p className=' bg-red-500 rounded-full font-bold text-4xl text-start px-16 py-10 cursor-pointer hover:text-5xl  '>SOU ESTUDANTE</p>
                 </Link>
               </div>
