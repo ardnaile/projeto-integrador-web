@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import BackgroundLayout from '../background/VariosLayouts'
+import BackgroundLayout from '../background/VariosLayouts';
 
-const Home = () => {
+
+function Home (props) {
     const styleBloco  = 'bg-transparent grid grid-cols-4 justify-center items-center gap-4 mb-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-4';
     const styleDivImg = 'sm:text-1xl text-center w-48 h-64 font-text_ale text-2xl rounded-3xl bg-white border-r-4 border-x-gray-400 cursor-pointer';
     const Text        = 'text-center font-extrabold text-5xl';
@@ -19,12 +20,12 @@ const Home = () => {
       }
     };
     // Verifica se há algum item selecionado para definir a opacidade da div
-    const opacidade = selecionados.length == 8 ? 'opacity-35' : 'opacity-100';
-
+    const opacidade = selecionados.length == 0 ? 'opacity-35' : 'opacity-100';
+   
   return (
     <>
     <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundohome.png')`}>
-    <div className='grid grid-cols-1 w-full h-full'>
+    <div className='grid grid-cols-1 w-full h-full' >
       <div>
         <nav className='grid grid-cols-2 bg-transparent w-full h-8'>
           {/*Coluna 1*/}
@@ -47,35 +48,35 @@ const Home = () => {
       </div>
 
       <div className='grid justify-center items-center'>
-        <h1 className={Text}>OLÁ, FULANINHO</h1>
+        <h1 className={Text}>OLÁ, AQUI VAI UM NOME</h1>
         <p className={Text}>O QUE VAMOS APRENDER HOJE?</p>
         {/* BLOCO 1*/}           
           <div className={styleBloco}>
-            <div className={`${styleDivImg} ${selecionados.includes(1) ? '' : 'bg-gray-300'}`} onClick={() => handleClick(1)}> 
+            <div className={`${styleDivImg} ${selecionados.includes(1) ? 'opacity-70' : ''}`} onClick={() => handleClick(1)}> 
               <img className={Img1}src={CaminhoIcone.concat("8.svg")} alt=""/>MATEMÁTICA
             </div>
-            <div className={`${styleDivImg} ${selecionados.includes(2) ? '' : 'bg-gray-300'}`} onClick={() => handleClick(2)}>
+            <div className={`${styleDivImg} ${selecionados.includes(2) ? 'opacity-70' : ''}`} onClick={() => handleClick(2)}>
               <img className={Img1}src={CaminhoIcone.concat("1.svg")} alt=""/>TECNOLOGIA    
             </div>
-            <div className={`${styleDivImg} ${selecionados.includes(3) ? '' : 'bg-gray-300'}`} onClick={() => handleClick(3)}>
+            <div className={`${styleDivImg} ${selecionados.includes(3) ? 'opacity-70' : ''}`} onClick={() => handleClick(3)}>
               <img className={Img1}src={CaminhoIcone.concat("2.svg")} alt=""/>IDIOMAS 
             </div>
-            <div className={`${styleDivImg} ${selecionados.includes(4) ? '' : 'bg-gray-300'}`} onClick={() => handleClick(4)}>
+            <div className={`${styleDivImg} ${selecionados.includes(4) ? 'opacity-70' : ''}`} onClick={() => handleClick(4)}>
               <img className={Img1}src={CaminhoIcone.concat("3.svg")}  alt=""/>ANIMAIS      
             </div>
           </div>
         {/* BLOCO 2 */} 
           <div className={styleBloco}>
-            <div className={`${styleDivImg} ${selecionados.includes(5) ? '' : 'bg-gray-300'}`} onClick={() => handleClick(5)}>
+            <div className={`${styleDivImg} ${selecionados.includes(5) ? 'opacity-70' : ''}`} onClick={() => handleClick(5)}>
               <img className={Img2} src={CaminhoIcone.concat("4.svg")} alt=""/>COMIDA                            
             </div>
-            <div className={`${styleDivImg} ${selecionados.includes(6) ? '' : 'bg-gray-300'}`} onClick={() => handleClick(6)}>
+            <div className={`${styleDivImg} ${selecionados.includes(6) ? 'opacity-70' : ''}`} onClick={() => handleClick(6)}>
               <img className={Img2} src={CaminhoIcone.concat("5.svg")} alt=""/>NATUREZA                       
             </div>
-            <div className={`${styleDivImg} ${selecionados.includes(7) ? '' : 'bg-gray-300'}`} onClick={() => handleClick(7)}>
+            <div className={`${styleDivImg} ${selecionados.includes(7) ? 'opacity-70' : ''}`} onClick={() => handleClick(7)}>
               <img className={Img2} src={CaminhoIcone.concat("6.svg")}  alt=""/>ARTES                         
             </div>
-            <div className={`${styleDivImg} ${selecionados.includes(8) ? '' : 'bg-gray-300'}`} onClick={() => handleClick(8)}>
+            <div className={`${styleDivImg} ${selecionados.includes(8) ? 'opacity-70' : ''}`} onClick={() => handleClick(8)}>
               <img className={Img2} src={CaminhoIcone.concat("7.svg")} alt=""/>ESPORTES
             </div>
           </div>
@@ -90,7 +91,7 @@ const Home = () => {
         </div>
        </footer>
     </div>
-    
+  
     </BackgroundLayout>
     </>
   )
