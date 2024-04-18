@@ -104,6 +104,188 @@
         "resposta": "Snake",
         "dica": "Essa palavra rima com \"fake\" e começa com \"S\", o mesmo som que algumas cobras fazem!",
         "id_categoria": 2
+    },
+    {
+        "id_questao_quatro": 16,
+        "enunciado": "Complete a frase: \"I like to ___ bananas!\".",
+        "resposta": "Eat",
+        "dica": "\"My friend likes to eat apples\" significa \"meu amigo gosta de comer maçãs\" em inglês.",
+        "id_categoria": 3
+    },
+    {
+        "id_questao_quatro": 17,
+        "enunciado": "Qual verbo significa \"beber\" em inglês?",
+        "resposta": "Drink",
+        "dica": "Este verbo rima com \"think\" e se escreve igual a palavra \"bebida\" em inglês.",
+        "id_categoria": 3
+    },
+    {
+        "id_questao_quatro": 18,
+        "enunciado": "\"I like to ____ videogames!\". Qual verbo completa a frase?",
+        "resposta": "Play",
+        "dica": "Esse verbo está no nome de um console para videogames bem conhecido!",
+        "id_categoria": 3
+    },
+    {
+        "id_questao_quatro": 19,
+        "enunciado": "\"Ana likes to swim, dance and run!\". Qual desses verbos significa \"correr\"?",
+        "resposta": "Run",
+        "dica": "\"Swim\" significa nadar e \"dance\" significa dançar!",
+        "id_categoria": 3
+    },
+    {
+        "id_questao_quatro": 20,
+        "enunciado": "Como o verbo \"amar\" pode ser traduzido para o inglês?",
+        "resposta": "Love",
+        "dica": "\"I love you\" é uma frase bem conhecida que significa \"eu amo você\"!",
+        "id_categoria": 3
+    },
+    {
+        "id_questao_quatro": 21,
+        "enunciado": "Alguém perguntou à Lara \"What is your name?\". Como Lara pode responder?",
+        "resposta": "My name is Lara",
+        "dica": "\"Your\" significa \"seu\" em inglês, e \"my\" significa \"meu\".",
+        "id_categoria": 4
+    },
+    {
+        "id_questao_quatro": 22,
+        "enunciado": "A professora perguntou a um aluno \"do you like to dance?\". Como ele pode responder?",
+        "resposta": "Yes, I like to dance",
+        "dica": "\"Do you like to dance?\" significa \"Você gosta de dançar?\" em inglês.",
+        "id_categoria": 4
+    },
+    {
+        "id_questao_quatro": 23,
+        "enunciado": "Como é possível responder à essa pergunta: \"Do you prefer to eat hamburger or pizza?\"",
+        "resposta": "I prefer to eat hamburger",
+        "dica": "\"I prefer to...\" significa \"eu prefiro...\"É até bem parecido, não é?",
+        "id_categoria": 4
+    },
+    {
+        "id_questao_quatro": 24,
+        "enunciado": "Como é possível responder à pergunta \"do you have pets?\"",
+        "resposta": "Yes, I have a dog.",
+        "dica": "\"Dogs\" e \"cats\" são considerados pets, ou seja, animais de estimação.",
+        "id_categoria": 4
+    },
+    {
+        "id_questao_quatro": 25,
+        "enunciado": "Luiza não gosta de sorvete. Se alguém pergunta à ela \"do you like ice cream?\", o que ela responde?",
+        "resposta": "No, I don't like ice cream",
+        "dica": "\"Do you like ice cream?\" significa \"Você gosta de sorvete?\" em inglês.",
+        "id_categoria": 4
+    },
+    {
+        "id_questao_quatro": 26,
+        "enunciado": "Alice é uma menina amigável. Qual adjetivo podemos usar para ela em inglês?",
+        "resposta": "Friendly",
+        "dica": "Se \"friend\" é amigo em amigo em inglês, então uma pessoa amigável é?",
+        "id_categoria": 5
+    },
+    {
+        "id_questao_quatro": 27,
+        "enunciado": "Se você vai muito bem na prova, o que a professora pode dizer para você em inglês?",
+        "resposta": "Fantastic",
+        "dica": "Essa palavra é bem parecida em português!",
+        "id_categoria": 5
+    },
+    {
+        "id_questao_quatro": 28,
+        "enunciado": "Como podemos dizer \"podre\" em inglês?",
+        "resposta": "Rotten",
+        "dica": "\"This banana is rotten\" significa que a banana não está boa para comer...",
+        "id_categoria": 5
+    },
+    {
+        "id_questao_quatro": 29,
+        "enunciado": "Qual adjetivo usamos para dizer que um homem é bonito em inglês?",
+        "resposta": "Handsome",
+        "dica": "Essa palavra é a junção das palavras mão + alguns em inglês!",
+        "id_categoria": 5
+    },
+    {
+        "id_questao_quatro": 30,
+        "enunciado": "Qual palavra usamos para dizer que uma mulher é bonita em inglês?",
+        "resposta": "Beautiful",
+        "dica": "\"Beauty\" significa beleza em inglês e a palavra que usamos pra dizer \"bonita\" em inglês é parecida!",
+        "id_categoria": 5
+    },
+    {
+        "id_questao_quatro": 31,
+        "enunciado": "Qual desses animais é comumente tido como animal de estimação?",
+        "resposta": "Cachorro",
+        "dica": "Animais de estimação são geralmente dóceis e convivem bem com seres humanos!",
+        "id_categoria": 8
+    },
+    {
+        "id_questao_quatro": 32,
+        "enunciado": "Qual desses animais é um réptil?",
+        "resposta": "Jacaré",
+        "dica": "As cobras e os lagartos são exemplos de répteis.",
+        "id_categoria": 8
+    },
+    {
+        "id_questao_quatro": 33,
+        "enunciado": "Qual desses animais é canívoro e possui asas?",
+        "resposta": "Águia",
+        "dica": "Animais carnívoros são aqueles cuja alimentação é formada principalmente por carne de outros animais!",
+        "id_categoria": 8
+    },
+    {
+        "id_questao_quatro": 34,
+        "enunciado": "Qual desses animais é um mamífero que põe ovos?",
+        "resposta": "Ornitorrinco",
+        "dica": "Mamíferos geralmente não põem ovos, mas existe um animal semiaquático que é uma exceção à essa regra!",
+        "id_categoria": 8
+    },
+    {
+        "id_questao_quatro": 35,
+        "enunciado": "Qual desses animais é mais comum de encontrarmos em uma fazenda?",
+        "resposta": "Porco",
+        "dica": "Esses animais geralmente ficam dentro de um lugar popularmente conhecido como chiqueiro.",
+        "id_categoria": 8
+    },
+    {
+        "id_questao_quatro": 36,
+        "enunciado": "Qual desses alimentos é uma raiz que possui betacaroteno?",
+        "resposta": "Cenoura",
+        "dica": "Betacaroteno é um pigmento alaranjado que faz muito bem para a pele.",
+        "id_categoria": 9
+    },
+    {
+        "id_questao_quatro": 37,
+        "enunciado": "Qual alimento tem a ver com o Halloween e a história da Cinderela?",
+        "resposta": "Abóbora",
+        "dica": "Ele é geralmente laranja, pesado e cresce em arbustos no chão.",
+        "id_categoria": 9
+    },
+    {
+        "id_questao_quatro": 38,
+        "enunciado": "Qual desses alimentos pode ser usado para fazer pipoca?",
+        "resposta": "Milho",
+        "dica": "Geralmente esquentamos esse alimento até ele estourar e se transformar em pipoca!",
+        "id_categoria": 9
+    },
+    {
+        "id_questao_quatro": 39,
+        "enunciado": "Qual desses alimentos é vermelho e pode ser usado para fazer molhos?",
+        "resposta": "Tomate",
+        "dica": "Quase todas as pizzas levam um molho feito com esse alimento!",
+        "id_categoria": 9
+    },
+    {
+        "id_questao_quatro": 40,
+        "enunciado": "Qual desses alimentos é uma folha verde geralmente associada ao personagem Popeye?",
+        "resposta": "Espinafre",
+        "dica": "Popeye é um personagem de história em quadrinhos conhecido por ser bem forte porque come um alimento bastante nutritivo!",
+        "id_categoria": 9
+    },
+    {
+        "id_questao_quatro": 41,
+        "enunciado": "",
+        "resposta": "",
+        "dica": "",
+        "id_categoria": 9
     }
     ]
 }
