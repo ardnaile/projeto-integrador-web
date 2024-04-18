@@ -10,7 +10,7 @@ import New_user from './rotas/usuario/New_user';
 import Home from './rotas/Home';
 import Old_user from './rotas/usuario/Old_user';
 import Prof_aluno from './rotas/usuario/Prof_aluno';
-import Estudante from './rotas/usuario/Estudante';
+
 import Quiz from './rotas/usuario/Quiz';
 import Sobre from './rotas/Sobre';
 import ColetaNome from './rotas/usuario/ColetaNome';
@@ -41,11 +41,7 @@ const router = createBrowserRouter([
     path:"/Prof_aluno",
     element:<Prof_aluno/>,
   },
-  {
-
-    path:"/Estudante",
-    element:<Estudante/>,
-  },
+  
   {
     path:"/Quiz",
     element:<Quiz/>,
