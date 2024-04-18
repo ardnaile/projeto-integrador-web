@@ -2,8 +2,7 @@
 
 Este é um projeto de extensão do curso de Engenharia de Software: um site com quizes e atividades lúdicas em diversas matérias 
 como programação, matemática e inglês, com foco nas crianças. Serão aplicados princípios de gamificação para tornar o aprendizado 
-mais leve e divertido. A intenção é que o site seja fácil de usar até para crianças que não são acostumadas com tecnologia, sendo 
-que a pretensão é aplicar essas atividades nas aulas em escolas particulares, públicas e instituições que acolhem crianças carentes. 
+mais leve e divertido. A intenção é que o site seja fácil de usar até para crianças que não são acostumadas com tecnologia! 
 
 
 ### Integrantes:
