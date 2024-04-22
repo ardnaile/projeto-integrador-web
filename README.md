@@ -11,7 +11,7 @@ mais leve e divertido. A intenção é que o site seja fácil de usar até para 
 - Wallace Mendes - [GitHub](https://github.com/WallaceB2)
 
 ### Protótipo
-- [Canva](https://www.canva.com/design/DAF923OVfOs/kC-fLkWwrF3PuFZEjdz4lg/edit?utm_content=DAF923OVfOs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
+- [Canva](https://www.canva.com/design/DAF923OVfOs/cohiH9bIFnUcODXOKdJjtA/view?utm_content=DAF923OVfOs&utm_campaign=designshare&utm_medium=link&utm_source=editor).
 
 ### Banco de dados
 Neste projeto será utilizado um banco de dados não relacional no MongoDB Atlas. Os [arquivos JSON](https://github.com/ardnaile/projeto-integrador-web/tree/bce96f19eada0ce375610637f217a82ada22ca76/Arquivos%20JSON) estão sendo editados no VS Code para depois subirmos no MongoDB.
