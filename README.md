@@ -11,6 +11,7 @@ mais leve e divertido. A intenção é que o site seja fácil de usar até para 
 - Wallace Mendes - [GitHub](https://github.com/WallaceB2)
 
 ### Protótipo
+Foi optado por fazer um protótipo sem interações e rotas entre os botões e as telas, apenas visual.
 - [Canva](https://www.canva.com/design/DAF923OVfOs/cohiH9bIFnUcODXOKdJjtA/view?utm_content=DAF923OVfOs&utm_campaign=designshare&utm_medium=link&utm_source=editor).
 
 ### Banco de dados
