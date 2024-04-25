@@ -1,10 +1,9 @@
-{
-    "professores": [
+ [
       {
         "id_professor": 1,
         "usuario_professor": "Eliandra",
         "chave_professor": "Eliandra12345678"
       }
     ]
-  }
+  
   

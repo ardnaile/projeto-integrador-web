@@ -1,5 +1,4 @@
-{
-    "historicos": [
+[
       {
         "id_historico": 1,
         "id_estudante": 1,
@@ -8,4 +7,3 @@
         "id_questao_setas": null
       }
     ]
-  }

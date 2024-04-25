@@ -1,5 +1,4 @@
-{
-    "materias": [
+[
       {
         "id_materia": 1,
         "nome_materia": "Matemática"
@@ -33,4 +32,4 @@
         "nome_materia": "Esportes" 
       }
     ]
-  }
+  

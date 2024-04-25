@@ -1,5 +1,4 @@
-{
-    "questoes_quatro": [
+[
     {
         "id_questao_quatro": 1,
         "enunciado": "Como podemos dizer \"Olá\" em inglês?",
@@ -386,4 +385,3 @@
         "id_categoria": 12
     }
     ]
-}

@@ -1,6 +1,4 @@
-{
-    "categorias": [
-      {
+      [{
         "id_categoria": 1,
         "nome_categoria": "Cumprimentos em inglês",
         "id_materia": 3
@@ -59,6 +57,4 @@
         "id_categoria": 12,
         "nome_categoria": "Nomes de esportes",
         "id_materia": 8
-      }
-    ]
-  }
+      }]

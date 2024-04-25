@@ -1,5 +1,4 @@
-{
-    "questoes_setas": [
+[
       {
         "id_questao_setas": 1,
         "enunciado": "Ajude o coala a chegar até a maçã. Use as setas do teclado para isso!",
@@ -27,4 +26,4 @@
         ]
       }
     ]
-  }
+  
