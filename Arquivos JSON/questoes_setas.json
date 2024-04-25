@@ -2,15 +2,28 @@
     "questoes_setas": [
       {
         "id_questao_setas": 1,
-        "enunciado": "Ajude o colada a chegar até a maçã. Use as setas do teclado para isso!",
+        "enunciado": "Ajude o coala a chegar até a maçã. Use as setas do teclado para isso!",
         "id_categoria": 6,
-        "dica": "",
+        "dica": "As bolinhas representam cada passo que deve ser dado pelo coala para chegar até a maçã. Se a próxima bolinha estiver embaixo da atual, você deve clicar na seta para baixo! Caso a bolinha fique vermelha, isso quer dizer que você errou! Clique na tecla de voltar (apagar) para desfazer o último movimento.",
         "matriz": [
           [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
           [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        ]
+      },
+      {
+        "id_questao_setas": 2,
+        "enunciado": "Ajude o coala a chegar até a maçã. Use as setas do teclado para isso!",
+        "id_categoria": 6,
+        "dica": "As bolinhas representam cada passo que deve ser dado pelo coala para chegar até a maçã. Se a próxima bolinha estiver embaixo da atual, você deve clicar na seta para baixo! Caso a bolinha fique vermelha, isso quer dizer que você errou! Clique na tecla de voltar (apagar) para desfazer o último movimento.",
+        "matriz": [
+          [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+          [0, 0, 0, 1, 1, 1, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+          [0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
         ]
       }
     ]

@@ -282,10 +282,108 @@
     },
     {
         "id_questao_quatro": 41,
-        "enunciado": "",
-        "resposta": "",
-        "dica": "",
-        "id_categoria": 9
+        "enunciado": "Qual dessas plantas tem flores amarelas, com sementes que são comestíveis e usadas para produzir um óleo muito usado?",
+        "resposta": "Girrassol",
+        "dica": "Essa planta é conhecida pelo seu movimento de \"seguir\" o sol ao longo do dia. As flores estão sempre viradas para a maior fonte de luz!",
+        "id_categoria": 10
+    },
+    {
+        "id_questao_quatro": 42,
+        "enunciado": "Qual dessas plantas armazena água e possui espinhos para se proteger?",
+        "resposta": "Cacto",
+        "dica": "Essas planta é utilizada por muitos como decoração! Muitas delas possuem flores de cores vibrantes.",
+        "id_categoria": 10
+    },
+    {
+        "id_questao_quatro": 43,
+        "enunciado": "Qual dessas plantas é conhecida por ser muito grande e ter como frutos os figos?",
+        "resposta": "Figueira",
+        "dica": "Essa planta é uma árvore que pode chegar a ter até 10 metros!",
+        "id_categoria": 10
+    },
+    {
+        "id_questao_quatro": 44,
+        "enunciado": "Qual dessas plantas pode ser considerada uma pteridófita, ou seja, não possui flores?",
+        "resposta": "Samambaia",
+        "dica": "Essa planta é muito utilizada em decoração e geralmente fica em vasos pendurados nas paredes e no teto das casas.",
+        "id_categoria": 10
+    },
+    {
+        "id_questao_quatro": 45,
+        "enunciado": "Qual dessas plantas é tóxica, tem flores vermelhas com hastes amarelas no centro e formato de coração?",
+        "resposta": "Antúrio",
+        "dica": "Os caules, folhas e flores dessa planta podem causar problemas para os humanos e pets como gatos e cachorros!",
+        "id_categoria": 10
+    },
+    {
+        "id_questao_quatro": 46,
+        "enunciado": "Qual cor podemos obter se misturarmos tinta vermelha e azul?",
+        "resposta": "Roxo",
+        "dica": "Existem tipos de repolho, batatas e outros frutos que são dessa cor!",
+        "id_categoria": 11
+    },
+    {
+        "id_questao_quatro": 47,
+        "enunciado": "Se misturarmos tinta azul e amarela, vamos obter uma tinta de que cor?",
+        "resposta": "Verde",
+        "dica": "Muitas verduras e plantas no geral são dessa cor por causa da clorofila!",
+        "id_categoria": 11
+    },
+    {
+        "id_questao_quatro": 48,
+        "enunciado": "As cores vermelho e amarelo, quando misturadas, formam qual cor?",
+        "resposta": "Laranja",
+        "dica": "Existe uma fruta que é conhecida pelo mesmo nome dessa cor!",
+        "id_categoria": 11
+    },
+    {
+        "id_questao_quatro": 49,
+        "enunciado": "Qual dessas cores é muito abundante no mundo mas difícil de encontrar em pigmentos de flores e frutos?",
+        "resposta": "Azul",
+        "dica": "Os céus e mares refletem essa cor, por isso ela é abundante no mundo. O mirtilo é uma fruta que também tem essa cor!",
+        "id_categoria": 11
+    },
+    {
+        "id_questao_quatro": 50,
+        "enunciado": "Qual dessas cores não faz parte do arco-íris?",
+        "resposta": "Rosa",
+        "dica": "O arco-íris possui sete cores, entre elas anil, violeta e vermelho!",
+        "id_categoria": 11
+    },
+    {
+        "id_questao_quatro": 51,
+        "enunciado": "Qual esporte é conhecido por usar uma bola redonda e marcar gols ao chutar a bola para dentro da meta adversária?",
+        "resposta": "Futebol",
+        "dica": "Este esporte é conhecido por permitir que os jogadores usem qualquer parte do corpo, exceto as mãos e os braços, para tocar na bola.",
+        "id_categoria": 12
+    },
+    {
+        "id_questao_quatro": 52,
+        "enunciado": "Em qual esporte os jogadores driblam a bola e tentam arremessá-la em uma cesta suspensa, marcando pontos para suas equipes?",
+        "resposta": "Basquete",
+        "dica": "Este esporte é caracterizado pelo uso frequente de dribles, passes e arremessos de longa distância. Os jogadores desse esporte são geralmente bem altos!",
+        "id_categoria": 12
+    },
+    {
+        "id_questao_quatro": 53,
+        "enunciado": "Em qual esporte os jogadores usam as mãos para tocar e passar a bola, visando fazê-la atravessar a rede para o lado oposto da quadra?",
+        "resposta": "Voleibol",
+        "dica": "Neste esporte, os jogadores podem usar tanto as mãos quanto os braços para passar, bloquear e atacar a bola.",
+        "id_categoria": 12
+    },
+    {
+        "id_questao_quatro": 54,
+        "enunciado": "Qual esporte utiliza raquetes e bolas e é geralmente praticado em quadras de saibro?",
+        "resposta": "Tênis",
+        "dica": "Saibro é um tipo de areia, geralmente alaranjada, que é muito utilizado nesse esporte por ser uma superfície que \"freia\" os jogadores.",
+        "id_categoria": 12
+    },
+    {
+        "id_questao_quatro": 55,
+        "enunciado": "Qual esporte que é praticado no mar e que entrou recentemente para as Olimpíadas?",
+        "resposta": "Surf",
+        "dica": "Este esporte é praticado na superfície do mar, consistindo de deslizar pelas ondas usando uma prancha.",
+        "id_categoria": 12
     }
     ]
 }
