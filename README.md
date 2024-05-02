@@ -21,6 +21,6 @@ Neste projeto será utilizado um banco de dados não relacional no MongoDB Atlas
 O front-end desse projeto está sendo desenvolvido com React, vite.js, tailwind.ccs e styled component. Para rodar o front-end é necessário rodar os comandos npm install, npm install react-icons e npm run dev. Também é preciso ter o node.js baixado!
 
 ### Documentação
-- Os planos de trabalho e documentos de requisitos para o sistema estão [nesta pasta](Documentação)
+- Todos os arquivos referentes à documentação estão [nesta pasta](Documentação)
 
 Mais informações conforme o andamento do projeto.
