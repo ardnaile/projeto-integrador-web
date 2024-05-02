@@ -26,7 +26,7 @@ const PainelProfessor = () => {
             
                 <div className="absolute bottom-50 w-full flex flex-row justify-center items-center">
                     
-                    <Link>
+                    <Link to='/MinhasTurmas'>
                         <button>
                             <img src={botao1}/>
                         </button>
