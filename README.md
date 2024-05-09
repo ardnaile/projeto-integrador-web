@@ -15,7 +15,7 @@ Foi optado por fazer um protótipo sem interações e rotas entre os botões e a
 - [Canva](https://www.canva.com/design/DAF923OVfOs/cohiH9bIFnUcODXOKdJjtA/view?utm_content=DAF923OVfOs&utm_campaign=designshare&utm_medium=link&utm_source=editor).
 
 ### Banco de dados
-Neste projeto será utilizado um banco de dados não relacional no MongoDB Atlas. Os [arquivos JSON](https://github.com/ardnaile/projeto-integrador-web/tree/bce96f19eada0ce375610637f217a82ada22ca76/Arquivos%20JSON) estão sendo editados no VS Code para depois subirmos no MongoDB.
+Neste projeto será utilizado um banco de dados não relacional no MongoDB Atlas. Já foi feito upload dos [arquivos JSON](https://github.com/ardnaile/projeto-integrador-web/tree/bce96f19eada0ce375610637f217a82ada22ca76/Arquivos%20JSON) no banco de dados usando o Compass.
 
 ### Front-end
 O front-end desse projeto está sendo desenvolvido com React, vite.js, tailwind.ccs e styled component. Para rodar o front-end é necessário rodar os comandos npm install, npm install react-icons e npm run dev. Também é preciso ter o node.js baixado!
