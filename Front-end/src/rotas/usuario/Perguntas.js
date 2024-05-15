@@ -27,7 +27,7 @@ export const Perguntas = [
       { resposta: 'Goku', correta: false, alternativa: '   ' },
       { resposta: 'Tio Patinhas', correta: true, alternativa: '   ' },
       { resposta: 'Harry Potter', correta: false, alternativa: '   ' },
-      { resposta: 'Tio Patinhas', correta: false, alternativa: '   ' },
+      { resposta: 'Rei Leão', correta: false, alternativa: '   ' },
     ],
     dica: 'Ele é um pato muito famoso, conhecido por sua avareza e por nadar em uma piscina cheia de moedas de ouro',
     respostaCorreta: 'Tio Patinhas' // Resposta correta para a segunda pergunta

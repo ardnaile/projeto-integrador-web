@@ -29,6 +29,7 @@ import PainelAluno from './telas/PainelAluno';
 import MinhasTurmas from './telas/MinhasTurmas';
 import QuizVerdadeiroFalso from './telas/QuizVerdadeiroFalso';
 import QuizQuatroOpcoes from './telas/QuizQuatroOpcoes';
+import Turma from './telas/Turma';
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
   {
     path:"/NomeTurma",
     element:<NomeTurma/>,
+  },
+  {
+    path:"/Turma/:id/:item",
+    element:<Turma/>,
   },
   {
     path:"/QualSeuNome",

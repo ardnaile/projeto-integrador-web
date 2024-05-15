@@ -20,7 +20,7 @@ const Login = () => {
                 </Link>
                 <div className="flex flex-col items-center space-y-10 justify-center h-screen mt-20">
                     <Input/>
-                    <Link>
+                    <Link to='/PainelProfessor'>
                         <BotaoConfirma/>
                     </Link>
                 </div>

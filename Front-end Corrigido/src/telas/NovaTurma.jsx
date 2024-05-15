@@ -18,7 +18,7 @@ const NovaTurma = () => {
                 </Link>
             <div className="flex flex-col items-center space-y-10 mt-[500px]">
                 <Input/>
-                <Link>
+                <Link to='/MinhasTurmas'>
                     <BotaoConfirma/>
                 </Link>
             </div>

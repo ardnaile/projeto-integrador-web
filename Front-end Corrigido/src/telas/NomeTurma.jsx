@@ -18,8 +18,8 @@ const NomeTurma = () => {
                 </Link>
             <div className="mt-44 flex flex-col items-center space-y-10 justify-center h-screen">
                 <Input/>
-                <Link className="w-60" >
-                    <BotaoConfirma />
+                <Link to='/Categorias' className="w-60" >
+                       <BotaoConfirma />
                 </Link>
             </div>
             </div>

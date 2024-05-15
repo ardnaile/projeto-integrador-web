@@ -15,7 +15,7 @@ const PainelProfessor = () => {
                 <img src={background} alt="Background" className="object-cover w-full h-full" />
             </div>
             <div>
-                <Link to='/Categorias'>
+                <Link to='/Login'>
                     <BotaoVoltar />
                 </Link>
             </div>
