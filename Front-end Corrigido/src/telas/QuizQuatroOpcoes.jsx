@@ -23,7 +23,7 @@ const QuizQuatroOpcoes = () => {
 
         <h1 className="absolute items-center justify-center z-10 top-60">AQUI VAI O TEXTO DA QUESTÃO LAALALALA</h1>
 
-        teste
+        
         
     </div>
   );
