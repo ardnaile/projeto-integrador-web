@@ -1,6 +1,6 @@
 // src/Componentes/DicaButton.jsx
 import React, { useState } from 'react';
-import dicaIcon from '../assets/icones/dica.png';
+import dicaIcon from '../botoes/botao-dica.svg';
 
 export default function BotaoDica({ dica }) {
   const [mostrarDica, setMostrarDica] = useState(false);
