@@ -14,12 +14,12 @@ const QualSeuNome = () => {
                 <img src={background} alt="Background" className="object-cover w-full h-full" /> 
             </div>
             <div className="absolute inset-0 flex flex-col items-center">
-                <Link to="/CriarConta">
-                    <NomeTurma />
+                <Link to="/NomeTurma">
+                    <BotaoVoltar />
                 </Link>
             <div className="mt-30 flex flex-col items-center space-y-10 justify-center h-screen">
                 <Input/>
-                <Link className="w-60" >
+                <Link>
                     <BotaoConfirma />
                 </Link>
             </div>

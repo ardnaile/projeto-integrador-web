@@ -3,12 +3,11 @@ import React, {useState} from "react";
 import botao from "../botoes/Botao-idiomas.svg";
 import botaoClicado from '../botoes/Botao-idiomas-clicado.svg'
 
-const BotaoIdiomas = ({atualizarEstadoPai}) => {
+const BotaoIdiomas = () => {
     const [clicado, setClicado] = useState(false);
 
     const handleClick = () => {
         setClicado(!clicado);
-        atualizarEstadoPai(!clicado);
     };
 
 

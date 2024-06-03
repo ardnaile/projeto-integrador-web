@@ -24,7 +24,7 @@ const textoGerado = gerarTextoAleatorio(1, 5, 10); // Gera um texto com 5 palavr
 
 
 const CodigoSecreto = () => {
-    const styleInput = 'text-3xl font-text_ale text-center ease-in-out focus:outline-none w-full bg-gray-50 border-none rounded-full px-6 py-4 mb-4 text-gray-800';
+    const styleInput = 'text-3xl font-text_ale font-extrabold text-center ease-in-out focus:outline-none w-full bg-gray-50 border-none rounded-full px-6 py-4 mb-4 text-gray-800';
     return(
         <div className="relative w-full h-screen flex justify-center items-center">
             <div className="absolute inset-0 overflow-hidden">

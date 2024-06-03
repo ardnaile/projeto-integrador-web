@@ -9,7 +9,6 @@ const BotaoComida = ({atualizarEstadoPai}) => {
 
     const handleClick = () => {
         setClicado(!clicado);
-        atualizarEstadoPai(!clicado);
     };
 
     return(
