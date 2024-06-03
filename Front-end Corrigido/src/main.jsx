@@ -8,10 +8,8 @@ import './style.css'
 import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'; 
 
 // novas
-import BemVindo from './telas/BemVindo';
 import Login from './telas/Login';
 import CriarConta from './telas/CriarConta';
-import PalavraPasse from './telas/PalavraPasse';
 import Atencao from './telas/Atencao'
 import NomeTurma from './telas/NomeTurma';
 import QualSeuNome from './telas/QualSeuNome';
@@ -43,10 +41,6 @@ const router = createBrowserRouter([
   {
     path:"/CriarConta",
     element:<CriarConta/>,
-  },
-  {
-    path:"/PalavraPasse",
-    element:<PalavraPasse/>,
   },
   {
     path:"/Atencao",

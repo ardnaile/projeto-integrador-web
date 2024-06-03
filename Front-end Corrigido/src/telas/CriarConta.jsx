@@ -9,6 +9,7 @@ import BotaoOk from "../components/BotaoOk";
 const CriarConta = () => {
     const styleInput = 'text-3xl font-text_ale text-center ease-in-out focus:outline-none w-[500px] bg-gray-50 border-none rounded-full px-4 py-4 text-gray-800';
 
+
     return(
         <div className="relative w-full h-screen flex justify-center items-center">
             <div className="absolute inset-0 overflow-hidden">
