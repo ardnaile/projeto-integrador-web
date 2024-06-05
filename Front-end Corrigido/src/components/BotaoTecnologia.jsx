@@ -4,12 +4,11 @@ import botao from "../botoes/Botao-tecnologia.svg";
 import botaoClicado from '../botoes/Botao-tecnologia-clicado.svg'
 
 
-const BotaoTecnologia = ({atualizarEstadoPai}) => {
+const BotaoTecnologia = () => {
     const [clicado, setClicado] = useState(false);
 
     const handleClick = () => {
         setClicado(!clicado);
-        atualizarEstadoPai(!clicado);
     };
 
 

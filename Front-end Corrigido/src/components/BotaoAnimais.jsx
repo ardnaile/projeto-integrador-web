@@ -3,12 +3,11 @@ import React, {useState} from "react";
 import botao from '../botoes/Botao-animais.svg'
 import botaoClicado from '../botoes/Botao-animais-clicado.svg'
 
-const BotaoAnimais = ({atualizarEstadoPai}) => {
+const BotaoAnimais = () => {
     const [clicado, setClicado] = useState(false);
 
     const handleClick = () => {
         setClicado(!clicado);
-        atualizarEstadoPai(!clicado);
     };
 
 

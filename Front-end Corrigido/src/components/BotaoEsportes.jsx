@@ -9,7 +9,6 @@ const BotaoEsportes = ({atualizarEstadoPai}) => {
 
     const handleClick = () => {
         setClicado(!clicado);
-        atualizarEstadoPai(!clicado);
     };
 
 

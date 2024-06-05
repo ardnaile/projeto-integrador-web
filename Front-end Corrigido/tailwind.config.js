@@ -8,7 +8,7 @@ export default {
     extend: {},
     // Estilos personalizados de fontes:
     fontFamily:{
-      text_ale:["Reddit Mono","monospace"],
+      text_ale:['"Baloo 2"', "sans-serif"], 
     }
   },
   plugins: [],
