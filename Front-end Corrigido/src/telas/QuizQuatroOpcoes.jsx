@@ -76,7 +76,7 @@ const QuizQuatroOpcoes = () => {
           <p className="text-2xl font-bold mb-4">Pontuação</p>
           <p className="text-lg mb-4">Sua pontuação é {pontos} de {questions.length}!</p>
           <button
-            onClick={() => navigate("/Home")}
+            onClick={() => navigate("/Categorias")}
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
           >
             Voltar
