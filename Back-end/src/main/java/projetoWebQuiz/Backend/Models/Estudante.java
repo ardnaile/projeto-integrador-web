@@ -1,37 +1,63 @@
 package projetoWebQuiz.Backend.Models;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "estudantes")
 public class Estudante {
-    private String nomeEstudante;
-    private Turma turmaEstudante;
-    private String codigoEstudante;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String id_estudante;
+    private String usuario_estudante;
+    private String chave_estudante;
+    private int qtd_acertos;
+    private Turma turma;
 
-    public Estudante(String nomeEstudante, Turma turmaEstudante, String codigoEstudante) {
-        this.nomeEstudante = nomeEstudante;
-        this.turmaEstudante = turmaEstudante;
-        this.codigoEstudante = codigoEstudante;
+    public Estudante(Turma turma, String usuario_estudante, String chave_estudante) {
+        this.usuario_estudante = usuario_estudante;
+        this.chave_estudante = chave_estudante;
+        this.turma = turma;
     }
 
-    public String getNomeEstudante() {
-        return nomeEstudante;
+    public String getId_estudante() {
+        return id_estudante;
     }
 
-    public void setNomeEstudante(String nomeAluno) {
-        this.nomeEstudante = nomeEstudante;
+    public void setId_estudante(String id_estudante) {
+        this.id_estudante = id_estudante;
     }
 
-    public Turma getTurmaEstudante() {
-        return turmaEstudante;
+    public String getUsuario_estudante() {
+        return usuario_estudante;
     }
 
-    public String getCodigoEstudante() {
-        return codigoEstudante;
+    public void setUsuario_estudante(String usuario_estudante) {
+        this.usuario_estudante = usuario_estudante;
     }
 
-    public void setCodigoEstudante(String codigoEstudante) {
-        this.codigoEstudante = codigoEstudante;
+    public String getChave_estudante() {
+        return chave_estudante;
     }
 
-    public void setTurmaEstudante(Turma turmaEstudante) {
-        this.turmaEstudante = turmaEstudante;
+    public Turma getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
+    }
+
+    public void setChave_estudante(String chave_estudante) {
+        this.chave_estudante = chave_estudante;
+    }
+
+    public int getQtd_acertos() {
+        return qtd_acertos;
+    }
+
+    public void setQtd_acertos(int qtd_acertos) {
+        this.qtd_acertos = qtd_acertos;
     }
 }

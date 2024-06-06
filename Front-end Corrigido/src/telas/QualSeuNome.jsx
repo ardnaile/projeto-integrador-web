@@ -8,6 +8,8 @@ import BotaoConfirma from "../components/BotaoConfirma";
 import NomeTurma from "./NomeTurma";
 
 const QualSeuNome = () => {
+    <script src='script.js'></script>
+
     return(
         <div className="relative w-full h-screen flex justify-center items-center">
             <div className="absolute inset-0 overflow-hidden">
@@ -18,9 +20,9 @@ const QualSeuNome = () => {
                     <BotaoVoltar />
                 </Link>
             <div className="mt-30 flex flex-col items-center space-y-10 justify-center h-screen">
-                <Input/>
+                <Input id='usuario_estudante'/>
                 <Link>
-                    <BotaoConfirma />
+                    <BotaoConfirma onClick="coletarInfoQualSeuNome()"/>
                 </Link>
             </div>
             </div>

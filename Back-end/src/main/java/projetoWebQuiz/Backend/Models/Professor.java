@@ -5,41 +5,41 @@ import jakarta.persistence.GenerationType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "Professor")
+@Document(collection = "professores")
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String idProfessor;
+    private String id_professor;
 
-    private String nomeProfessor;
-    private String palavraPasseProfessor;
+    private String usuario_professor;
+    private String chave_professor;
 
-    public Professor(String nomeProfessor, String palavraPasseProfessor) {
-        this.nomeProfessor = nomeProfessor;
-        this.palavraPasseProfessor = palavraPasseProfessor;
+    public Professor(String usuario_professor, String chave_professor) {
+        this.usuario_professor = usuario_professor;
+        this.chave_professor = chave_professor;
     }
 
-    public String getIdProfessor() {
-        return idProfessor;
+    public String getId_professor() {
+        return id_professor;
     }
 
-    public void setIdProfessor(String idProfessor) {
-        this.idProfessor = idProfessor;
+    public void setId_professor(String id_professor) {
+        this.id_professor = id_professor;
     }
 
-    public String getNomeProfessor() {
-        return nomeProfessor;
+    public String getUsuario_professor() {
+        return usuario_professor;
     }
 
-    public void setNomeProfessor(String nomeProfessor) {
-        this.nomeProfessor = nomeProfessor;
+    public void setUsuario_professor(String usuario_professor) {
+        this.usuario_professor = usuario_professor;
     }
 
-    public String getPalavraPasseProfessor() {
-        return palavraPasseProfessor;
+    public String getChave_professor() {
+        return chave_professor;
     }
 
-    public void setPalavraPasseProfessor(String palavraPasseProfessor) {
-        this.palavraPasseProfessor = palavraPasseProfessor;
+    public void setChave_professor(String chave_professor) {
+        this.chave_professor = chave_professor;
     }
 }

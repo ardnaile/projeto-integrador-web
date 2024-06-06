@@ -30,7 +30,7 @@ public class ControllerTeste {
             Professor professor = professorMapper.toEntity(professorDto);
             Professor novoProfessor = professorService.salvarProfessor(professor);
 
-            return ResponseEntity.ok("Professor cadastrado com sucesso. ID: " + novoProfessor.getIdProfessor());
+            return ResponseEntity.ok("Professor cadastrado com sucesso. ID: " + novoProfessor.getId_professor());
     } catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao cadastrar professor: " + e.getMessage());
         }

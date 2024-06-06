@@ -24,6 +24,8 @@ const textoGerado = gerarTextoAleatorio(1, 5, 10); // Gera um texto com 5 palavr
 
 
 const CodigoSecreto = () => {
+    <script src='script.js'></script>
+
     const styleInput = 'text-3xl font-text_ale font-extrabold text-center ease-in-out focus:outline-none w-full bg-gray-50 border-none rounded-full px-6 py-4 mb-4 text-gray-800';
     return(
         <div className="relative w-full h-screen flex justify-center items-center">
@@ -34,9 +36,9 @@ const CodigoSecreto = () => {
             <div className="absolute inset-0 flex flex-col items-center">
         
                 <div className="mt-[110px] flex flex-col items-center space-y-80 justify-center h-screen">
-                    <input className={styleInput} value={textoGerado} type="text" />
+                    <input className={styleInput} value={textoGerado} type="text" id='chave_estudante'/>
                     <Link className="w-60" >
-                        <BotaoOk />
+                        <BotaoOk onClick="coletarInfoCodigoSecreto()"/>
                     </Link>
                 </div>
             </div>
