@@ -6,29 +6,32 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import projetoWebQuiz.Backend.Models.LoginRequest;
+import projetoWebQuiz.Backend.Dtos.ProfessorDto;
+import projetoWebQuiz.Backend.Mappers.ProfessorMapper;
 import projetoWebQuiz.Backend.Models.Professor;
-import projetoWebQuiz.Backend.Repositories.RepositorioTeste;
+import projetoWebQuiz.Backend.Repositories.ProfessorRepository;
+import projetoWebQuiz.Backend.Services.ProfessorService;
 
 @RestController
 public class ControllerTeste {
 
     @Autowired
-    private RepositorioTeste repositorioTeste;
+    private ProfessorRepository professorRepository;
 
-    @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest){
-        String palavraPasse = loginRequest.getPalavraPasse();
+    @Autowired
+    private ProfessorMapper professorMapper;
 
-        if (palavra passe digitada = palavra passe do banco){
-            return ResponseEntity.ok("Autenticação bem sucedida")
-        } else {
-            return ResponseEntity.status(404).body("Palavra passe não registrada no banco");
-        }
-    }
+    @Autowired
+    private ProfessorService professorService;
 
     @PostMapping("/cadastroProfessor")
-    public ResponseEntity<String> cadastrar(@RequestBody Professor professor){
-        String nomeProfessor = professor.get
-    }
+    public ResponseEntity<String> cadastrarProfessor(@RequestBody ProfessorDto professorDto){
+        try {
+            Professor professor = professorMapper.toEntity(professorDto);
+            Professor novoProfessor = professorService.salvarProfessor(professor);
+
+            return ResponseEntity.ok("Professor cadastrado com sucesso. ID: " + novoProfessor.getIdProfessor());
+    } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao cadastrar professor: " + e.getMessage());
+        }
 }

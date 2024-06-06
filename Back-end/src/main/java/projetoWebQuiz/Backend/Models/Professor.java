@@ -1,16 +1,20 @@
 package projetoWebQuiz.Backend.Models;
-//import org.springframework.data.annotation.Id;
-//import org.springframework.data.mongodb.core.mapping.Document;
 
-// @Document(collection = "Professor")
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "Professor")
 public class Professor {
-    //@Id
-    private int idProfessor;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String idProfessor;
+
     private String nomeProfessor;
     private String palavraPasseProfessor;
 
-    public Professor(String idProfessor, String nomeProfessor, String palavraPasseProfessor) {
-        this.idProfessor = idProfessor;
+    public Professor(String nomeProfessor, String palavraPasseProfessor) {
         this.nomeProfessor = nomeProfessor;
         this.palavraPasseProfessor = palavraPasseProfessor;
     }

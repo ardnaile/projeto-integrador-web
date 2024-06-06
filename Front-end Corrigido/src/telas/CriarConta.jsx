@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 import BotaoVoltar from "../components/BotaoVoltar";
 import background from "../fundos/fundo-criar-conta.svg";
-import Input from "../components/Input";
 import BotaoOk from "../components/BotaoOk";
 
 const CriarConta = () => {
+    <script src="script.js"></script>
     const styleInput = 'text-3xl font-text_ale text-center ease-in-out focus:outline-none w-[500px] bg-gray-50 border-none rounded-full px-4 py-4 text-gray-800';
 
 
@@ -21,14 +21,13 @@ const CriarConta = () => {
                     <BotaoVoltar />
                 </Link>
 
-                <div className="flex flex-col items-center space-y-10 justify-center h-screen">
-                    <input id="inputNomeProfessor" type="text" className={styleInput} title="Sugestão: Use números, letras maiúsculas, letras minúsculas e símbolos!" placeholder="Digite um nome de usuário"/>
-                    <input id="inputSenhaProfessor" type="text" className={styleInput} title="Sugestão: Use números, letras maiúsculas, letras minúsculas e símbolos!" placeholder="Digite uma senha"/>
-
+                <form id="cadastroProfessorForm" className="flex flex-col items-center space-y-10 justify-center h-screen">
+                    <input id="nomeProfessor" type="text" className={styleInput} title="Sugestão: Use números, letras maiúsculas, letras minúsculas e símbolos!" placeholder="Digite um nome de usuário"/>
+                    <input id="palavraPasseProfessor" type="text" className={styleInput} title="Sugestão: Use números, letras maiúsculas, letras minúsculas e símbolos!" placeholder="Digite uma senha"/>
                     <Link>
-                        <BotaoOk/>
+                        <BotaoOk onClick="enviarFormularioProfessor()"/>
                     </Link>
-                </div>
+                </form>   
             </div>
         </div>
     )
