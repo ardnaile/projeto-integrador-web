@@ -1,14 +1,18 @@
 package projetoWebQuiz.Backend.Models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+//import jakarta.persistence.Entity;
+//import jakarta.persistence.GeneratedValue;
+//import jakarta.persistence.GenerationType;
+//import jakarta.persistence.Table;
+//import jakarta.persistence.Id;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+// @Entity
+// @Table(name="estudantes")
 @Document(collection = "estudantes")
 public class Estudante {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id_estudante;
     private String usuario_estudante;
     private String chave_estudante;
