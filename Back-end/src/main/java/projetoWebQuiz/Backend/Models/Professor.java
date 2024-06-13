@@ -1,15 +1,8 @@
 package projetoWebQuiz.Backend.Models;
 
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.GenerationType;
-//import jakarta.persistence.Table;
-//import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.annotation.Id;
 
-// @Entity
-// @Table(name="professores")
 @Document(collection = "professores")
 public class Professor {
     @Id

@@ -12,10 +12,12 @@ public class ProfessorService {
     @Autowired
     private ProfessorRepository professorRepository;
 
+    // Create
     public Professor salvarProfessor(Professor professor){
         return professorRepository.save(professor);
     }
 
+    // Read
     public List<Professor> verTodosProfessores() {
         return professorRepository.findAll();
     }
@@ -25,6 +27,7 @@ public class ProfessorService {
                 .orElseThrow(() -> new RuntimeException("Professor não encontrado"));
     }
 
+    // Update
     public Professor atualizarProfessor(String id, Professor professor) {
         if (!professorRepository.existsById(id)) {
             throw new RuntimeException("Professor não encontrado");
@@ -32,7 +35,8 @@ public class ProfessorService {
         return professorRepository.save(professor);
     }
 
-    public void excluirProfessor(String id) {
+    // Delete
+    public void deletarProfessor(String id) {
         if (!professorRepository.existsById(id)) {
             throw new RuntimeException("Professor não encontrado");
         }

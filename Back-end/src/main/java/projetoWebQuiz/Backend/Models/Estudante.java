@@ -1,10 +1,5 @@
 package projetoWebQuiz.Backend.Models;
 
-//import jakarta.persistence.Entity;
-//import jakarta.persistence.GeneratedValue;
-//import jakarta.persistence.GenerationType;
-//import jakarta.persistence.Table;
-//import jakarta.persistence.Id;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -19,6 +14,7 @@ public class Estudante {
     private int qtd_acertos;
     private Turma turma;
 
+    // builder pro dto!!
     public Estudante(Turma turma, String usuario_estudante, String chave_estudante) {
         this.usuario_estudante = usuario_estudante;
         this.chave_estudante = chave_estudante;
