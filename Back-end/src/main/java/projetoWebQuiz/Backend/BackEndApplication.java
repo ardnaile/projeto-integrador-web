@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "projetoWebQuiz.Backend") // Verifique se este pacote está correto
+@ComponentScan(basePackages = "projetoWebQuiz.Backend")
 
 public class BackEndApplication {
 

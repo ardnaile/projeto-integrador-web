@@ -16,7 +16,7 @@ public class ProfessorService {
         return professorRepository.save(professor);
     }
 
-    public List<Professor> listarProfessores() {
+    public List<Professor> verTodosProfessores() {
         return professorRepository.findAll();
     }
 
