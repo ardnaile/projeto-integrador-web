@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import projetoWebQuiz.Backend.Dtos.ProfessorDto;
 import projetoWebQuiz.Backend.Mappers.ProfessorMapper;
 import projetoWebQuiz.Backend.Models.Professor;
+import projetoWebQuiz.Backend.Models.Turma;
 import projetoWebQuiz.Backend.Repositories.ProfessorRepository;
 import projetoWebQuiz.Backend.Services.ProfessorService;
 
@@ -43,5 +44,10 @@ public class ProfessorController {
     public ResponseEntity<List<Professor>> verTodosProfessores(){
         List<Professor> lista = professorService.verTodosProfessores();
         return ResponseEntity.ok(lista);
+    }
+
+    @GetMapping("/minhasTurmas")
+    public ResponseEntity<List<Turma>> minhasTurmas(){
+        return null;
     }
 }

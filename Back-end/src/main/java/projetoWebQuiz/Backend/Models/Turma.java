@@ -13,6 +13,6 @@ public class Turma {
 
     @Id
     private String id_turma;
-    private String nome;
-    private Professor professor_turma;
+    private String nome_turma;
+    private String professor_turma;
 }

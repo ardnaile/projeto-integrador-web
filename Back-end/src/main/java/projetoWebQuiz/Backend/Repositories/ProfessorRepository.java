@@ -5,4 +5,5 @@ import projetoWebQuiz.Backend.Models.Professor;
 
 public interface ProfessorRepository extends MongoRepository<Professor, String> {
     // aqui podemos adicionar os métodos de consulta (query)
+    Professor findByUsuario(String usuario_professor);
 }
