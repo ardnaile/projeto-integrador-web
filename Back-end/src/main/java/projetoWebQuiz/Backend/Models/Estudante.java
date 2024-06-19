@@ -1,10 +1,9 @@
 package projetoWebQuiz.Backend.Models;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-// @Entity
-// @Table(name="estudantes")
 @Document(collection = "estudantes")
 public class Estudante {
     @Id
@@ -12,10 +11,10 @@ public class Estudante {
     private String usuario_estudante;
     private String chave_estudante;
     private int qtd_acertos;
-    private Turma turma;
+    private String turma;
 
     // builder pro dto!!
-    public Estudante(Turma turma, String usuario_estudante, String chave_estudante) {
+    public Estudante(String turma, String usuario_estudante, String chave_estudante) {
         this.usuario_estudante = usuario_estudante;
         this.chave_estudante = chave_estudante;
         this.turma = turma;
@@ -41,11 +40,11 @@ public class Estudante {
         return chave_estudante;
     }
 
-    public Turma getTurma() {
+    public String getTurma() {
         return turma;
     }
 
-    public void setTurma(Turma turma) {
+    public void setTurma(String turma) {
         this.turma = turma;
     }
 

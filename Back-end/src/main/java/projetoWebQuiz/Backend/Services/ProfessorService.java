@@ -27,20 +27,4 @@ public class ProfessorService {
                 .orElseThrow(() -> new RuntimeException("Professor não encontrado"));
     }
 
-    // Update
-    public Professor atualizarProfessor(String id, Professor professor) {
-        if (!professorRepository.existsById(id)) {
-            throw new RuntimeException("Professor não encontrado");
-        }
-        return professorRepository.save(professor);
-    }
-
-    // Delete
-    public void deletarProfessor(String id) {
-        if (!professorRepository.existsById(id)) {
-            throw new RuntimeException("Professor não encontrado");
-        }
-        professorRepository.deleteById(id);
-    }
-
 }

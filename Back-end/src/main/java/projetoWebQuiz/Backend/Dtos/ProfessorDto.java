@@ -1,7 +1,7 @@
 package projetoWebQuiz.Backend.Dtos;
 
 public record ProfessorDto(
-        String nomeProfessor,
-        String palavraPasseProfessor) {
+        String usuario_professor,
+        String chave_professor) {
 
 }
