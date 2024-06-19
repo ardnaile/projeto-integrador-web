@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import BotaoVoltar from "../components/BotaoVoltar";
 import background from "../fundos/fundo-criar-conta.svg";
 import BotaoOk from "../components/BotaoOk";
+import botao from '../botoes/botao-ok.svg'
 
 const CriarConta = () => {
     <script src="script.js"></script>
@@ -24,10 +25,12 @@ const CriarConta = () => {
                 <form id="cadastroProfessorForm" className="flex flex-col items-center space-y-10 justify-center h-screen">
                     <input id="nomeProfessor" type="text" className={styleInput} title="Sugestão: Use números, letras maiúsculas, letras minúsculas e símbolos!" placeholder="Digite um nome de usuário"/>
                     <input id="palavraPasseProfessor" type="text" className={styleInput} title="Sugestão: Use números, letras maiúsculas, letras minúsculas e símbolos!" placeholder="Digite uma senha"/>
-                    <Link>
-                        <BotaoOk onClick="enviarFormularioProfessor()"/>
-                    </Link>
-                </form>   
+                </form> 
+                <button className="cursor-pointer" onClick="enviarFormularioProfessor()">
+                    <img src={botao} alt={botao} className="w-48 h-16"/>
+                </button>
+
+                {/* <BotaoOk id="botaoCadastroProfessor" onClick="enviarFormularioProfessor()"/>      */}
             </div>
         </div>
     )
