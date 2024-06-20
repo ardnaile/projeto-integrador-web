@@ -3,10 +3,7 @@ package projetoWebQuiz.Backend.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import projetoWebQuiz.Backend.Dtos.ProfessorDto;
 import projetoWebQuiz.Backend.Mappers.ProfessorMapper;
 import projetoWebQuiz.Backend.Models.Professor;
@@ -46,8 +43,9 @@ public class ProfessorController {
         return ResponseEntity.ok(lista);
     }
 
-    @GetMapping("/minhasTurmas")
-    public ResponseEntity<List<Turma>> minhasTurmas(){
-        return null;
+    @GetMapping("/minhasTurmas/{idProfessor}")
+    public ResponseEntity<List<Turma>> minhasTurmas(@PathVariable String idProfessor) {
+        List<Turma> lista = professorService.buscarTurmasPorProfessor(idProfessor);
+        return ResponseEntity.ok(lista);
     }
 }

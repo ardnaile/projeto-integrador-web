@@ -32,7 +32,7 @@ public class EstudanteController {
     public ResponseEntity<String> cadastroEstudante(@RequestBody EstudanteDto estudanteDto) {
         try{
             Estudante estudante = estudanteMapper.toEntity(estudanteDto);
-            Turma turma = turmaRepository.findBy(estudante.getTurma());
+            Turma turma = turmaRepository.findByNomeTurma(estudante.getTurma());
 
             if (turma != null){
                 Estudante novoEstudante = estudanteService.salvarEstudante(estudante);
