@@ -48,4 +48,14 @@ public class ProfessorController {
         List<Turma> lista = professorService.buscarTurmasPorProfessor(idProfessor);
         return ResponseEntity.ok(lista);
     }
+
+    @GetMapping("/buscaNomeProfessor/{id_professor}")
+    public ResponseEntity<String> buscaNomeProfessor(@PathVariable String id_professor){
+        String nomeProfessor = professorService.buscaNomeProfessor(id_professor);
+        if (nomeProfessor != null){
+            return ResponseEntity.ok(nomeProfessor);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

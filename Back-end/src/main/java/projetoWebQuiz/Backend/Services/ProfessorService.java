@@ -9,6 +9,7 @@ import projetoWebQuiz.Backend.Repositories.ProfessorRepository;
 import projetoWebQuiz.Backend.Repositories.TurmaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProfessorService {
@@ -38,4 +39,12 @@ public class ProfessorService {
         return turmaRepository.findByProfessor(idProfessor);
     }
 
+    public String buscaNomeProfessor(String idProfessor){
+       Professor professor = professorRepository.findById(idProfessor).orElseThrow(() -> new RuntimeException("Professor não encontrado"));
+       if (professor != null){
+           return professor.getUsuario_professor();
+       } else {
+           return null;
+       }
+    }
 }
