@@ -13,7 +13,7 @@ const NovaTurma = () => {
                 <img src={background} alt="Background" className="object-cover w-full h-full" /> 
             </div>
             <div className="absolute inset-0 flex flex-col items-center">
-                <Link to="/Login">
+                <Link to='/PainelProfessor'>
                     <BotaoVoltar />
                 </Link>
             <div className="flex flex-col items-center space-y-10 mt-[500px]">

@@ -5,6 +5,7 @@ import background from '../fundos/fundo-principal.svg';
 import { useNavigate } from 'react-router-dom';
 import BotaoVoltar from "../components/BotaoVoltar";
 import BotaoDica from '../components/BotaoDica';
+import { Link } from "react-router-dom";
 
 const QuizQuatroOpcoes = () => {
   const navigate = useNavigate();
@@ -75,12 +76,13 @@ const QuizQuatroOpcoes = () => {
         <div className="bg-white p-8 rounded-md w-96 text-center">
           <p className="text-2xl font-bold mb-4">Pontuação</p>
           <p className="text-lg mb-4">Sua pontuação é {pontos} de {questions.length}!</p>
-          <button
-            onClick={() => navigate("/Categorias")}
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
-          >
-            Voltar
-          </button>
+          <Link to='/Categorias'>
+            <button
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
+            >
+              Voltar
+            </button>
+          </Link>
         </div>
       </div>
     );
@@ -91,7 +93,9 @@ const QuizQuatroOpcoes = () => {
       className="relative flex flex-col items-center justify-center h-screen"
       style={{ backgroundImage: `url(${background})` }}
     >
-      <BotaoVoltar />
+      <Link to="/Categorias" className="absolute top-4 left-4">
+        <BotaoVoltar/>
+      </Link>
       {showPontuacao ? (
         <PontuacaoModal />
       ) : (

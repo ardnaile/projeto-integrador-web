@@ -12,7 +12,7 @@ const SaibaMais = () => {
         <img src={background} alt="Background" className="object-cover w-full h-full" />
     </div>
 
-    <Link to='/Painel'>
+    <Link to='/PainelProfessor'>
         <BotaoVoltar />
     </Link>
 
