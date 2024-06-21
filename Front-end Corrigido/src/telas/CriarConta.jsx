@@ -59,9 +59,11 @@ const CriarConta = () => {
                     />
                 </form> 
                 
-                <button className="cursor-pointer" onClick={enviarFormularioProfessor}>
-                    <img src={botao} alt="botao Ok" className="w-48 h-16"/>
-                </button>
+                <Link to ="/Login">
+                    <button className="cursor-pointer" onClick={enviarFormularioProfessor}>
+                        <img src={botao} alt="botao Ok" className="w-48 h-16"/>
+                    </button>
+                </Link>
             </div>
         </div>
     );
