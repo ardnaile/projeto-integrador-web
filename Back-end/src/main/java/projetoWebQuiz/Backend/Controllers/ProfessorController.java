@@ -50,8 +50,8 @@ public class ProfessorController {
     }
 
     @GetMapping("/buscaNomeProfessor/{id_professor}")
-    public ResponseEntity<String> buscaNomeProfessor(@PathVariable String id_professor){
-        String nomeProfessor = professorService.buscaNomeProfessor(id_professor);
+    public ResponseEntity<List<Professor>> buscaNomeProfessor(@PathVariable String id_professor){
+        List nomeProfessor = professorService.buscaNomeProfessor(id_professor);
         if (nomeProfessor != null){
             return ResponseEntity.ok(nomeProfessor);
         } else {

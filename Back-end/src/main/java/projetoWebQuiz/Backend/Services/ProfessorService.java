@@ -8,6 +8,7 @@ import projetoWebQuiz.Backend.Models.Turma;
 import projetoWebQuiz.Backend.Repositories.ProfessorRepository;
 import projetoWebQuiz.Backend.Repositories.TurmaRepository;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,12 +40,12 @@ public class ProfessorService {
         return turmaRepository.findByProfessor(idProfessor);
     }
 
-    public String buscaNomeProfessor(String idProfessor){
-       Professor professor = professorRepository.findById(idProfessor).orElseThrow(() -> new RuntimeException("Professor não encontrado"));
-       if (professor != null){
-           return professor.getUsuario_professor();
-       } else {
-           return null;
-       }
+    public List buscaNomeProfessor(String idProfessor){
+        Professor professor = professorRepository.findById(idProfessor).orElseThrow(() -> new RuntimeException("Professor não encontrado"));
+        if (professor != null){
+            return Collections.singletonList(professor.getUsuario_professor());
+        } else {
+            return null;
+        }
     }
 }
