@@ -2,9 +2,9 @@ import React from "react";
 
 import botao from '../botoes/botao-confirmar.svg'
 
-const BotaoConfirma = () => {
+const BotaoConfirma = ({onButtonClick}) => {
     return(
-        <button className="cursor-pointer">
+        <button onClick={onButtonClick} className="cursor-pointer">
             <img src={botao} alt={botao} className="w-48 h-16"/>
         </button>
     )
