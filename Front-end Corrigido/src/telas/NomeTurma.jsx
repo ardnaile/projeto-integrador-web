@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState,useEffect } from 'react';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
 import BotaoVoltar from "../components/BotaoVoltar";
 import background from "../fundos/fundo-qual-nome-da-turma.svg";
@@ -7,7 +9,41 @@ import Input from "../components/Input";
 import BotaoConfirma from "../components/BotaoConfirma";
 
 const NomeTurma = () => {
-    <script src='script.js'></script>
+  <script src='script.js'></script>
+  const [inputValue, setInputValue] = useState('');
+  const [turma, setTurmas] = useState('');
+  const navigate = useNavigate();
+
+  const handleInputChange = (value) => {
+    setInputValue(value);
+  };
+
+  
+  const handleFetchRequest = async () => {
+        const response = await fetch(`http://192.168.100.40:8080/verAlunosDaTurma/${inputValue}`,{
+          method:'GET'})
+        if (!response.ok) {
+          alert('Erro ao requisitar dados')
+        }
+        const data = await response.json();
+        const turmaSimples = data.map(turma => ({
+          turma: turma.turma
+        }))  
+
+        setTurmas(turmaSimples)
+
+        const turmaEncontrada = turmaSimples.some(turmaObj => turmaObj.turma === inputValue);
+        
+        console.log(turmaEncontrada)
+
+        if (turmaEncontrada) {
+          alert("Logado com sucesso!");
+          navigate('/Categorias');
+        } else {
+          alert('Falha na autenticação');
+        }
+    };
+   
     return(
         <div className="relative w-full h-screen flex justify-center items-center">
             <div className="absolute inset-0 overflow-hidden">
@@ -18,10 +54,10 @@ const NomeTurma = () => {
                     <BotaoVoltar />
                 </Link>
             <div className="mt-44 flex flex-col items-center space-y-10 justify-center h-screen">
-                <Input id='turma'/>
-                <Link to='/Categorias' className="w-60" >
-                       <BotaoConfirma onClick='coletarInfoNomeTurma()'/>
-                </Link>
+                <Input onInputChange={handleInputChange}/>
+                {/* <Link to='/Categorias' className="w-60" > */}
+                       <BotaoConfirma onButtonClick={handleFetchRequest}/>
+                {/* </Link> */}
             </div>
             </div>
         </div>

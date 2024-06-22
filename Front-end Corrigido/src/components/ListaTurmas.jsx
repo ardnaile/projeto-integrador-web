@@ -13,7 +13,8 @@ const ButtonList = ({ turmas }) => {
       return (
       <div className="grid gap-6">
         {turmas.map((turma, index) => (  
-          <Link to={`/turma/${turma.id_turma}`} key={index}>
+          <Link to={`/turma/${turma.id_turma}?nome_turma=${(turma.nome_turma)}`} 
+                key={index}>
             <div>
                 <button
                 className="bg-gray-100 w-full text-black px-6 py-4 rounded-3xl font-bold text-3xl text-wrap"
@@ -27,15 +28,13 @@ const ButtonList = ({ turmas }) => {
     );  
 };
 
-    // ['TURMA DA BAGUNÇA', 'TURMA DA BAGUNÇA', 'TURMA DA BAGUNÇA','TURMA DA BAGUNÇA','TURMA DA BAGUNÇA','TURMA DA BAGUNÇA'];
-
 const ListaTurma = () => {
   const [turmas, setTurmas] = useState([]);
   useEffect(() => {
     const fetchTurmas = async () => {
       try {
         // Faz a requisição para obter os dados das turmas
-        const response = await fetch('http://192.168.100.40:8080/verTodasTurmas'); // Substitua pela sua URL de API
+        const response = await fetch('http://192.168.100.40:8080/minhasTurmas/4'); // Substitua pela sua URL de API
         if (!response.ok) {
           throw new Error('Falha ao obter os dados das turmas');
         }
