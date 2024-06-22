@@ -25,7 +25,7 @@ const Login = () => {
           .then((data) => {
             setDados(data[0])
 
-            if (inputValue === dados) {
+            if (inputValue == dados) {
               alert("Logado com sucesso!");
               navigate('/PainelProfessor');
             } else {

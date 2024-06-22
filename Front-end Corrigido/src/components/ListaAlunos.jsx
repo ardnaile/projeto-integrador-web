@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState,useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 const CentralizedDiv = ({ children }) => {
@@ -10,31 +10,59 @@ const CentralizedDiv = ({ children }) => {
   };
   
 
-const ButtonList = ({ items }) => {
+  const ButtonList = ({ alunos }) => {
     return (
-      <div className="grid gap-6">
-        {items.map((item, index) => (  
-          <Link to={`/turma/${index}/${item}`} key={index}>
-            <div>
-                <p
-                className="bg-transparent w-full text-black px-6 py-4 rounded-3xl font-bold text-3xl text-wrap text-center"
-                >
-                {item}
-                </p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    );  
+    <div className="grid gap-6">
+      {alunos.map((aluno, index) => (  
+        <Link to={`/turma/${aluno.id_estudante}`} key={index}>
+          <div>
+              <button
+              className="bg-gray-100 w-full text-black px-6 py-4 rounded-3xl font-bold text-3xl text-wrap"
+              >
+              {aluno.usuario_estudante}
+              </button>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );  
 };
 
-
 const ListaAlunos = () => {
-    const turmas = ['Alguma coisa vai aqui', 'Alguma coisa vai aqui', 'Alguma coisa vai aqui','Alguma coisa vai aqui','Alguma coisa vai aqui','Alguma coisa vai aqui'];
+  const [alunosTurmas, setTurmas] = useState([]);
+  useEffect(() => {
+    const fetchTurmas = async () => {
+      try {
+        // Faz a requisição para obter os dados das turmas
+        const response = await fetch('http://192.168.100.40:8080/verTodosEstudantes'); // Substitua pela sua URL de API
+        if (!response.ok) {
+          throw new Error('Falha ao obter os dados das turmas');
+        }
+        const data = await response.json();
+
+        // Processa os dados para extrair apenas id_turma e nome_turma
+        const alunosSimplificadas = data.map(aluno => ({
+          id_estudante: aluno.id_estudante,
+          usuario_estudante: aluno.usuario_estudante
+        }));
+
+        // Atualiza o estado com os dados simplificados
+        setTurmas(alunosSimplificadas);
+      } catch (error) {
+        console.error('Erro ao carregar as turmas:', error);
+      }
+    };
+
+    // Chama a função de fetch ao montar o componente
+    fetchTurmas();
+  }, []);
+
+
+  const meusAlunos = alunosTurmas;
 
     return(
         <CentralizedDiv>
-            <ButtonList items={turmas} />
+            <ButtonList alunos={meusAlunos} />
         </CentralizedDiv>  
     )
 }

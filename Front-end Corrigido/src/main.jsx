@@ -51,7 +51,7 @@ const router = createBrowserRouter([
     element:<NomeTurma/>,
   },
   {
-    path:"/Turma/:id/:item",
+    path:"/Turma/:id",
     element:<Turma/>,
   },
   {

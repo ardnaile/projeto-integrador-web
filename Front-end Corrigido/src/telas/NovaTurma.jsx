@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import BotaoVoltar from "../components/BotaoVoltar";
@@ -8,24 +8,39 @@ import Input from "../components/Input";
 import BotaoConfirma from "../components/BotaoConfirma";
 
 const NovaTurma = () => {
-    const [nomeTurma, setNomeTurma] = useState('');
-    const idProfessor = "1"; // Supondo que o ID do professor seja fixo ou capturado de algum estado global/contexto
-
+    const [dados, setDados] = useState('');
+    const [inputValue, setInputValue] = useState('');
+    const navigate = useNavigate();
     const styleInput = 'text-3xl font-text_ale text-center ease-in-out focus:outline-none w-[500px] bg-gray-50 border-none rounded-full px-4 py-4 text-gray-800';
 
-    const enviarNovaTurma = async () => {
-        try {
-            const response = await axios.post('http://localhost:8080/novaTurma', {
-                nome_turma: nomeTurma,
-                id_professor: idProfessor
-            });
-            console.log('Resposta do servidor:', response.data);
-            // Após a criação da turma, você pode redirecionar o usuário para a página de suas turmas
-            // history.push('/MinhasTurmas');
-        } catch (error) {
-            console.error('Erro ao criar nova turma:', error);
-            // Tratar o erro conforme necessário
-        }
+    const handleInputChange = (value) => {
+        setInputValue(value);
+    };
+
+    const requestBody = {
+        nome_turma:inputValue, 
+        id_professor: "4" 
+    }
+  
+    const handleFetchRequest = () => {
+        fetch(`http://localhost:8080/novaTurma`,{
+            method: 'POST',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify(requestBody)
+          })
+            .then((response) => response.status.valueOf())
+            .then((data) => {
+              setDados(data)
+              console.log(data)
+  
+              if (data == 200) {
+                alert("Cadastrado com sucesso!");
+                navigate('/PainelProfessor');
+              } else {
+                alert('Falha ao gravar os dados');
+              }
+            })
+            .catch((error) => console.log(error))
     };
 
     return (
@@ -39,14 +54,11 @@ const NovaTurma = () => {
                 </Link>
                 <div className="flex flex-col items-center space-y-10 mt-[500px]">
                     <Input
-                        value={nomeTurma}
-                        onChange={(e) => setNomeTurma(e.target.value)}
+                        onInputChange={handleInputChange}
                         className={styleInput}
                         placeholder="Nome da Turma"
                     />
-                    <button className="cursor-pointer" onClick={enviarNovaTurma}>
-                        <BotaoConfirma />
-                    </button>
+                    <BotaoConfirma onButtonClick={handleFetchRequest} />
                 </div>
             </div>
         </div>
