@@ -3,30 +3,23 @@ package projetoWebQuiz.Backend.Models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "questoes_duas")
+@Document(collection = "questoes_quatro")
 public class QuestaoQuatro {
     @Id
-    private String id_questao_quatro;
+    private String id;
 
     private String enunciado;
     private String resposta;
     private String dica;
-    private int id_categoria;
+    private String opcao2;
+    private String opcao3;
 
-    public QuestaoQuatro(String id_questao_quatro, String enunciado, String resposta, String dica, int id_categoria) {
-        this.id_questao_quatro = id_questao_quatro;
-        this.enunciado = enunciado;
-        this.resposta = resposta;
-        this.dica = dica;
-        this.id_categoria = id_categoria;
+    public String getId() {
+        return id;
     }
 
-    public String getId_questao_quatro() {
-        return id_questao_quatro;
-    }
-
-    public void setId_questao_quatro(String id_questao_quatro) {
-        this.id_questao_quatro = id_questao_quatro;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getEnunciado() {
@@ -53,11 +46,31 @@ public class QuestaoQuatro {
         this.dica = dica;
     }
 
-    public int getId_categoria() {
-        return id_categoria;
+    public String getOpcao2() {
+        return opcao2;
     }
 
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
+    public void setOpcao2(String opcao2) {
+        this.opcao2 = opcao2;
     }
+
+    public String getOpcao3() {
+        return opcao3;
+    }
+
+    public void setOpcao3(String opcao3) {
+        this.opcao3 = opcao3;
+    }
+
+    public String getOpcao4() {
+        return opcao4;
+    }
+
+    public void setOpcao4(String opcao4) {
+        this.opcao4 = opcao4;
+    }
+
+    private String opcao4;
+
+    // Getters e Setters omitidos para brevidade
 }

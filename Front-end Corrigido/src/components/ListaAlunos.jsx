@@ -39,7 +39,7 @@ const ListaAlunos = () => {
     const fetchTurmas = async () => {
       try {
         // Faz a requisição para obter os dados das turmas
-        const response = await fetch(`http://192.168.100.40:8080/verAlunosDaTurma/${nome_turma}`); // Substitua pela sua URL de API
+        const response = await fetch(`http://localhost:8080/verAlunosDaTurma/${nome_turma}`); // Substitua pela sua URL de API
         if (!response.ok) {
           throw new Error('Falha ao obter os dados das turmas');
         }

@@ -12,9 +12,9 @@ public class QuestaoQuatroMapper {
                 questaoQuatro.getEnunciado(),
                 questaoQuatro.getResposta(),
                 questaoQuatro.getDica(),
-                null,
-                null,
-                null
+                questaoQuatro.getOpcao2(),
+                questaoQuatro.getOpcao3(),
+                questaoQuatro.getOpcao4()
         );
     }
 }
