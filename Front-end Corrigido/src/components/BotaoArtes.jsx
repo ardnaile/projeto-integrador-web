@@ -7,8 +7,16 @@ import botaoClicado from '../botoes/Botao-artes-clicado.svg'
 const BotaoArtes = () => {
     const [clicado, setClicado] = useState(false);
 
+    const [contagem, setContagem] = useState(0);
+
     const handleClick = () => {
         setClicado(!clicado);
+
+        if (contagem == 0) {
+            setContagem(1)
+        }else{
+            setContagem(0) 
+        }
     };
 
     return(

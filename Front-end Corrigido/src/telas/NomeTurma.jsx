@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import { useParams, useLocation } from 'react-router-dom';
 
 import BotaoVoltar from "../components/BotaoVoltar";
 import background from "../fundos/fundo-qual-nome-da-turma.svg";
@@ -33,14 +32,12 @@ const NomeTurma = () => {
         setTurmas(turmaSimples)
 
         const turmaEncontrada = turmaSimples.some(turmaObj => turmaObj.turma === inputValue);
-        
-        console.log(turmaEncontrada)
 
         if (turmaEncontrada) {
-          alert("Logado com sucesso!");
-          navigate('/Categorias');
+          // alert("Logado com sucesso!");
+          navigate('/QualSeuNOme');
         } else {
-          alert('Falha na autenticação');
+          alert('Nome da turma não existe');
         }
     };
    

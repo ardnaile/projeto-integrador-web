@@ -6,8 +6,16 @@ import botaoClicado from '../botoes/Botao-idiomas-clicado.svg'
 const BotaoIdiomas = () => {
     const [clicado, setClicado] = useState(false);
 
+    const [contagem, setContagem] = useState(0);
+
     const handleClick = () => {
         setClicado(!clicado);
+
+        if (contagem == 0) {
+            setContagem(1)
+        }else{
+            setContagem(0) 
+        }
     };
 
 

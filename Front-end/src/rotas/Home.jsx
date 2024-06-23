@@ -24,7 +24,6 @@ function Home (props) {
    
   return (
     <>
-    <BackgroundLayout backgroundImage={`url('./src/assets/img_fundo/fundohome.png')`}>
     <div className='grid grid-cols-1 w-full h-full' >
       <div>
         <nav className='grid grid-cols-2 bg-transparent w-full h-8'>
@@ -91,8 +90,6 @@ function Home (props) {
         </div>
        </footer>
     </div>
-  
-    </BackgroundLayout>
     </>
   )
 }

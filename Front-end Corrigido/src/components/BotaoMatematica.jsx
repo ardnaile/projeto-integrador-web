@@ -6,11 +6,17 @@ import botaoClicado from '../botoes/Botao-matematica-clicado.svg'
 
 const BotaoMatematica = () => {
     const [clicado, setClicado] = useState(false);
+    const [contagem, setContagem] = useState(0);
 
     const handleClick = () => {
         setClicado(!clicado);
-    };
 
+        if (contagem == 0) {
+            setContagem(1)
+        }else{
+            setContagem(0) 
+        }
+    };
 
     return(
         <button className="w-full h-full flex justify-center items-center" onClick={handleClick}>

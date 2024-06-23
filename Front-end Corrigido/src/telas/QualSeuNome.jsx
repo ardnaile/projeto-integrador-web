@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 
 import BotaoVoltar from "../components/BotaoVoltar";
@@ -7,9 +7,9 @@ import Input from "../components/Input";
 import BotaoConfirma from "../components/BotaoConfirma";
 import NomeTurma from "./NomeTurma";
 
-const QualSeuNome = () => {
+const QualSeuNome = ({turma}) => {
     <script src='script.js'></script>
-
+   
     return(
         <div className="relative w-full h-screen flex justify-center items-center">
             <div className="absolute inset-0 overflow-hidden">
@@ -29,4 +29,5 @@ const QualSeuNome = () => {
         </div>
     )
 }
+
 export default QualSeuNome;
