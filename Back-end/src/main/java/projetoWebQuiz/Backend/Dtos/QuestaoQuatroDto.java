@@ -7,7 +7,6 @@ public class QuestaoQuatroDto {
     private String opcao2;
     private String opcao3;
     private String opcao4;
-    private String respostaCorreta; // Adicionando o atributo respostaCorreta
 
     public QuestaoQuatroDto(String enunciado, String resposta, String dica, String opcao2, String opcao3, String opcao4) {
         this.enunciado = enunciado;
@@ -65,13 +64,5 @@ public class QuestaoQuatroDto {
 
     public void setOpcao4(String opcao4) {
         this.opcao4 = opcao4;
-    }
-
-    public String getRespostaCorreta() {
-        return respostaCorreta;
-    }
-
-    public void setRespostaCorreta(String respostaCorreta) {
-        this.respostaCorreta = respostaCorreta;
     }
 }
