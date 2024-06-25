@@ -64,6 +64,6 @@ public class ProfessorController {
 
     @PostMapping("/validarProfessor")
     public boolean validarProfessor(@RequestBody ProfessorDto professorDto){
-        return professorService.validarUsuario(professorDto.usuario_professor(), professorDto.chave_professor());
+        return professorService.validarProfessor(professorDto.usuario_professor(), professorDto.chave_professor());
     }
 }
