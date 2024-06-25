@@ -2,9 +2,13 @@ package projetoWebQuiz.Backend.Services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import projetoWebQuiz.Backend.Dtos.QuestaoDuasDto;
 import projetoWebQuiz.Backend.Dtos.QuestaoQuatroDto;
+import projetoWebQuiz.Backend.Mappers.QuestaoDuasMapper;
 import projetoWebQuiz.Backend.Mappers.QuestaoQuatroMapper;
+import projetoWebQuiz.Backend.Models.QuestaoDuas;
 import projetoWebQuiz.Backend.Models.QuestaoQuatro;
+import projetoWebQuiz.Backend.Repositories.QuestaoDuasRepository;
 import projetoWebQuiz.Backend.Repositories.QuestaoQuatroRepository;
 
 import java.util.Collections;
@@ -19,19 +23,35 @@ public class QuestaoService {
     @Autowired
     private QuestaoQuatroMapper questaoQuatroMapper;
 
-    public QuestaoQuatroDto pegarQuestaoQuatro(){
-        List<QuestaoQuatro> questoesQuatro = questaoQuatroRepository.findAll();
+    @Autowired
+    private QuestaoDuasRepository questaoDuasRepository;
+
+    @Autowired
+    private QuestaoDuasMapper questaoDuasMapper;
+
+    public QuestaoQuatroDto pegarQuestaoQuatro(int id_categoria){
+        // Pegando uma lista com todas as questões do banco e embaralhando
+        List<QuestaoQuatro> questoesQuatro = questaoQuatroRepository.findByIdCategoria(id_categoria);
         Collections.shuffle(questoesQuatro);
 
-        QuestaoQuatroDto questaoDto = questaoQuatroMapper.toDTO(questoesQuatro.get(0));
+        // Pegando a primeira da lista e transformando em dto
+        QuestaoQuatroDto questaoQuatroDto = questaoQuatroMapper.toDTO(questoesQuatro.get(0));
 
-        // Exemplo de lógica para adicionar opções
-        // Aqui você pode implementar a lógica para selecionar e adicionar as opções
-        // List<String> opcoes = selecionarOpcoes(questoesQuatro.get(0));
-        // questaoDto.setOpcao2(opcoes.get(0));
-        // questaoDto.setOpcao3(opcoes.get(1));
-        // questaoDto.setOpcao4(opcoes.get(2));
+        // Setando os valores das outras opções (opções erradas)
+        questaoQuatroDto.setOpcao2(questoesQuatro.get(1).getResposta());
+        questaoQuatroDto.setOpcao3(questoesQuatro.get(2).getResposta());
+        questaoQuatroDto.setOpcao4(questoesQuatro.get(3).getResposta());
 
-        return questaoDto;
+        // retornando o json com todas as infos necessárias
+        return questaoQuatroDto;
     }
+
+    public QuestaoDuasDto pegarQuestaoDuas(int id_categoria){
+        List<QuestaoDuas> questoesDuas = questaoDuasRepository.findByIdCategoria(id_categoria);
+        Collections.shuffle(questoesDuas);
+
+        QuestaoDuasDto questaoDuasDto = questaoDuasMapper.toDTO(questoesDuas.get(0));
+        return questaoDuasDto;
+    }
+
 }

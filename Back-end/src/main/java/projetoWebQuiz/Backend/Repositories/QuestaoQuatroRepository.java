@@ -9,6 +9,6 @@ import java.util.List;
 public interface QuestaoQuatroRepository extends MongoRepository<QuestaoQuatro, String> {
 
     @Query("{ 'id_categoria': ?0 }")
-    List<QuestaoQuatro> findByIdCategoria(String id_categoria);
+    List<QuestaoQuatro> findByIdCategoria(int id_categoria);
 
 }

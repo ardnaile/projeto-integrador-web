@@ -7,14 +7,16 @@ import projetoWebQuiz.Backend.Models.QuestaoQuatro;
 @Component
 public class QuestaoQuatroMapper {
 
+    // quando inicializa o dto por meio da conversão, as opcoes são nulas
+
     public QuestaoQuatroDto toDTO(QuestaoQuatro questaoQuatro){
         return new QuestaoQuatroDto(
                 questaoQuatro.getEnunciado(),
                 questaoQuatro.getResposta(),
                 questaoQuatro.getDica(),
-                questaoQuatro.getOpcao2(),
-                questaoQuatro.getOpcao3(),
-                questaoQuatro.getOpcao4()
+                null,
+                null,
+                null
         );
     }
 }
