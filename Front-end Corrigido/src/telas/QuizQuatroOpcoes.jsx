@@ -51,7 +51,7 @@ const QuizQuatroOpcoes = () => {
     clearInterval(intervalId);
     const id = setInterval(() => {
       setTempoRestante(tempoRestante => tempoRestante - 1);
-    }, 1000);
+    }, 3800);
     setIntervalId(id);
   };
 
@@ -203,7 +203,7 @@ const QuizQuatroOpcoes = () => {
       <div className="flex-1 flex items-center justify-center flex-col">
         {questaoAtual && (
           <div className="bg-opacity-80 p-8 rounded-lg max-w-md w-full">
-            <div className="text-left mb-4 relative">
+            <div className="text-center mb-4 relative">
               <h2 className="text-xl font-bold">{questaoAtual.enunciado}</h2>
               <div className="grid grid-cols-2 gap-4 mt-4">
                 {questaoAtual.opcoesEmbaralhadas.map((opcao, index) => (
@@ -230,12 +230,14 @@ const QuizQuatroOpcoes = () => {
                 ))}
               </div>
               {perguntaSelecionada !== null && (
-                <button
-                  onClick={handleConfirmarResposta}
-                  className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl mt-4"
-                >
-                  Confirmar
-                </button>
+                <div className="flex justify-center mt-4">
+                  <button
+                    onClick={handleConfirmarResposta}
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
+                  >
+                    Confirmar
+                  </button>
+                </div>
               )}
             </div>
           </div>
