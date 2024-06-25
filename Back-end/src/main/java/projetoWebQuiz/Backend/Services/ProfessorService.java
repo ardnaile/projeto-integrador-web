@@ -10,6 +10,7 @@ import projetoWebQuiz.Backend.Repositories.TurmaRepository;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -53,8 +54,12 @@ public class ProfessorService {
         }
     }
 
-    public boolean validarProfessor(String usuario, String chave) {
+    public String validarProfessor(String usuario, String chave) {
         Optional<Professor> professor = professorRepository.findByUsuarioAndChaveProfessor(usuario, chave);
-        return professor.isPresent();
+        if (professor.isPresent()){
+            return String.valueOf(professor.get().getId_professor());
+        } else {
+            throw new NoSuchElementException("Professor não encontrado.");
+        }
     }
 }

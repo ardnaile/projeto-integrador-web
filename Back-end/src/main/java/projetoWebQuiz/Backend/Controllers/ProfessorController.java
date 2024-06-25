@@ -12,6 +12,7 @@ import projetoWebQuiz.Backend.Repositories.ProfessorRepository;
 import projetoWebQuiz.Backend.Services.ProfessorService;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 public class ProfessorController {
@@ -63,7 +64,14 @@ public class ProfessorController {
     }
 
     @PostMapping("/validarProfessor")
-    public boolean validarProfessor(@RequestBody ProfessorDto professorDto){
-        return professorService.validarProfessor(professorDto.usuario_professor(), professorDto.chave_professor());
+    public ResponseEntity<String> validarProfessor(@RequestBody ProfessorDto professorDto){
+        try {
+            String professorId = professorService.validarProfessor(professorDto.usuario_professor(), professorDto.chave_professor());
+            return ResponseEntity.ok(professorId);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno no servidor.");
+        }
     }
 }
