@@ -20,7 +20,11 @@ public class ProfessorService {
     private TurmaRepository turmaRepository;
 
     // Create
-    public Professor salvarProfessor(Professor professor){
+    public Professor salvarProfessor(Professor professor) throws Exception {
+        Optional<Professor> existente = professorRepository.findByUsuario(professor.getUsuario_professor());
+        if (existente.isPresent()) {
+            throw new Exception("Usuário já existe.");
+        }
         return professorRepository.save(professor);
     }
 
@@ -47,5 +51,10 @@ public class ProfessorService {
         } else {
             return null;
         }
+    }
+
+    public boolean validarUsuario(String usuario, String chave) {
+        Optional<Professor> professor = professorRepository.findByUsuarioAndChaveProfessor(usuario, chave);
+        return professor.isPresent();
     }
 }
