@@ -2,7 +2,7 @@ package projetoWebQuiz.Backend.Dtos;
 
 public record QuestaoDuasDto(
         String enunciado,
-        Boolean resposta,
+        int resposta,
         String dica
 ) {
 }

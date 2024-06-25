@@ -19,7 +19,7 @@ const NomeTurma = () => {
 
   
   const handleFetchRequest = async () => {
-        const response = await fetch(`http://192.168.100.40:8080/verAlunosDaTurma/${inputValue}`,{
+        const response = await fetch(`http://localhost:8080/verAlunosDaTurma/${inputValue}`,{
           method:'GET'})
         if (!response.ok) {
           alert('Erro ao requisitar dados')

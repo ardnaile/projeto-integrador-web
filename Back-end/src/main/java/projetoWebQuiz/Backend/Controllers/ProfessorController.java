@@ -33,6 +33,9 @@ public class ProfessorController {
 
             return ResponseEntity.ok("Professor cadastrado com sucesso. ID: " + novoProfessor.getId_professor());
     } catch (Exception e){
+            if (e.getMessage().equals("Usuário já existe.")){
+                return ResponseEntity.status(HttpStatus.CONFLICT).body("Erro ao cadastrar professor: usuário já existe");
+            }
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao cadastrar professor: " + e.getMessage());
         }
     }
@@ -57,5 +60,10 @@ public class ProfessorController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostMapping("/validarProfessor")
+    public boolean validarProfessor(@RequestBody ProfessorDto professorDto){
+        return professorService.validarProfessor(professorDto.usuario_professor(), professorDto.chave_professor());
     }
 }

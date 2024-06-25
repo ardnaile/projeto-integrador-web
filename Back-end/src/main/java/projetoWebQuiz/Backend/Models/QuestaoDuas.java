@@ -9,11 +9,11 @@ public class QuestaoDuas {
     private String id_questao_duas;
 
     private String enunciado;
-    private Boolean resposta;
+    private int resposta;
     private String dica;
     private int id_categoria;
 
-    public QuestaoDuas(String id_questao_duas, String enunciado, Boolean resposta, String dica, int id_categoria) {
+    public QuestaoDuas(String id_questao_duas, String enunciado, int resposta, String dica, int id_categoria) {
         this.id_questao_duas = id_questao_duas;
         this.enunciado = enunciado;
         this.resposta = resposta;
@@ -37,11 +37,11 @@ public class QuestaoDuas {
         this.enunciado = enunciado;
     }
 
-    public Boolean getResposta() {
+    public int getResposta() {
         return resposta;
     }
 
-    public void setResposta(Boolean resposta) {
+    public void setResposta(int resposta) {
         this.resposta = resposta;
     }
 

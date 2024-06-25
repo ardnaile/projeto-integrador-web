@@ -14,4 +14,8 @@ public interface ProfessorRepository extends MongoRepository<Professor, String> 
 
     @Query("{ 'chave_professor': ?0 }")
     Optional<Professor> findByChave(String chave_professor);
+
+    @Query("{ 'usuario_professor': ?0, 'chave_professor': ?1 }")
+    Optional<Professor> findByUsuarioAndChaveProfessor(String usuarioProfessor, String chaveProfessor);
+
 }

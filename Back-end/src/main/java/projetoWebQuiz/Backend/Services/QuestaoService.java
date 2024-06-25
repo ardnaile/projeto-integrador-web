@@ -11,60 +11,47 @@ import projetoWebQuiz.Backend.Models.QuestaoQuatro;
 import projetoWebQuiz.Backend.Repositories.QuestaoDuasRepository;
 import projetoWebQuiz.Backend.Repositories.QuestaoQuatroRepository;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 @Service
 public class QuestaoService {
-    @Autowired
-    private QuestaoDuasRepository questaoDuasRepository;
 
     @Autowired
     private QuestaoQuatroRepository questaoQuatroRepository;
 
     @Autowired
-    private QuestaoDuasMapper questaoDuasMapper;
-
-    @Autowired
     private QuestaoQuatroMapper questaoQuatroMapper;
 
-    // pegar uma questão de verdadeiro ou falso aleatória
-    // retorna um json com enunciado, resposta e dica
-    public QuestaoDuasDto pegarQuestaoDuas(){
-        List<QuestaoDuasDto> todasQuestoesDuas = new ArrayList<>();
+    @Autowired
+    private QuestaoDuasRepository questaoDuasRepository;
 
-        // Adicionar questões de verdadeiro ou falso à lista
-        List<QuestaoDuas> questoesDuas = questaoDuasRepository.findAll();
+    @Autowired
+    private QuestaoDuasMapper questaoDuasMapper;
 
+    public QuestaoQuatroDto pegarQuestaoQuatro(int id_categoria){
+        // Pegando uma lista com todas as questões do banco e embaralhando
+        List<QuestaoQuatro> questoesQuatro = questaoQuatroRepository.findByIdCategoria(id_categoria);
+        Collections.shuffle(questoesQuatro);
 
-        for (QuestaoDuas question : questoesDuas) {
-            QuestaoDuasDto questaoDto = questaoDuasMapper.toDTO(question);
-            todasQuestoesDuas.add(questaoDto);
-        }
-        // Embaralhando a lista
-        Collections.shuffle(todasQuestoesDuas);
-        return todasQuestoesDuas.get(0);
+        // Pegando a primeira da lista e transformando em dto
+        QuestaoQuatroDto questaoQuatroDto = questaoQuatroMapper.toDTO(questoesQuatro.get(0));
+
+        // Setando os valores das outras opções (opções erradas)
+        questaoQuatroDto.setOpcao2(questoesQuatro.get(1).getResposta());
+        questaoQuatroDto.setOpcao3(questoesQuatro.get(2).getResposta());
+        questaoQuatroDto.setOpcao4(questoesQuatro.get(3).getResposta());
+
+        // retornando o json com todas as infos necessárias
+        return questaoQuatroDto;
     }
-    // mudar para selecionar as questoes antes de passar pra dto
-    public QuestaoQuatroDto pegarQuestaoQuatro(){
-        List<QuestaoQuatroDto> todasQuestoesQuatro = new ArrayList<>();
 
-        // Adicionar questões de verdadeiro ou falso à lista
-        List<QuestaoQuatro> questoesQuatro = questaoQuatroRepository.findAll();
-        for (QuestaoQuatro question : questoesQuatro) {
-            QuestaoQuatroDto questaoDto = questaoQuatroMapper.toDTO(question);
-            todasQuestoesQuatro.add(questaoDto);
-        }
-        // Embaralhando a lista
-        Collections.shuffle(todasQuestoesQuatro);
+    public QuestaoDuasDto pegarQuestaoDuas(int id_categoria){
+        List<QuestaoDuas> questoesDuas = questaoDuasRepository.findByIdCategoria(id_categoria);
+        Collections.shuffle(questoesDuas);
 
-        // selecionando as questoes
-        QuestaoQuatroDto selecionada = todasQuestoesQuatro.get(0);
-        // get(1), get(2), etc...
-
-        // Adicionar a lógica para adicionar os valores nas opções
-        return null;
+        QuestaoDuasDto questaoDuasDto = questaoDuasMapper.toDTO(questoesDuas.get(0));
+        return questaoDuasDto;
     }
 
 }

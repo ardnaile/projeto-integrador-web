@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import projetoWebQuiz.Backend.Models.Estudante;
+import projetoWebQuiz.Backend.Models.Professor;
 import projetoWebQuiz.Backend.Models.Turma;
 import projetoWebQuiz.Backend.Repositories.EstudanteRepository;
 import projetoWebQuiz.Backend.Repositories.TurmaRepository;
@@ -31,4 +32,8 @@ public class EstudanteService {
         return estudanteRepository.findById(id);
     }
 
+    public boolean validarEstudante(String chave) {
+        Optional<Estudante> estudante = estudanteRepository.findByChaveEstudante(chave);
+        return estudante.isPresent();
+    }
 }
