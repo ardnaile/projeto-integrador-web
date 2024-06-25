@@ -9,11 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import projetoWebQuiz.Backend.Dtos.QuestaoDuasDto;
 import projetoWebQuiz.Backend.Dtos.QuestaoQuatroDto;
+import projetoWebQuiz.Backend.Models.QuestaoDuas;
+import projetoWebQuiz.Backend.Repositories.QuestaoDuasRepository;
 import projetoWebQuiz.Backend.Services.QuestaoService;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/questoes")
+@RequestMapping
 public class QuestaoController {
+    @Autowired
+    private QuestaoDuasRepository questaoDuasRepository;
 
     @Autowired
     private QuestaoService questaoService;
@@ -46,5 +52,11 @@ public class QuestaoController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(null);
         }
+    }
+
+    @GetMapping("/verTodasQuestoesDuas")
+    public ResponseEntity<List<QuestaoDuas>> questoesDuas(){
+        List<QuestaoDuas> lista = questaoDuasRepository.findAll();
+        return ResponseEntity.ok(lista);
     }
 }
