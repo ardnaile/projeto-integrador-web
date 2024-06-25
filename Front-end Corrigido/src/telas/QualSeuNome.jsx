@@ -21,7 +21,7 @@ const QualSeuNome = ({turma}) => {
                 </Link>
             <div className="mt-30 flex flex-col items-center space-y-10 justify-center h-screen">
                 <Input id='usuario_estudante'/>
-                <Link>
+                <Link to={'/CodigoSecreto'}>
                     <BotaoConfirma onClick="coletarInfoQualSeuNome()"/>
                 </Link>
             </div>

@@ -18,7 +18,7 @@ const Login = () => {
     };
     
     const handleFetchRequest = () => {
-      fetch(`http://192.168.100.40:8080/buscaNomeProfessor/6674b7cbdee3d1539a9548eb`,{
+      fetch(`http://localhost:8080/buscaNomeProfessor/6674b7cbdee3d1539a9548eb`,{
           method: 'GET',
         })
           .then((response) => response.json())
