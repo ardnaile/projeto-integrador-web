@@ -1,5 +1,3 @@
-// Categorias.js
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import background from '../fundos/fundo-quiz.svg';
@@ -17,19 +15,19 @@ const Categorias = () => {
   const navigate = useNavigate();
   const [categoriasSelecionadas, setCategoriasSelecionadas] = useState([]);
 
-  // Função para alternar a seleção de uma categoria
-  const toggleCategoria = (categoria) => {
-    if (categoriasSelecionadas.includes(categoria)) {
-      setCategoriasSelecionadas(categoriasSelecionadas.filter(cat => cat !== categoria));
+  // Função para adicionar ou remover categoria da lista de selecionadas
+  const toggleCategoria = (idCategoria) => {
+    if (categoriasSelecionadas.includes(idCategoria)) {
+      setCategoriasSelecionadas(categoriasSelecionadas.filter(cat => cat !== idCategoria));
     } else {
-      setCategoriasSelecionadas([...categoriasSelecionadas, categoria]);
+      setCategoriasSelecionadas([...categoriasSelecionadas, idCategoria]);
     }
   };
 
   // Função para iniciar o quiz com as categorias selecionadas
   const handleIniciarQuiz = () => {
     if (categoriasSelecionadas.length > 0) {
-      navigate(`/quiz-quatro-opcoes?categorias=${categoriasSelecionadas.join(',')}`);
+      navigate(`/QuizQuatroOpcoes?categorias=${categoriasSelecionadas.join(',')}`);
     }
   };
 
@@ -42,17 +40,17 @@ const Categorias = () => {
       
       <div className="absolute inset-0 mt-[220px] flex flex-col justify-center items-center">
         <div className="grid grid-cols-4 grid-rows-2 gap-4 mb-10">
-          <BotaoMatematica onClick={() => toggleCategoria('Matemática')} />
-          <BotaoTecnologia onClick={() => toggleCategoria('Tecnologia')} />
-          <BotaoIdiomas onClick={() => toggleCategoria('Idiomas')} />
-          <BotaoAnimais onClick={() => toggleCategoria('Animais')} />
-          <BotaoComida onClick={() => toggleCategoria('Comida')} />
-          <BotaoNatureza onClick={() => toggleCategoria('Natureza')} />
-          <BotaoArtes onClick={() => toggleCategoria('Artes')} />
-          <BotaoEsportes onClick={() => toggleCategoria('Esportes')} />
+          <BotaoMatematica onClick={() => toggleCategoria(1)} />
+          <BotaoTecnologia onClick={() => toggleCategoria(2)} />
+          <BotaoIdiomas onClick={() => toggleCategoria(3)} />
+          <BotaoAnimais onClick={() => toggleCategoria(7)} />
+          <BotaoComida onClick={() => toggleCategoria(4)} />
+          <BotaoNatureza onClick={() => toggleCategoria(9)} />
+          <BotaoArtes onClick={() => toggleCategoria(10)} />
+          <BotaoEsportes onClick={() => toggleCategoria(11)} />
         </div>
         
-        {/* Componente BotaoIniciar */}
+        {/* Componente BotaoIniciar com propriedade onClick e disabled */}
         <BotaoIniciar onClick={handleIniciarQuiz} disabled={isBotaoIniciarDisabled} />
       </div>
     </div>
