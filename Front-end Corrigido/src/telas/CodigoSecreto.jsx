@@ -29,10 +29,9 @@ const CodigoSecreto = () => {
     const textoGerado = gerarTextoAleatorio(1, 5, 10); // Gera um texto com 1 palavra, cada palavra tendo entre 5 e 10 caracteres
 
     const handleInputChange = (value) => {
-        setInputValue(value);
+        setInputValue(value.target.valu);
       };
-    
-    console.log()
+
     const requestBody = {
         usuario_estudante: 'Rafael',
         chave_estuandae: inputValue,
