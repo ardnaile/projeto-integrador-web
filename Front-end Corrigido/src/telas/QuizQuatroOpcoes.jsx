@@ -51,16 +51,32 @@ const QuizQuatroOpcoes = () => {
     clearInterval(intervalId);
     const id = setInterval(() => {
       setTempoRestante(tempoRestante => tempoRestante - 1);
-    }, 3800);
+    }, 1000);
     setIntervalId(id);
   };
 
   const fetchQuestao = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/questoes/quatro');
+      const urls = [
+        'http://localhost:8080/questaoQuatro/1',
+        'http://localhost:8080/questaoQuatro/2',
+        'http://localhost:8080/questaoQuatro/3',
+        'http://localhost:8080/questaoQuatro/7',
+        'http://localhost:8080/questaoQuatro/9',
+        'http://localhost:8080/questaoQuatro/10',
+        'http://localhost:8080/questaoQuatro/11',
+        'http://localhost:8080/questaoQuatro/12',
+        'http://localhost:8080/questaoQuatro/5',
+        'http://localhost:8080/questaoQuatro/8',
+      ];
+
+      const randomUrl = urls[Math.floor(Math.random() * urls.length)]; // Escolhe uma URL aleatória
+      const response = await fetch(randomUrl);
+
       if (!response.ok) {
         throw new Error('Erro ao buscar questão');
       }
+
       const questao = await response.json();
       const opcoesEmbaralhadas = shuffleOptions([
         questao.resposta,
