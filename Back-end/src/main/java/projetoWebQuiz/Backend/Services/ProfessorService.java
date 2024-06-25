@@ -53,7 +53,7 @@ public class ProfessorService {
         }
     }
 
-    public boolean validarUsuario(String usuario, String chave) {
+    public boolean validarProfessor(String usuario, String chave) {
         Optional<Professor> professor = professorRepository.findByUsuarioAndChaveProfessor(usuario, chave);
         return professor.isPresent();
     }

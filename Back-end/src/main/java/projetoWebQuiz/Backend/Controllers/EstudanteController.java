@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import projetoWebQuiz.Backend.Dtos.EstudanteDto;
+import projetoWebQuiz.Backend.Dtos.LoginEstudanteDto;
+import projetoWebQuiz.Backend.Dtos.ProfessorDto;
 import projetoWebQuiz.Backend.Mappers.EstudanteMapper;
 import projetoWebQuiz.Backend.Models.Estudante;
 import projetoWebQuiz.Backend.Models.Professor;
@@ -28,7 +30,7 @@ public class EstudanteController {
     @Autowired
     TurmaRepository turmaRepository;
 
-    @PostMapping("cadastroEstudante")
+    @PostMapping("/cadastroEstudante")
     public ResponseEntity<String> cadastroEstudante(@RequestBody EstudanteDto estudanteDto) {
         try{
             Estudante estudante = estudanteMapper.toEntity(estudanteDto);
@@ -48,5 +50,10 @@ public class EstudanteController {
     public ResponseEntity<List<Estudante>> verTodosEstudantes(){
         List<Estudante> lista = estudanteService.verTodosEstudantes();
         return ResponseEntity.ok(lista);
+    }
+
+    @PostMapping("/validarEstudante")
+    public boolean validarProfessor(@RequestBody LoginEstudanteDto loginEstudanteDto){
+        return estudanteService.validarEstudante(loginEstudanteDto.chave_estudante());
     }
 }
