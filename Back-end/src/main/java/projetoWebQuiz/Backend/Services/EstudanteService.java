@@ -11,6 +11,7 @@ import projetoWebQuiz.Backend.Repositories.EstudanteRepository;
 import projetoWebQuiz.Backend.Repositories.TurmaRepository;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -32,8 +33,13 @@ public class EstudanteService {
         return estudanteRepository.findById(id);
     }
 
-    public boolean validarEstudante(String chave) {
+    public String validarEstudante(String chave) {
         Optional<Estudante> estudante = estudanteRepository.findByChaveEstudante(chave);
-        return estudante.isPresent();
+        if (estudante.isPresent()) {
+            return String.valueOf(estudante.get().getId_estudante());
+        } else {
+            throw new NoSuchElementException("Estudante não encontrado com a chave fornecida.");
+        }
     }
+
 }
