@@ -28,6 +28,7 @@ import MinhasTurmas from './telas/MinhasTurmas';
 import QuizVerdadeiroFalso from './telas/QuizVerdadeiroFalso';
 import QuizQuatroOpcoes from './telas/QuizQuatroOpcoes';
 import Turma from './telas/Turma';
+import RespostaIncorretaVF from './telas/RespostaIncorretaVF';
 
 const router = createBrowserRouter([
   {
@@ -113,6 +114,10 @@ const router = createBrowserRouter([
   {
     path:"/QuizQuatroOpcoes",
     element:<QuizQuatroOpcoes/>,
+  },
+  {
+    path:"/RespostaIncorretaVF",
+    element:<RespostaIncorretaVF/>,
   },
   
 ]);

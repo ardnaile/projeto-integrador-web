@@ -7,11 +7,15 @@ const BotaoVoltar = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        if (location.pathname.includes('/QuizQuatroOpcoes')) { // Verifica se está na tela de quiz
-            navigate('/Categorias'); // Redireciona para a tela de categorias
-        } else {
-            // Lógica caso queira lidar com outra ação ou não fazer nada
-        }
+        // Verifica se a rota atual é QuizQuatroOpcoes
+        if (location.pathname.includes('/QuizQuatroOpcoes')) {
+            navigate('/Categorias');
+        } 
+        // Verifica se a rota atual é QuizVerdadeiroFalso
+        else if (location.pathname.includes('/QuizVerdadeiroFalso')) {
+            navigate('/QuizVerdadeiroFalso');
+        } 
+        // Lida com outras rotas
     };
 
     return (
