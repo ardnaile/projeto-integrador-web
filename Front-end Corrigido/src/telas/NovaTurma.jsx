@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { Link,useNavigate, useParams } from "react-router-dom";
 import axios from 'axios';
 
 import BotaoVoltar from "../components/BotaoVoltar";
 import background from "../fundos/fundo-nova-turma.svg";
 import Input from "../components/Input";
 import BotaoConfirma from "../components/BotaoConfirma";
+import InputTurma from "../components/InputTurma";
 
 const NovaTurma = () => {
+    let {id} = useParams();
     const [dados, setDados] = useState('');
     const [inputValue, setInputValue] = useState('');
     const navigate = useNavigate();
@@ -19,7 +21,7 @@ const NovaTurma = () => {
 
     const requestBody = {
         nome_turma:inputValue, 
-        id_professor: "4" 
+        id_professor: id 
     }
   
     const handleFetchRequest = () => {
@@ -35,7 +37,7 @@ const NovaTurma = () => {
   
               if (data == 200) {
                 alert("Cadastrado com sucesso!");
-                navigate('/PainelProfessor');
+                navigate(`/PainelProfessor/${id}`);
               } else {
                 alert('Falha ao gravar os dados');
               }
@@ -49,11 +51,11 @@ const NovaTurma = () => {
                 <img src={background} alt="Background" className="object-cover w-full h-full" /> 
             </div>
             <div className="absolute inset-0 flex flex-col items-center">
-                <Link to='/PainelProfessor'>
+                <Link to={`/PainelProfessor/${id}`}>
                     <BotaoVoltar />
                 </Link>
                 <div className="flex flex-col items-center space-y-10 mt-[500px]">
-                    <Input
+                    <InputTurma
                         onInputChange={handleInputChange}
                         className={styleInput}
                         placeholder="Nome da Turma"

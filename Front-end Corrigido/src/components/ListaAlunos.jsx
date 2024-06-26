@@ -12,10 +12,11 @@ const CentralizedDiv = ({ children }) => {
   
 
   const ButtonList = ({ alunos }) => {
+    
     return (
     <div className="grid gap-6">
       {alunos.map((aluno, index) => (  
-        <Link to={`/turma/${aluno.id_estudante}`} key={index}>
+        // <Link to={`/turma/${aluno.id_estudante}`} key={index}>
           <div>
               <button
               className="bg-gray-100 w-full text-black px-6 py-4 rounded-3xl font-bold text-3xl text-wrap"
@@ -23,7 +24,7 @@ const CentralizedDiv = ({ children }) => {
               {aluno.usuario_estudante}
               </button>
           </div>
-        </Link>
+        // </Link>
       ))}
     </div>
   );  
@@ -34,6 +35,8 @@ const ListaAlunos = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const nome_turma = queryParams.get('nome_turma');
+  const professor = queryParams.get('professor');
+  
 
   useEffect(() => {
     const fetchTurmas = async () => {

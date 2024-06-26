@@ -16,6 +16,7 @@ import projetoWebQuiz.Backend.Repositories.TurmaRepository;
 import projetoWebQuiz.Backend.Services.EstudanteService;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
@@ -38,7 +39,7 @@ public class EstudanteController {
 
             if (turma != null){
                 Estudante novoEstudante = estudanteService.salvarEstudante(estudante);
-                return ResponseEntity.ok("Estudante cadastrado com sucesso. ID: " + novoEstudante.getId_estudante());
+                return ResponseEntity.ok(novoEstudante.getId_estudante());//"Estudante cadastrado com sucesso. ID: " +
             } else {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("A turma informada não existe!");
             }
@@ -53,7 +54,14 @@ public class EstudanteController {
     }
 
     @PostMapping("/validarEstudante")
-    public boolean validarProfessor(@RequestBody LoginEstudanteDto loginEstudanteDto){
-        return estudanteService.validarEstudante(loginEstudanteDto.chave_estudante());
+    public ResponseEntity<String> validarEstudante(@RequestParam String chave) {
+        try {
+            String estudanteId = estudanteService.validarEstudante(chave);
+            return ResponseEntity.ok(estudanteId);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno do servidor.");
+        }
     }
 }

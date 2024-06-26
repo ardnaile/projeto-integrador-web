@@ -181,7 +181,7 @@ const QuizQuatroOpcoes = () => {
       <div className="mt-4 text-black text-center">
         <div className={`flex items-center rounded-lg px-4 py-2 ${getColorClass(seconds)}`}>
           <FiClock className="w-24 h-24 mr-2" style={{ transform: `rotate(${rotateSeconds}deg)` }} />
-          <span className="block font-bold">Tempo restante: {seconds} segundos</span>
+          <span className="block font-bold ">Tempo restante: {seconds} segundos</span>
         </div>
       </div>
 

@@ -13,7 +13,7 @@ import projetoWebQuiz.Backend.Services.TurmaService;
 import java.util.List;
 
 @RestController
-public class TurmaController {
+public class    TurmaController {
     @Autowired
     TurmaMapper turmaMapper;
     @Autowired

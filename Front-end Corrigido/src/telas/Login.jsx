@@ -7,29 +7,43 @@ import background from "../fundos/fundo-login.svg";
 import Input from "../components/Input";
 import BotaoConfirma from "../components/BotaoConfirma";
 import botaocadastro from "../botoes/botao-nao-possuo-conta.svg"
+import InputSenha from '../components/InputSenha';
 
 const Login = () => {
-    const [inputValue, setInputValue] = useState('');
+    const [inputValueUsu, setInputValueUsu] = useState('');
+    const [inputValuePass, setInputValuePass] = useState('');
     const [dados,setDados] = useState('');
     const navigate = useNavigate();
 
-    const handleInputChange = (value) => {
-      setInputValue(value);
+    const handleInputChangeUsu = (value) => {
+      setInputValueUsu(value);
     };
     
-    const handleFetchRequest = () => {
-      fetch(`http://localhost:8080/buscaNomeProfessor/6674b7cbdee3d1539a9548eb`,{
-          method: 'GET',
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            setDados(data[0])
+    const handleInputChangePass = (value) => {
+      setInputValuePass(value);
+    };
 
-            console.log(inputValue,dados)
-            if (inputValue == dados) {
+    const requestBody = {
+      usuario_professor: inputValueUsu,
+      chave_professor: inputValuePass,
+    };
+
+
+    const handleFetchRequest = () => {
+      fetch(`http://localhost:8080/validarProfessor`,{
+          method: 'POST',
+          headers: { 'Content-type': 'application/json' },
+          body: JSON.stringify(requestBody)
+        })
+          
+          .then((response) => response.text())
+          .then((data) => {
+            console.log(data)
+            setDados(data)
+            if (data != 'Professor não encontrado.' ) {
               alert("Logado com sucesso!");
-              navigate('/PainelProfessor');
-            } else {
+              navigate(`/PainelProfessor/${data}`);
+            }else {
               alert('Falha na autenticação');
             }
           })
@@ -47,10 +61,9 @@ const Login = () => {
                     <BotaoVoltar />
                 </Link>
                 <div className="flex flex-col items-center space-y-10 justify-center h-screen mt-20">
-                    <Input onInputChange={handleInputChange}/>
-                    {/* <Link to='/PainelProfessor'> */}
-                        <BotaoConfirma onButtonClick={handleFetchRequest}/>
-                    {/* </Link> */}
+                    <Input onInputChange={handleInputChangeUsu}/>
+                    <InputSenha onInputChange={handleInputChangePass}/>
+                    <BotaoConfirma onButtonClick={handleFetchRequest}/>
                 </div>
                 <div>
                     <Link to="/CriarConta">

@@ -1,13 +1,23 @@
-import React, {useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, {useEffect, useState} from "react";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 
 import BotaoVoltar from "../components/BotaoVoltar";
 import background from "../fundos/fundo-qual-seu-nome.svg";
 import Input from "../components/Input";
 import BotaoConfirma from "../components/BotaoConfirma";
-import NomeTurma from "./NomeTurma";
 
-const QualSeuNome = ({turma}) => {
+const QualSeuNome = () => {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    // const {nome_turma} = useParams();
+    const nome_turma = queryParams.get('nome_turma');
+    // const professor = queryParams.get('professor');
+    const [inputValue , setInputValue] = useState('');
+
+    const handleInputChange = (value) => {
+        setInputValue(value);
+      };
+   
     <script src='script.js'></script>
    
     return(
@@ -20,8 +30,8 @@ const QualSeuNome = ({turma}) => {
                     <BotaoVoltar />
                 </Link>
             <div className="mt-30 flex flex-col items-center space-y-10 justify-center h-screen">
-                <Input id='usuario_estudante'/>
-                <Link to={'/CodigoSecreto'}>
+                <Input onInputChange={handleInputChange} id='usuario_estudante'/>
+                <Link to={`/CodigoSecreto?nome_turma=${nome_turma}&nome_aluno=${inputValue}`}>
                     <BotaoConfirma onClick="coletarInfoQualSeuNome()"/>
                 </Link>
             </div>

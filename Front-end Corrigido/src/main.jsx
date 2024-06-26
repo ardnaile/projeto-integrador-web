@@ -87,7 +87,7 @@ const router = createBrowserRouter([
     element:<SaibaMais/>,
   },
   {
-    path:"/NovaTurma",
+    path:"/NovaTurma/:id",
     element:<NovaTurma/>,
   },
   {
@@ -95,7 +95,7 @@ const router = createBrowserRouter([
     element:<TestandoTelas/>,
   },
   {
-    path:"/PainelProfessor",
+    path:"/PainelProfessor/:id",
     element:<PainelProfessor/>,
   },
   {
@@ -103,7 +103,7 @@ const router = createBrowserRouter([
     element:<PainelAluno/>,
   },
   {
-    path:"/MinhasTurmas",
+    path:"/MinhasTurmas/:id",
     element:<MinhasTurmas/>,
   },
   {

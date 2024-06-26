@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useParams, useLocation } from 'react-router-dom';
 
 import background from '../fundos/fundo-principal.svg';
 import botao1 from '../botoes/botao-minhas-turmas.svg'
@@ -9,6 +10,7 @@ import FotosPerfil from "../components/FotosPerfil";
 import BotaoVoltar from "../components/BotaoVoltar";
 
 const PainelProfessor = () => {
+    const { id } = useParams();
     return(
         <div className="relative w-full h-screen flex justify-center items-center">
             <div className="absolute inset-0 overflow-hidden">
@@ -26,13 +28,13 @@ const PainelProfessor = () => {
             
                 <div className="absolute bottom-50 w-full flex flex-row justify-center items-center">
                     
-                    <Link to='/MinhasTurmas'>
+                    <Link to={`/MinhasTurmas/${id}`}>
                         <button>
                             <img src={botao1}/>
                         </button>
                     </Link>
 
-                    <Link to='/NovaTurma'>
+                    <Link to={`/NovaTurma/${id}`}>
                         <button>
                             <img src={botao2}/>
                         </button>

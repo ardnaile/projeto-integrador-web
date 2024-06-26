@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import BotaoVoltar from "../components/BotaoVoltar";
+import BotaoConfirma from "../components/BotaoConfirma";
 import background from "../fundos/fundo-código-secreto.svg";
 import BotaoOk from "../components/BotaoOk";
+import Input from "../components/Input";
+
 
 function gerarTextoAleatorio(numeroPalavras, tamanhoMinimoPalavra, tamanhoMaximoPalavra) {
     const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
@@ -24,19 +27,25 @@ function gerarTextoAleatorio(numeroPalavras, tamanhoMinimoPalavra, tamanhoMaximo
 const CodigoSecreto = () => {
     const navigate = useNavigate();
     const [dados, setDados] = useState('');
-    const[inputValue, setInputValue] = useState('')
+    const[inputValue, setInputValue] = useState('');
+    // const {nome_turma} = useParams();
+    // const {nome_aluno} = useParams();
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const nome_turma = queryParams.get('nome_turma');
+    const nome_aluno = queryParams.get('nome_aluno');
 
     const textoGerado = gerarTextoAleatorio(1, 5, 10); // Gera um texto com 1 palavra, cada palavra tendo entre 5 e 10 caracteres
 
     const handleInputChange = (value) => {
-        setInputValue(value.target.valu);
+        setInputValue(value);
       };
 
     const requestBody = {
-        usuario_estudante: 'Rafael',
-        chave_estuandae: inputValue,
-        qtd_acerto: 0,
-        turma: 'turma1'
+        usuario_estudante: nome_aluno,
+        chave_estudante: textoGerado,
+        qtd_acertos: 0,
+        turma: nome_turma
     }
 
     const handleFetchRequest = () => {
@@ -45,17 +54,14 @@ const CodigoSecreto = () => {
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(requestBody)
         })
-        .then((response) => response.status)
+        .then((response) => response.text())
         .then((data) => {
-            setDados(data)
-            console.log(data)
-
-            if (data === 200) {
-                alert("Cadastrado com sucesso!");
-                navigate('/Categorias');
-            } else {
+            if (data.ok) {
+                aconsole.log(data);
                 alert('Falha ao gravar os dados');
-                navigate('/Categorias');
+            } else {
+                alert("Cadastrado com sucesso!");
+                navigate(`/Categorias?${data}`);
             }
         })
         .catch((error) => console.log(error))
@@ -71,10 +77,8 @@ const CodigoSecreto = () => {
 
             <div className="absolute inset-0 flex flex-col items-center">
                 <div className="mt-[110px] flex flex-col items-center space-y-80 justify-center h-screen">
-                    <input onChange={handleInputChange} className={styleInput} value={textoGerado} type="text" id='chave_estudante' readOnly />
-                    <button className="w-60" onClick={handleFetchRequest}>
-                        <BotaoOk />
-                    </button>
+                     <input onDragEnter={handleInputChange} className={styleInput} value={textoGerado} type="text" id='chave_estudante' readOnly />
+                    <BotaoConfirma onButtonClick={handleFetchRequest}/>
                 </div>
             </div>
         </div>

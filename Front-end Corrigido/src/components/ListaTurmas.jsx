@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { Link } from "react-router-dom";
+import background from '../fundos/fundo-minhas-turmas.svg';
 
 const CentralizedDiv = ({ children }) => {
     return (
@@ -9,17 +10,16 @@ const CentralizedDiv = ({ children }) => {
     );
 };
 
-const ButtonList = ({ turmas }) => {
+const ButtonList = ({ turmas,idProfessores }) => {
+      const professor = idProfessores;
       return (
       <div className="grid gap-6">
         {turmas.map((turma, index) => (  
-          <Link to={`/turma/${turma.id_turma}?nome_turma=${(turma.nome_turma)}`} 
-                key={index}>
+          <Link to={`/turma/${turma.id_turma}?nome_turma=${encodeURIComponent(turma.nome_turma)}&professor=${encodeURIComponent(professor)}`}
+            key={index}>
             <div>
-                <button
-                className="bg-gray-100 w-full text-black px-6 py-4 rounded-3xl font-bold text-3xl text-wrap"
-                >
-                {turma.nome_turma}
+                <button className="bg-gray-100 w-full text-black px-6 py-4 rounded-3xl font-bold text-3xl text-wrap">
+                  {turma.nome_turma}
                 </button>
             </div>
           </Link>
@@ -28,13 +28,17 @@ const ButtonList = ({ turmas }) => {
     );  
 };
 
-const ListaTurma = () => {
+const ListaTurma = ({id}) => {
   const [turmas, setTurmas] = useState([]);
+  const [idProfessor, setIdProfessor] = useState(id);
+
   useEffect(() => {
     const fetchTurmas = async () => {
       try {
         // Faz a requisição para obter os dados das turmas
-        const response = await fetch('http://localhost:8080:8080/minhasTurmas/4'); // Substitua pela sua URL de API
+
+        const response = await fetch(`http://localhost:8080/minhasTurmas/${idProfessor}`);
+        
         if (!response.ok) {
           throw new Error('Falha ao obter os dados das turmas');
         }
@@ -45,10 +49,10 @@ const ListaTurma = () => {
           id_turma: turma.id_turma,
           nome_turma: turma.nome_turma
         }));
-
+    
         // Atualiza o estado com os dados simplificados
         setTurmas(turmasSimplificadas);
-      } catch (error) {
+      } catch (error) { 
         console.error('Erro ao carregar as turmas:', error);
       }
     };
@@ -59,9 +63,11 @@ const ListaTurma = () => {
 
     const minhasturmas = turmas;
     return(
+      <div >
         <CentralizedDiv>
-            <ButtonList turmas={minhasturmas} />
+          <ButtonList idProfessores={idProfessor} turmas={minhasturmas} />
         </CentralizedDiv>  
+      </div>
     )
 }
 
