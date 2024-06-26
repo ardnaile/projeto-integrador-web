@@ -51,7 +51,7 @@ const QuizQuatroOpcoes = () => {
     clearInterval(intervalId);
     const id = setInterval(() => {
       setTempoRestante(tempoRestante => tempoRestante - 1);
-    }, 3800);
+    }, 1000);
     setIntervalId(id);
   };
 
