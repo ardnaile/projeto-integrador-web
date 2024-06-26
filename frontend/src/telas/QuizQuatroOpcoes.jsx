@@ -51,7 +51,7 @@ const QuizQuatroOpcoes = () => {
     clearInterval(intervalId);
     const id = setInterval(() => {
       setTempoRestante(tempoRestante => tempoRestante - 1);
-    }, 1000);
+    }, 3800); // Reduzi o intervalo para 1000ms (1 segundo)
     setIntervalId(id);
   };
 
@@ -66,8 +66,6 @@ const QuizQuatroOpcoes = () => {
         'http://localhost:8080/questaoQuatro/10',
         'http://localhost:8080/questaoQuatro/11',
         'http://localhost:8080/questaoQuatro/12',
-        'http://localhost:8080/questaoQuatro/5',
-        'http://localhost:8080/questaoQuatro/8',
       ];
 
       const randomUrl = urls[Math.floor(Math.random() * urls.length)]; // Escolhe uma URL aleatória
@@ -203,9 +201,9 @@ const QuizQuatroOpcoes = () => {
       <div className="flex-1 flex items-center justify-center flex-col">
         {questaoAtual && (
           <div className="bg-opacity-80 p-8 rounded-lg max-w-md w-full">
-            <div className="text-center mb-4 relative">
-              <h2 className="text-xl font-bold">{questaoAtual.enunciado}</h2>
-              <div className="grid grid-cols-2 gap-4 mt-4">
+            <div className="text-center mb-6 relative">
+              <h2 className="text-3xl font-bold mb-4">{questaoAtual.enunciado}</h2>
+              <div className="grid grid-cols-2 gap-4">
                 {questaoAtual.opcoesEmbaralhadas.map((opcao, index) => (
                   <div key={`opcao-${index}`}>
                     <input
@@ -221,7 +219,7 @@ const QuizQuatroOpcoes = () => {
                       htmlFor={`opcao-${index}`}
                       className={`${
                         perguntaSelecionada === index ? 'bg-gray-400' : 'bg-white'
-                      } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-full text-left cursor-pointer block`}
+                      } hover:bg-green-400 text-black font-bold px-8 py-6 border-b-2 hover:border-white-500 rounded-xl w-full text-left cursor-pointer block text-2xl`} // Ajustei o tamanho do texto para text-lg e aumentei o px e py para 6 para aumentar o tamanho dos botões
                       onClick={() => handleSelecionarResposta(index)}
                     >
                       <span className="ml-2">{opcao}</span>
@@ -230,10 +228,10 @@ const QuizQuatroOpcoes = () => {
                 ))}
               </div>
               {perguntaSelecionada !== null && (
-                <div className="flex justify-center mt-4">
+                <div className="flex justify-center mt-6"> 
                   <button
                     onClick={handleConfirmarResposta}
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl text-2xl" // Aumentei o px de 6 para 8 para aumentar o tamanho horizontalmente
                   >
                     Confirmar
                   </button>
@@ -250,11 +248,11 @@ const QuizQuatroOpcoes = () => {
         {acertos === totalPerguntas && (
           <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
             <div className="bg-white p-8 rounded-md w-96 text-center">
-              <p className="text-lg mb-4">Parabéns! Você acertou todas as perguntas.</p>
-              <p className="text-lg mb-4">Você acertou {acertos} perguntas.</p>
+              <p className="text-xl mb-4">Parabéns! Você acertou todas as perguntas.</p>
+              <p className="text-xl mb-4">Você acertou {acertos} perguntas.</p>
               <button
                 onClick={handleConfirmarResultado}
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-12 rounded-xl text-2xl" // Aumentei o px de 4 para 8 para aumentar o tamanho horizontalmente
               >
                 Ver categorias
               </button>

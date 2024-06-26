@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { FiClock } from 'react-icons/fi';
 import background from '../fundos/fundo-principal.svg';
 import BotaoVoltar from '../components/BotaoVoltar';
@@ -10,7 +10,6 @@ import BotaoDica from '../components/BotaoDica';
 import RespostaIncorretaVF from './RespostaIncorretaVF';
 
 const QuizVerdadeiroFalso = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const [questao, setQuestao] = useState(null);
   const [opcaoSelecionada, setOpcaoSelecionada] = useState(null);
@@ -154,7 +153,7 @@ const QuizVerdadeiroFalso = () => {
 
   const handleConfirmarResultado = () => {
     setMostrarModal(false);
-    navigate('/categorias'); // Navega para a página de categorias usando useNavigate
+    // Utilize o Link para navegar para a página de categorias
   };
 
   if (respostaIncorreta) {
@@ -182,15 +181,15 @@ const QuizVerdadeiroFalso = () => {
 
       {mostrarModal && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-8 rounded-md w-96 text-center">
-            <p className="text-lg mb-4">Parabéns! Você acertou todas as perguntas.</p>
-            <p className="text-lg mb-4">Você acertou {acertos} perguntas.</p>
-            <button
-              onClick={handleConfirmarResultado}
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
-            >
-              Ver categorias
-            </button>
+            <div className="bg-white p-8 rounded-md w-96 text-center">
+              <p className="text-xl mb-4">Parabéns! Você acertou todas as perguntas.</p>
+              <p className="text-xl mb-4">Você acertou {acertos} perguntas.</p>
+              <button
+                onClick={handleConfirmarResultado}
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-12 rounded-xl text-2xl" 
+              >
+                Ver categorias
+              </button>
           </div>
         </div>
       )}
