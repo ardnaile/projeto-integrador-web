@@ -75,8 +75,8 @@ const QuizVerdadeiroFalso = () => {
 
       const questao = await response.json();
       const opcoesEmbaralhadas = shuffleOptions([
-        { texto: 'Verdadeiro', valor: '0' },
-        { texto: 'Falso', valor: '1' },
+        { texto: 'Verdadeiro', valor: '1' },
+        { texto: 'Falso', valor: '0' },
       ]);
       questao.opcoesEmbaralhadas = opcoesEmbaralhadas;
       setQuestao(questao);
@@ -114,7 +114,7 @@ const QuizVerdadeiroFalso = () => {
     }
 
     const respostaCorreta = questao?.resposta.toString();
-    const respostaSelecionadaTexto = opcaoSelecionada === 'verdadeiro' ? '0' : '1';
+    const respostaSelecionadaTexto = opcaoSelecionada === 'verdadeiro' ? '1' : '0';
 
     if (respostaCorreta === respostaSelecionadaTexto) {
       setAcertos(acertos => acertos + 1);
@@ -175,7 +175,7 @@ const QuizVerdadeiroFalso = () => {
       <div className="mt-4 text-black text-center">
         <div className={`flex items-center rounded-lg px-4 py-2 ${getColorClass(seconds)}`}>
           <FiClock className="w-24 h-24 mr-2" style={{ transform: `rotate(${rotateSeconds}deg)` }} />
-          <span className="block font-bold ">Tempo restante: {seconds} segundos</span>
+          <span className="block font-bold text-xl ">Tempo restante: {seconds} segundos</span>
         </div>
       </div>
 
@@ -195,7 +195,7 @@ const QuizVerdadeiroFalso = () => {
       )}
 
       <div className="flex-1 flex items-center justify-center flex-col">
-        <h2 className="text-2xl font-bold text-center mb-4">{questao.enunciado}</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">{questao.enunciado}</h2>
 
         <div className="flex items-center justify-center space-x-8">
           <BotaoVerdadeiro
