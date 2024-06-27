@@ -57,7 +57,7 @@ const NomeTurma = () => {
             <div className="mt-44 flex flex-col items-center space-y-10 justify-center h-screen">
                 <InputTurma onInputChange={handleInputChange}/>
                 {/* <Link to='/Categorias' className="w-60" > */}
-                       <BotaoConfirma onButtonClick={handleFetchRequest}/>
+                       <BotaoConfirma onClick={handleFetchRequest}/>
                 {/* </Link> */}
             </div>
             </div>

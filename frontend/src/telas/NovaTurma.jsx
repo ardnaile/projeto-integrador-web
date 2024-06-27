@@ -60,7 +60,7 @@ const NovaTurma = () => {
                         className={styleInput}
                         placeholder="Nome da Turma"
                     />
-                    <BotaoConfirma onButtonClick={handleFetchRequest} />
+                    <BotaoConfirma onClick={handleFetchRequest} />
                 </div>
             </div>
         </div>

@@ -63,7 +63,7 @@ const Login = () => {
                 <div className="flex flex-col items-center space-y-10 justify-center h-screen mt-20">
                     <Input onInputChange={handleInputChangeUsu}/>
                     <InputSenha onInputChange={handleInputChangePass}/>
-                    <BotaoConfirma onButtonClick={handleFetchRequest}/>
+                    <BotaoConfirma onClick={handleFetchRequest}/>
                 </div>
                 <div>
                     <Link to="/CriarConta">
