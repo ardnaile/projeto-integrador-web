@@ -14,6 +14,7 @@ import projetoWebQuiz.Backend.Repositories.QuestaoDuasRepository;
 import projetoWebQuiz.Backend.Services.QuestaoService;
 
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping
@@ -58,5 +59,15 @@ public class QuestaoController {
     public ResponseEntity<List<QuestaoDuas>> questoesDuas(){
         List<QuestaoDuas> lista = questaoDuasRepository.findAll();
         return ResponseEntity.ok(lista);
+    }
+
+    @GetMapping("/questaoAleatoria/{idCategoria}")
+    public ResponseEntity<Object> pegarQuestaoAleatoria(@PathVariable int idCategoria){
+        try {
+            Object questao = questaoService.pegarQuestaoAleatoria(idCategoria);
+            return ResponseEntity.ok(questao);
+        } catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ocorreu um erro ao buscar a questão.");
+        }
     }
 }

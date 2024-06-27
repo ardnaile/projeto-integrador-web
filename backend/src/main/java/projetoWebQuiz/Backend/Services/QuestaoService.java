@@ -13,6 +13,7 @@ import projetoWebQuiz.Backend.Repositories.QuestaoQuatroRepository;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class QuestaoService {
@@ -28,6 +29,8 @@ public class QuestaoService {
 
     @Autowired
     private QuestaoDuasMapper questaoDuasMapper;
+
+    private final Random random = new Random();
 
     public QuestaoQuatroDto pegarQuestaoQuatro(int id_categoria){
         // Pegando uma lista com todas as questões do banco e embaralhando
@@ -52,6 +55,14 @@ public class QuestaoService {
 
         QuestaoDuasDto questaoDuasDto = questaoDuasMapper.toDTO(questoesDuas.get(0));
         return questaoDuasDto;
+    }
+
+    public Object pegarQuestaoAleatoria(int id_categoria){
+        if(random.nextBoolean()){
+            return pegarQuestaoQuatro(id_categoria);
+        } else {
+            return pegarQuestaoDuas(id_categoria);
+        }
     }
 
 }
