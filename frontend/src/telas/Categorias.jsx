@@ -45,6 +45,8 @@ const Categorias = () => {
   // Verifica se o botão de iniciar deve estar desabilitado
   const isBotaoIniciarDisabled = categoriasSelecionadas.length === 0;
 
+  // A função toggleCategoria neste código é responsável por adicionar ou remover 
+  // uma categoria da lista de categorias selecionadas no componente Categorias.
   return (
     <div className="relative w-full h-screen">
       <img src={background} alt="Background" className="absolute inset-0 object-cover w-full h-full" />

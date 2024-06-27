@@ -36,6 +36,7 @@ const QuizQuatroOpcoes = () => {
     }
   }, [tempoRestante]); 
 
+  // Efeito para mudar a rotaçãop do relogio conforme o tempo passa
   useEffect(() => {
     const id = setInterval(() => {
       setSeconds(prevSeconds => {
@@ -56,6 +57,8 @@ const QuizQuatroOpcoes = () => {
     setIntervalId(id);
   };
 
+  // A função fetchQuestao busca aleatoriamente uma questão de uma lista de URLs e a exibe na interface. 
+  // Embaralha as opções de resposta
   const fetchQuestao = async () => {
     try {
       const urls = [
@@ -184,7 +187,8 @@ const QuizQuatroOpcoes = () => {
         </div>
       </div>
 
-      {mostrarModal && (
+
+      {mostrarModal && ( // Modal de dica que recebe sempre a dica para a questão atual do Quiz
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
           <div className="bg-white p-8 rounded-md w-96 text-center">
             <p className="text-lg mb-4">Modal de Dica:</p>
