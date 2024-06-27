@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import background from '../fundos/fundo-resposta-errada.svg';
-import BotaoRespostaCerta from "../components/BotaoRespostaCerta";
-import BotaoProximaPergunta from "../components/BotaoProximaPergunta";
-import BotaoVoltar from "../components/BotaoVoltar";
+import { Link, useLocation} from "react-router-dom"; // Importando hooks do React Router
+import background from '../fundos/fundo-resposta-errada.svg'; 
+import BotaoRespostaCerta from "../components/BotaoRespostaCerta"; 
+import BotaoProximaPergunta from "../components/BotaoProximaPergunta"; 
+import BotaoVoltar from "../components/BotaoVoltar"; 
 
 const RespostaIncorreta = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [respostaCorreta, setRespostaCorreta] = useState('');
+  const location = useLocation(); // Hook do React Router para obter a localização atual
+  const [respostaCorreta, setRespostaCorreta] = useState(''); // Estado para armazenar a resposta correta
 
+  // Efeito para atualizar a resposta correta com base nos parâmetros da URL
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const respostaIncorreta = params.get('respostaIncorreta');
-    setRespostaCorreta(respostaIncorreta);  // Definindo a resposta correta com base nos parâmetros da URL
+    const params = new URLSearchParams(location.search); 
+    const respostaIncorreta = params.get('respostaIncorreta'); 
+    setRespostaCorreta(respostaIncorreta); 
   }, [location]);
 
   return(

@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import background from '../fundos/fundo-quiz.svg';
-import BotaoMatematica from '../components/BotaoMatematica';
-import BotaoTecnologia from '../components/BotaoTecnologia';
-import BotaoIdiomas from '../components/BotaoIdiomas';
-import BotaoAnimais from '../components/BotaoAnimais';
-import BotaoComida from '../components/BotaoComida';
-import BotaoNatureza from '../components/BotaoNatureza';
-import BotaoArtes from '../components/BotaoArtes';
-import BotaoEsportes from '../components/BotaoEsportes';
-import BotaoIniciar from '../components/BotaoIniciar';
-import BotaoVoltar from '../components/BotaoVoltar'; // Importando o BotaoVoltar
+import { useNavigate, Link } from 'react-router-dom'; // Importando hooks do React Router
+import background from '../fundos/fundo-quiz.svg'; // Importando imagem de fundo
+import BotaoMatematica from '../components/BotaoMatematica'; // Componente botão para categoria Matemática
+import BotaoTecnologia from '../components/BotaoTecnologia'; // Componente botão para categoria Tecnologia
+import BotaoIdiomas from '../components/BotaoIdiomas'; // Componente botão para categoria Idiomas
+import BotaoAnimais from '../components/BotaoAnimais'; // Componente botão para categoria Animais
+import BotaoComida from '../components/BotaoComida'; // Componente botão para categoria Comida
+import BotaoNatureza from '../components/BotaoNatureza'; // Componente botão para categoria Natureza
+import BotaoArtes from '../components/BotaoArtes'; // Componente botão para categoria Artes
+import BotaoEsportes from '../components/BotaoEsportes'; // Componente botão para categoria Esportes
+import BotaoIniciar from '../components/BotaoIniciar'; // Componente botão Iniciar
+import BotaoVoltar from '../components/BotaoVoltar'; // Componente botão Voltar
 
 const Categorias = () => {
-  const navigate = useNavigate();
-  const [categoriasSelecionadas, setCategoriasSelecionadas] = useState([]);
+  const navigate = useNavigate(); // Hook do React Router para navegação programática
+  const [categoriasSelecionadas, setCategoriasSelecionadas] = useState([]); // Estado para armazenar categorias selecionadas
 
   // Função para adicionar ou remover categoria da lista de selecionadas
   const toggleCategoria = (idCategoria) => {
     if (categoriasSelecionadas.includes(idCategoria)) {
-      setCategoriasSelecionadas(categoriasSelecionadas.filter(cat => cat !== idCategoria));
+      setCategoriasSelecionadas(categoriasSelecionadas.filter(cat => cat !== idCategoria)); // Remove a categoria se já estiver selecionada
     } else {
-      setCategoriasSelecionadas([...categoriasSelecionadas, idCategoria]);
+      setCategoriasSelecionadas([...categoriasSelecionadas, idCategoria]); // Adiciona a categoria se não estiver selecionada
     }
   };
 
@@ -34,9 +34,9 @@ const Categorias = () => {
       } else {
         // Verifica se Tecnologia (ID 7) está presente junto com outras categorias selecionadas
         if (categoriasSelecionadas.includes(7)) {
-          console.log('Selecione apenas a categoria Tecnologia para iniciar o quiz.');
+          console.log('Selecione apenas a categoria Tecnologia para iniciar o quiz.'); // Avisa para selecionar apenas Tecnologia se estiver combinada com outras
         } else {
-          navigate(`/QuizQuatroOpcoes?categorias=${categoriasSelecionadas.join(',')}`);
+          navigate(`/QuizQuatroOpcoes?categorias=${categoriasSelecionadas.join(',')}`); // Redireciona para QuizQuatroOpcoes com as categorias selecionadas
         }
       }
     }
@@ -51,20 +51,20 @@ const Categorias = () => {
       
       <div className="absolute inset-0 mt-[220px] flex flex-col justify-center items-center">
         <div className="grid grid-cols-4 grid-rows-2 gap-4 mb-10">
-          <BotaoMatematica onClick={() => toggleCategoria(1)} />
-          <BotaoTecnologia onClick={() => toggleCategoria(7)} />
-          <BotaoIdiomas onClick={() => toggleCategoria(3)} />
-          <BotaoAnimais onClick={() => toggleCategoria(2)} />
-          <BotaoComida onClick={() => toggleCategoria(4)} />
-          <BotaoNatureza onClick={() => toggleCategoria(9)} />
-          <BotaoArtes onClick={() => toggleCategoria(10)} />
-          <BotaoEsportes onClick={() => toggleCategoria(11)} />
+          <BotaoMatematica onClick={() => toggleCategoria(1)} /> {/* Botão para selecionar Matemática */}
+          <BotaoTecnologia onClick={() => toggleCategoria(7)} /> {/* Botão para selecionar Tecnologia */}
+          <BotaoIdiomas onClick={() => toggleCategoria(3)} /> {/* Botão para selecionar Idiomas */}
+          <BotaoAnimais onClick={() => toggleCategoria(2)} /> {/* Botão para selecionar Animais */}
+          <BotaoComida onClick={() => toggleCategoria(4)} /> {/* Botão para selecionar Comida */}
+          <BotaoNatureza onClick={() => toggleCategoria(9)} /> {/* Botão para selecionar Natureza */}
+          <BotaoArtes onClick={() => toggleCategoria(10)} /> {/* Botão para selecionar Artes */}
+          <BotaoEsportes onClick={() => toggleCategoria(11)} /> {/* Botão para selecionar Esportes */}
         </div>
         
-        {/* Componente BotaoIniciar com propriedade onClick e disabled */}
+        {/* Botão para iniciar o quiz */}
         <BotaoIniciar onClick={handleIniciarQuiz} disabled={isBotaoIniciarDisabled} />
         
-        {/* Adicionando o BotaoVoltar para retornar à página anterior */}
+        {/* Botão Voltar que redireciona para a página anterior */}
         <div className="mt-4">
           <Link to="/">
             <BotaoVoltar />

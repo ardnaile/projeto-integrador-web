@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { FiClock } from 'react-icons/fi';
 import background from '../fundos/fundo-principal.svg';
 import BotaoVoltar from '../components/BotaoVoltar';
@@ -10,7 +10,6 @@ import BotaoDica from '../components/BotaoDica';
 import RespostaIncorretaVF from './RespostaIncorretaVF';
 
 const QuizVerdadeiroFalso = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const [questao, setQuestao] = useState(null);
   const [opcaoSelecionada, setOpcaoSelecionada] = useState(null);
@@ -76,8 +75,8 @@ const QuizVerdadeiroFalso = () => {
 
       const questao = await response.json();
       const opcoesEmbaralhadas = shuffleOptions([
-        { texto: 'Verdadeiro', valor: '0' },
-        { texto: 'Falso', valor: '1' },
+        { texto: 'Verdadeiro', valor: '1' },
+        { texto: 'Falso', valor: '0' },
       ]);
       questao.opcoesEmbaralhadas = opcoesEmbaralhadas;
       setQuestao(questao);
@@ -115,7 +114,7 @@ const QuizVerdadeiroFalso = () => {
     }
 
     const respostaCorreta = questao?.resposta.toString();
-    const respostaSelecionadaTexto = opcaoSelecionada === 'verdadeiro' ? '0' : '1';
+    const respostaSelecionadaTexto = opcaoSelecionada === 'verdadeiro' ? '1' : '0';
 
     if (respostaCorreta === respostaSelecionadaTexto) {
       setAcertos(acertos => acertos + 1);
@@ -154,7 +153,7 @@ const QuizVerdadeiroFalso = () => {
 
   const handleConfirmarResultado = () => {
     setMostrarModal(false);
-    navigate('/categorias'); // Navega para a página de categorias usando useNavigate
+    // Utilize o Link para navegar para a página de categorias
   };
 
   if (respostaIncorreta) {
@@ -176,27 +175,27 @@ const QuizVerdadeiroFalso = () => {
       <div className="mt-4 text-black text-center">
         <div className={`flex items-center rounded-lg px-4 py-2 ${getColorClass(seconds)}`}>
           <FiClock className="w-24 h-24 mr-2" style={{ transform: `rotate(${rotateSeconds}deg)` }} />
-          <span className="block font-bold ">Tempo restante: {seconds} segundos</span>
+          <span className="block font-bold text-xl ">Tempo restante: {seconds} segundos</span>
         </div>
       </div>
 
       {mostrarModal && (
         <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
-          <div className="bg-white p-8 rounded-md w-96 text-center">
-            <p className="text-lg mb-4">Parabéns! Você acertou todas as perguntas.</p>
-            <p className="text-lg mb-4">Você acertou {acertos} perguntas.</p>
-            <button
-              onClick={handleConfirmarResultado}
-              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
-            >
-              Ver categorias
-            </button>
+            <div className="bg-white p-8 rounded-md w-96 text-center">
+              <p className="text-xl mb-4">Parabéns! Você acertou todas as perguntas.</p>
+              <p className="text-xl mb-4">Você acertou {acertos} perguntas.</p>
+              <button
+                onClick={handleConfirmarResultado}
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-12 rounded-xl text-2xl" 
+              >
+                Ver categorias
+              </button>
           </div>
         </div>
       )}
 
       <div className="flex-1 flex items-center justify-center flex-col">
-        <h2 className="text-2xl font-bold text-center mb-4">{questao.enunciado}</h2>
+        <h2 className="text-3xl font-bold text-center mb-4">{questao.enunciado}</h2>
 
         <div className="flex items-center justify-center space-x-8">
           <BotaoVerdadeiro

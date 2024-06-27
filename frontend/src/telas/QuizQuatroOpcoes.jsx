@@ -7,33 +7,34 @@ import BotaoDica from '../components/BotaoDica';
 
 const QuizQuatroOpcoes = () => {
   const navigate = useNavigate();
-  const [questaoAtual, setQuestaoAtual] = useState(null);
-  const [respostaSelecionada, setRespostaSelecionada] = useState(null);
-  const [acertos, setAcertos] = useState(0);
-  const [perguntaSelecionada, setPerguntaSelecionada] = useState(null);
-  const [tempoRestante, setTempoRestante] = useState(30);
-  const [intervalId, setIntervalId] = useState(null);
-  const [seconds, setSeconds] = useState(30);
-  const [rotateSeconds, setRotateSeconds] = useState(0);
-  const [mostrarModal, setMostrarModal] = useState(false);
-  const [resultadoModal, setResultadoModal] = useState(false);
-  const [totalPerguntas, setTotalPerguntas] = useState(5);
+  const [questaoAtual, setQuestaoAtual] = useState(null); // Estado para armazenar a questão atual
+  const [respostaSelecionada, setRespostaSelecionada] = useState(null); // Estado para armazenar a resposta selecionada
+  const [acertos, setAcertos] = useState(0); // Estado para contar o número de acertos
+  const [perguntaSelecionada, setPerguntaSelecionada] = useState(null); // Estado para armazenar a pergunta selecionada
+  const [tempoRestante, setTempoRestante] = useState(30); // Estado para o tempo restante
+  const [intervalId, setIntervalId] = useState(null); // Estado para armazenar o ID do intervalo
+  const [seconds, setSeconds] = useState(30); // Estado para contar os segundos
+  const [rotateSeconds, setRotateSeconds] = useState(0); // Estado para controlar a rotação do ícone do relógio
+  const [mostrarModal, setMostrarModal] = useState(false); // Estado para controlar a exibição do modal
+  const [resultadoModal, setResultadoModal] = useState(false); // Estado para controlar a exibição do modal de resultado
+  const [totalPerguntas, setTotalPerguntas] = useState(5); // Estado para armazenar o número total de perguntas
 
   useEffect(() => {
     fetchQuestao();
     iniciarRelogio();
 
     return () => {
-      clearInterval(intervalId);
+      clearInterval(intervalId); // Limpa o intervalo ao desmontar o componente
     };
-  }, []);
+  }, []); // Executa apenas uma vez ao montar o componente
 
+  //Quando o tempo chegar a 0 direciona para a tela de Resposta Incorreta
   useEffect(() => {
     if (tempoRestante === 0) {
       clearInterval(intervalId);
       handleRespostaIncorreta();
     }
-  }, [tempoRestante]);
+  }, [tempoRestante]); 
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -43,15 +44,15 @@ const QuizQuatroOpcoes = () => {
         setRotateSeconds(newRotateSeconds);
         return newSeconds >= 0 ? newSeconds : 0;
       });
-    }, 1000);
-    return () => clearInterval(id);
-  }, []);
+    }, 1000); 
+    return () => clearInterval(id); 
+  }, []); 
 
   const iniciarRelogio = () => {
     clearInterval(intervalId);
     const id = setInterval(() => {
       setTempoRestante(tempoRestante => tempoRestante - 1);
-    }, 1000);
+    }, 3800); 
     setIntervalId(id);
   };
 
@@ -66,37 +67,35 @@ const QuizQuatroOpcoes = () => {
         'http://localhost:8080/questaoQuatro/10',
         'http://localhost:8080/questaoQuatro/11',
         'http://localhost:8080/questaoQuatro/12',
-        'http://localhost:8080/questaoQuatro/5',
-        'http://localhost:8080/questaoQuatro/8',
       ];
-
+  
       const randomUrl = urls[Math.floor(Math.random() * urls.length)]; // Escolhe uma URL aleatória
-      const response = await fetch(randomUrl);
-
+      const response = await fetch(randomUrl); // Faz a requisição para a URL aleatória escolhida
+  
       if (!response.ok) {
-        throw new Error('Erro ao buscar questão');
+        throw new Error('Erro ao buscar questão'); // Lança um erro se a resposta não for ok (status 200-299)
       }
-
-      const questao = await response.json();
-      const opcoesEmbaralhadas = shuffleOptions([
+  
+      const questao = await response.json(); // Converte a resposta para JSON
+      const opcoesEmbaralhadas = shuffleOptions([ // Embaralha as opções de resposta
         questao.resposta,
         questao.opcao2,
         questao.opcao3,
         questao.opcao4,
       ]);
-      questao.opcoesEmbaralhadas = opcoesEmbaralhadas;
-      setQuestaoAtual(questao);
-      setRespostaSelecionada(null);
-      setPerguntaSelecionada(null);
-      setTempoRestante(30); // Reinicia o tempo para 30 segundos ao carregar uma nova questão
-      iniciarRelogio();
-
-      const params = new URLSearchParams(window.location.search);
-      if (params.has('respostaIncorreta')) {
-        setTotalPerguntas(totalPerguntas => totalPerguntas - 1);
+      questao.opcoesEmbaralhadas = opcoesEmbaralhadas; // Adiciona as opções embaralhadas ao objeto questao
+      setQuestaoAtual(questao); 
+      setRespostaSelecionada(null); 
+      setPerguntaSelecionada(null); 
+      setTempoRestante(30); // Reinicia o tempo restante para 30 segundos ao carregar uma nova questão
+      iniciarRelogio(); // Reinicia o relógio para a nova questão
+  
+      const params = new URLSearchParams(window.location.search); // Obtém parâmetros da URL atual
+      if (params.has('respostaIncorreta')) { // Verifica se há parâmetro indicando resposta incorreta
+        setTotalPerguntas(totalPerguntas => totalPerguntas - 1); // Decrementa o número total de perguntas se houver resposta incorreta
       }
     } catch (error) {
-      console.error('Erro ao buscar questão:', error);
+      console.error('Erro ao buscar questão:', error); 
     }
   };
 
@@ -181,7 +180,7 @@ const QuizQuatroOpcoes = () => {
       <div className="mt-4 text-black text-center">
         <div className={`flex items-center rounded-lg px-4 py-2 ${getColorClass(seconds)}`}>
           <FiClock className="w-24 h-24 mr-2" style={{ transform: `rotate(${rotateSeconds}deg)` }} />
-          <span className="block font-bold ">Tempo restante: {seconds} segundos</span>
+          <span className="block font-bold text-xl">Tempo restante: {seconds} segundos</span>
         </div>
       </div>
 
@@ -203,9 +202,9 @@ const QuizQuatroOpcoes = () => {
       <div className="flex-1 flex items-center justify-center flex-col">
         {questaoAtual && (
           <div className="bg-opacity-80 p-8 rounded-lg max-w-md w-full">
-            <div className="text-center mb-4 relative">
-              <h2 className="text-xl font-bold">{questaoAtual.enunciado}</h2>
-              <div className="grid grid-cols-2 gap-4 mt-4">
+            <div className="text-center mb-6 relative">
+              <h2 className="text-3xl font-bold mb-4">{questaoAtual.enunciado}</h2>
+              <div className="grid grid-cols-2 gap-4">
                 {questaoAtual.opcoesEmbaralhadas.map((opcao, index) => (
                   <div key={`opcao-${index}`}>
                     <input
@@ -221,7 +220,7 @@ const QuizQuatroOpcoes = () => {
                       htmlFor={`opcao-${index}`}
                       className={`${
                         perguntaSelecionada === index ? 'bg-gray-400' : 'bg-white'
-                      } hover:bg-green-400 text-black font-bold px-4 py-4 border-b-2 hover:border-white-500 rounded-xl w-full text-left cursor-pointer block`}
+                      } hover:bg-green-400 text-black font-bold px-8 py-6 border-b-2 hover:border-white-500 rounded-xl w-full text-left cursor-pointer block text-2xl`}
                       onClick={() => handleSelecionarResposta(index)}
                     >
                       <span className="ml-2">{opcao}</span>
@@ -230,10 +229,10 @@ const QuizQuatroOpcoes = () => {
                 ))}
               </div>
               {perguntaSelecionada !== null && (
-                <div className="flex justify-center mt-4">
+                <div className="flex justify-center mt-6">
                   <button
                     onClick={handleConfirmarResposta}
-                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl text-2xl"
                   >
                     Confirmar
                   </button>
@@ -250,11 +249,11 @@ const QuizQuatroOpcoes = () => {
         {acertos === totalPerguntas && (
           <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50">
             <div className="bg-white p-8 rounded-md w-96 text-center">
-              <p className="text-lg mb-4">Parabéns! Você acertou todas as perguntas.</p>
-              <p className="text-lg mb-4">Você acertou {acertos} perguntas.</p>
+              <p className="text-xl mb-4">Parabéns! Você acertou todas as perguntas.</p>
+              <p className="text-xl mb-4">Você acertou {acertos} perguntas.</p>
               <button
                 onClick={handleConfirmarResultado}
-                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-xl"
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-12 rounded-xl text-2xl"
               >
                 Ver categorias
               </button>

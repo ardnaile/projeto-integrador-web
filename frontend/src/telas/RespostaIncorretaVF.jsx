@@ -9,13 +9,11 @@ const RespostaIncorretaVF = ({ respostaIncorreta }) => {
   const location = useLocation();
 
   const handleNavigateBack = () => {
-    console.log("Navigate back clicked");
-    window.location.href = "/QuizVerdadeiroFalso"; // Navega de volta para a tela do QuizVerdadeiroFalso
+    window.location.href = "/Categorias"; // Navega de volta para a tela do QuizVerdadeiroFalso
   };
 
   const handleNavigateNext = () => {
-    console.log("Navigate next clicked");
-    window.location.href = "/QuizVerdadeiroFalso"; // Navega para a próxima pergunta (mesma tela do QuizVerdadeiroFalso)
+    window.location.href = "/QuizVerdadeiroFalso"; // Navega para a próxima pergunta da tela do QuizVerdadeiroFalso)
   };
 
   return (
