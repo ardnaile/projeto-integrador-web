@@ -61,7 +61,7 @@ const CodigoSecreto = () => {
                 alert('Falha ao gravar os dados');
             } else {
                 alert("Cadastrado com sucesso!");
-                navigate(`/Categorias?${data}`);
+                navigate(`/Categorias`);
             }
         })
         .catch((error) => console.log(error))
@@ -78,7 +78,7 @@ const CodigoSecreto = () => {
             <div className="absolute inset-0 flex flex-col items-center">
                 <div className="mt-[110px] flex flex-col items-center space-y-80 justify-center h-screen">
                      <input onDragEnter={handleInputChange} className={styleInput} value={textoGerado} type="text" id='chave_estudante' readOnly />
-                    <BotaoConfirma onButtonClick={handleFetchRequest}/>
+                    <BotaoConfirma onClick={handleFetchRequest}/>
                 </div>
             </div>
         </div>

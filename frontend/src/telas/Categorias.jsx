@@ -68,7 +68,7 @@ const Categorias = () => {
         
         {/* Botão Voltar que redireciona para a página anterior */}
         <div className="mt-4">
-          <Link to="/categorias">
+          <Link to="/">
             <BotaoVoltar />
           </Link>
         </div>
