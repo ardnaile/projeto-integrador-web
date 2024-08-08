@@ -20,5 +20,3 @@ O front-end desse projeto está sendo desenvolvido com React, vite.js, tailwind.
 
 ### Back-end 
 O back-end desse projeto está sendo desenvolvido com Java e Spring. 
-
-Mais informações conforme o andamento do projeto.
